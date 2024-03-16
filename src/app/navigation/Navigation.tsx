@@ -38,7 +38,7 @@ const Navigation = () => {
             <div className={styles.nav}>
                 <a href="" className={styles.menu_item}>Цены на тарифы</a>
             </div>
-        <Select text='Еще' options={['О платформе','Блог','Реквизиты']}/>
+        <Select text='Еще' options={['О платформе','Блог','Реквизиты', 'Купить баннер','Вакансии','СМИ о нас','Бонусы от партнеров','Помощь','Франшиза']}/>
             {/* <div className={styles.menu_item_d}>
             Еще
                 <div className={styles.dropdown}>
