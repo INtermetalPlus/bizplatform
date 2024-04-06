@@ -4,16 +4,18 @@
     left: 0;
     z-index: 5;
     overflow: visible;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    
 }
 
 .page_header {
     display: flex;
     align-items: center;
-    width: 100vw;
-    gap:40px;
-    height: 72px;
-    padding-left: 40px;
-    background-color: #fff;
+    max-width: 1600px;
+    gap: 74px;
+    min-height: 80px;
     border-bottom: 1px solid #eaeaea;
 }
 
@@ -27,38 +29,26 @@
 }
 
 .first {
-    color:#f90;
+    color:#3971FF;
     flex-shrink: 0;
-    font-size: 24px;
+    font-size: 40px;
     line-height: 30px;
     font-weight: 700;
     text-decoration: none;
     cursor: pointer;
 }
 
-.first, .second {
+.first {
     transition: color .4s ease;
 }
-
-.second {
-    color: #333;
-    flex-shrink: 0;
-    font-size: 24px;
-    line-height: 30px;
-    font-weight: 700;
-    text-decoration: none;
-    cursor: pointer;
-}
-
 
 .item_nav {
     display: flex;
     align-items: center;
     justify-content: center !important;
     min-width: 0;
-    max-width: 1200px;
     color: #333;
-    font-size: 16px;
+    font-size: 22px;
     line-height: 22px;
 }
 
@@ -68,19 +58,18 @@
     align-items: center;
     justify-content: center !important;
     min-width: 0;
-    max-width: 1200px;
     color: #333;
-    font-size: 16px;
-    line-height: 22px;
+    font-size: 22px;
+    line-height: 26.63px;
 }
 
 .menu_item {
     position: relative;
-    color:#333;
+    color:black;
     flex-shrink: 0;
-    margin-right: 40px;
+    margin-right: 44px;
     text-decoration: none;
-    transition: all .4;
+    transition: all ease .5;
 }
 
 .activeMenu {
@@ -93,7 +82,8 @@
 
 .header_info {
     display: flex;
-    margin-left: 40px;
+    margin-left: 81px;
+    margin-right: 59px;
     min-height: 24px;
 }
 
@@ -127,6 +117,16 @@
 
 .menu_item_d {
     position: relative;
+}
+
+.menu_item_d::after {
+    position: absolute;
+    content: '';
+    width: 12px;
+    height: 7.4px;
+    background-image: url('../../../shared/assets/home/header/arrow-down.svg');
+    right: -20px;
+    top:9.8px;
 }
 
 .dropdown {
@@ -179,7 +179,6 @@
     line-height: 22px;
 }
 
-
 .register {
     display: inline-block;
     border: none;
@@ -189,10 +188,9 @@
     font-size: 1em;
     line-height: 1;
     background: transparent;
-    color: #f90 !important;
+    color: #3971FF !important;
     cursor: pointer !important;
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-right: 44px;
 }
 
 .login {
@@ -204,7 +202,6 @@
     font-size: 1em;
     line-height: 1;
     background: transparent;
-    color: #f90 !important;
+    color: #3971FF !important;
     cursor: pointer !important;
-    margin-right: 40px;
 }
