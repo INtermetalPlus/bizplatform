@@ -15,11 +15,16 @@
         color: #3971FF;
     }
 }
-.comments {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 40px;
 
+.comments {
+    column-count: 2;
+    column-gap: 20px;
+    margin-top: 40px;
+}
+.comments > div {
+    break-inside: avoid;
+    margin-bottom: 70px;
+}
+.comments > div:first-child {
+    margin-top: 0;
 }
