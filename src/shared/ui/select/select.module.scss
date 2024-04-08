@@ -1,0 +1,16 @@
+.select {
+    height: 69px;
+    border-radius: 2px;
+    color:#FFFFFF;
+    display: flex;
+    text-align: center;
+    background-color: #477BFF;
+    font-size: 24px;
+    appearance: none; /* Скрывает стандартную стрелку */
+    position: relative;
+}
+.icon {
+    position: relative;
+    bottom: 43px;
+    left: 275px;
+}
