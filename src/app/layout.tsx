@@ -25,7 +25,6 @@ export default function RootLayout({
       <body className={roboto.className}>
         {children}
         <SearchProduct/>
-
       </body>
     </html>
   );

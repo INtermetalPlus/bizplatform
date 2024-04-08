@@ -4,14 +4,19 @@ interface ButtonProps {
   width?: string;
   text: string;
   type: 'primaryButton' | 'secondaryButton';
+  onClick?: () => void; 
 }
 
-export const BlueButton = ({ width, text, type }: ButtonProps): JSX.Element => {
+export const BlueButton = ({ width, text, type, onClick }: ButtonProps): JSX.Element => {
   const buttonStyle = type === 'primaryButton' ? styles.primaryButton : styles.secondaryButton;
 
   return (
-    <button className={`${styles.btn} ${buttonStyle}`} style={{width: width || ''}}>
-        {text}
+    <button 
+      className={`${styles.btn} ${buttonStyle}`} 
+      style={{width: width || ''}}
+      onClick={onClick} 
+    >
+      {text}
     </button>
   )
 }

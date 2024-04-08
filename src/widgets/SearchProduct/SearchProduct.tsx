@@ -5,21 +5,33 @@ import { BlueButton } from "@/shared/ui/blueButton";
 import { Select } from "@/shared/ui/select";
 import { SearchField } from "@/features/searchField";
 import { SelectButton } from "@/shared/ui/selectButton";
+import { AddProductModal } from "../AddProductModal";
 interface SearchFieldProps {
   onSearch?: (term: string) => void;
 }
 
 export const SearchProduct = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <div className={styles.main}>
       <div className={styles.headerSearch}>
         <h2>Найти или добавить свой товар</h2>
-        <BlueButton type="primaryButton" width="385px" text="Добавить товар" />
+        <BlueButton type="primaryButton" width="385px" text="Добавить товар" onClick={handleOpenModal} />
+{isModalOpen && <AddProductModal onClose={handleCloseModal} />}
+
       </div>
       <div className={styles.secondBlock}>
-        <Select width="385px" options={["Кыргызстан", "Казахстан", "Россия"]} />
+        <Select type="primarySelect" width="385px" options={["Кыргызстан", "Казахстан", "Россия"]} />
         <SearchField />
         <div>
           <BlueButton type="primaryButton" width="192.5px" text="Заказы" />
