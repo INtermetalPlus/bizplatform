@@ -5,6 +5,7 @@ import { Footer } from "@/widgets/Footer";
 import { CommentBlock } from "@/widgets/CommentBlock";
 import { Comments } from "@/widgets/Comments";
 import { SearchProduct } from "@/widgets/SearchProduct";
+import { AllOrder } from "@/widgets/AllOrder";
 const roboto = Roboto({
   weight: ["400", "700", "300", "500"],
   subsets: ["latin", "cyrillic"],
@@ -24,7 +25,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={roboto.className}>
         {children}
-        <SearchProduct/>
+        <AllOrder/>
+
       </body>
     </html>
   );
