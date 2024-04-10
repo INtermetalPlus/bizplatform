@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import styles from "./Navigation.module.scss";
 import Image from "next/image";
 import languagePick from "./../../../shared/assets/home/header/language_option.png";
+// modal window
+import {ModalWindowReg} from "../../Modalwindow/ModalWindowReg";
 
 const Select = ({ text, options }: { text: string; options: string[] }) => {
   const [hover, setHover] = useState(false);
@@ -23,7 +25,18 @@ const Select = ({ text, options }: { text: string; options: string[] }) => {
     </div>
   );
 };
-export const Navigation: React.FC = () => {
+export const Navigation:React.FC = () => {
+  const[modalWindow, setModalWindow] = useState(false)
+
+  
+  const openModalWindow = () => {
+    setModalWindow(true)  
+  }
+
+  const closeModalWindow = () => {
+    setModalWindow(false)
+  }
+
   return (
     <div className={styles.header}>
       <header className={styles.page_header}>
@@ -70,19 +83,21 @@ export const Navigation: React.FC = () => {
               src={languagePick}
               width={24}
               height={24}
-              alt=""
+              alt="ru lang"
               className="lang"
             />
           </div>
 
           <div className={styles.auth}>
             <span>
-              <button className={styles.register}>Регистрация</button>
+              <button className={styles.register} onClick={openModalWindow}>Регистрация</button>
               <button className={styles.login}>Логин</button>
             </span>
           </div>
         </nav>
       </header>
+      {modalWindow && <ModalWindowReg closeModalWindow={closeModalWindow} />}
     </div>
+
   );
 };

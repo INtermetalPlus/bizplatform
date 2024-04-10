@@ -1,0 +1,77 @@
+.registerForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+    justify-content: space-around;
+}
+
+.registerForm input:nth-last-child(2) {
+    margin-bottom: 24px;
+}
+
+.registerForm__input {
+    display: flex;
+    width: 470px;
+    height: 70px;
+    padding-left: 10px;
+    border: 1.5px solid rgb(156, 156, 156);
+    border-radius: 2px;
+    background: rgb(241, 241, 241);
+    outline: none;
+}
+
+.registerForm__input::placeholder {
+    color: rgb(93, 93, 93);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.registerForm__submit {
+    cursor: pointer;
+    width: 478px;
+    height: 56px;
+    text-align: center;
+    border: none;
+    border-radius: 2px;
+    background: rgb(57, 113, 255);
+    transition: 0.3s;
+    color: rgb(255, 255, 255);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+// hover
+
+.registerForm__submit:hover {
+    background: #FF9900;
+    color: #000;
+}
+
+.registerForm__submit:focus {
+    background: rgb(108, 143, 231);
+    color: rgba(0, 0, 0, 0.144)
+}
+
+// error btn
+
+.errorButton {
+    max-width: 360px;
+    color: rgb(255, 0, 0);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    margin-right: auto;
+    text-align: left;
+}
+
+// error input
+
+.registerForm__errorInput {
+    border: 1.5px solid rgb(255, 0, 0);
+}
+
