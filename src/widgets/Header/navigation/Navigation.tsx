@@ -75,6 +75,7 @@ export const Navigation: React.FC = () => {
             />
           </div>
 
+
           <div className={styles.auth}>
             <span>
               <button className={styles.register}>Регистрация</button>
