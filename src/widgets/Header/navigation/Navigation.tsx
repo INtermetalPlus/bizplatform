@@ -73,7 +73,7 @@ export const Navigation: React.FC = () => {
                   src={languagePick}
                   width={24}
                   height={24}
-                  alt=""
+                  alt="logoRussian"
                   className="lang"
               />
             </div>
