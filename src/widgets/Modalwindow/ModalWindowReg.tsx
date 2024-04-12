@@ -6,20 +6,24 @@ import { ModalWindowForm } from "@/features/models/ModalWindowForm";
 
 
 interface ModalWindowRegProps {
-    closeModalWindow: () => void;
+    closeModalWindow: () => void
 }
 
 
-export const ModalWindowReg: React.FC<ModalWindowRegProps> = ({ closeModalWindow }) => {
+export const ModalWindowReg: React.FC<ModalWindowRegProps> = ({ closeModalWindow }) => {  
+    const notCLosed = (event: React.MouseEvent) => {
+        event.stopPropagation()
+    }
+
     return (
-        <div className={styles.modalWindow__background}>
-            <div className={styles.modalWindow}>
+        <div className={styles.modalWindow__background } onClick={closeModalWindow}>
+            <div className={styles.modalWindow} onClick={notCLosed}>
                 <div className={styles.closeModalWindow} onClick={closeModalWindow}>
                     <Image
                     src={closeModalIcon}
                     width={15}
                     height={15}
-                    alt="close modal"
+                    alt="close"
                     />
                 </div>
                 <h3 className={styles.closeModalWindow__header}>

@@ -43,12 +43,14 @@ export const ModalWindowForm: React.FC = () => {
             className={`${styles.registerForm__input} ${errors.email ? styles.registerForm__errorInput : ''}`}
             {...register('email', {
                 // 'error' т.к. отображаю компонент а не сообщ.
-                required: 'error',
+                required: 'Поле обязательно для заполнения',
                 pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
             })}
             />
             {errors.email && (
-                <ErrorInput/>
+                <div  className={styles.errorButton}>
+                    {errors.email.message}
+                </div>
             )}
             <input
             type="text"
@@ -56,23 +58,32 @@ export const ModalWindowForm: React.FC = () => {
             className={`${styles.registerForm__input} ${errors.phone ? styles.registerForm__errorInput : ''}`} 
             {...register('phone' , {
                 // закоментил чтобы работала форма сохраняя данные в лог
-                // required: 'error'
+                required: 'Поле обязательно для заполнения',
+                validate: value => /\+\d{3}\(\d{3}\)\d{3}-\d{3}/.test(value)
             })}
             ref={numberRef}
             />
             {errors.phone && (
-                <div>{errors.email?.message}</div>
+                <div className={styles.errorButton}>
+                    {errors.phone.message}
+                </div>
             )}
             <input 
             type="password" 
             placeholder="Пароль" 
             className={`${styles.registerForm__input} ${errors.password ? styles.registerForm__errorInput : ''}`}
             {...register('password', {
-                minLength: 8
+                required: 'Поле обязательно для заполнения',
+                minLength: {
+                    value: 8,
+                    message: 'Пароль должен составлять не менее 8 символов'
+                }
             })}
             />
             {errors.password && (
-                <ErrorPassword/>
+                <div className={styles.errorButton}>
+                    {errors.password.message}
+                </div>
             )}
             <button className={styles.registerForm__submit}>Зарегестрироваться</button>
         </form>
