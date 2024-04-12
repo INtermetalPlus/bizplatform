@@ -1,0 +1,44 @@
+.contact {
+  margin: 50px auto;
+  font-family: "Inter", sans-serif;
+  width: 1350px;
+  height: 318px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.contact_block {
+  width: 650px;
+  height: 134px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+  background: rgb(255, 255, 255);
+
+}
+
+.contact_card {
+  display: flex;
+  align-items: center;
+}
+
+.card_icon {
+  width: 90px;
+  height: 86px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 0 3px 3px;
+  background: rgb(57, 113, 255);
+  margin: 24px 12px 24px 24px;
+  cursor: pointer;
+
+}
+.contact_p {
+  color: rgb(11, 22, 35);
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 39px;
+  text-align: left;
+}

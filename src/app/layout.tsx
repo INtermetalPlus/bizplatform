@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import  { Navigation } from "../widgets/Header/navigation"
+import {Menu} from "@/widgets/Menu/Menu";
+import {Contact} from "@/widgets/Contact/Contact";
+import Card from "@/widgets/Card/Card";
 const inter = Inter({ weight: ["400", "700","300","500"], subsets: ["latin","cyrillic"] });
 
 export const metadata: Metadata = {
@@ -18,8 +21,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Navigation />
+        <Menu/>
+        <Contact />
+        <Card/>
         {children}
-        
+
       </body>
     </html>
   );
