@@ -6,6 +6,8 @@ import { CommentBlock } from "@/widgets/CommentBlock";
 import { Comments } from "@/widgets/Comments";
 import { SearchProduct } from "@/widgets/SearchProduct";
 import { AllOrder } from "@/widgets/AllOrder";
+import { SimilarOrders } from "@/widgets/SimilarOrders";
+import { OfferCustomer } from "@/widgets/OfferCustomer";
 const roboto = Roboto({
   weight: ["400", "700", "300", "500"],
   subsets: ["latin", "cyrillic"],
@@ -25,7 +27,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={roboto.className}>
         {children}
-        <AllOrder/>
+        <OfferCustomer/>
+        <SimilarOrders/>
+        
+
+
+        <Footer/>
 
       </body>
     </html>

@@ -9,7 +9,9 @@ interface OrderProps {
   commentText: string;
   date: string;
   supply: string;
-  type: "viewed" | "completed" | string; // указал string из-за того, что ts ругался, принимает только два значения 
+  type: "viewed" | "completed" | string;
+  category?: string; // добавлено
+  deliveryFrom?: string; // добавлено
 }
 
 export const Order: React.FC<OrderProps> = ({
@@ -19,6 +21,8 @@ export const Order: React.FC<OrderProps> = ({
   date,
   supply,
   type,
+  category, // добавлено
+  deliveryFrom, // добавлено
 }) => {
   return (
     <div className={type === "completed" ? styles.completed : styles.main}>
@@ -37,6 +41,18 @@ export const Order: React.FC<OrderProps> = ({
             </React.Fragment>
           ))}
         </span>
+        {category && ( // добавлено
+        <div className={styles.category}>
+          <p>Категория</p>
+          <span className={styles.blue}>{category}</span>
+        </div>
+      )}
+      {deliveryFrom && ( // добавлено
+        <div className={styles.deliveryFrom}>
+          <p>Поставка из</p>
+          <span className={styles.blue}>{deliveryFrom}</span>
+        </div>
+      )}
       </div>
       <div className={styles.supplyEye}>
         <span className={styles.supply}>{supply}</span>
@@ -46,6 +62,7 @@ export const Order: React.FC<OrderProps> = ({
           </div>
         )}
       </div>
+     
     </div>
   );
 };
