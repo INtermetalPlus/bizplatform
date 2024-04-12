@@ -20,7 +20,6 @@
 }
 
 .link {
-    flex-shrink: 0;
     font-size: 24px;
     line-height: 30px;
     font-weight: 700;
@@ -57,7 +56,6 @@
     flex-grow: 1;
     align-items: center;
     justify-content: center !important;
-    min-width: 0;
     color: #333;
     font-size: 22px;
     line-height: 26.63px;
@@ -66,7 +64,6 @@
 .menu_item {
     position: relative;
     color:black;
-    flex-shrink: 0;
     margin-right: 44px;
     text-decoration: none;
     transition: all ease .5;
@@ -172,7 +169,6 @@
     display: flex;
     gap: 24px;
     position: relative;
-    display: flex;
     align-items: center;
     justify-content: flex-end;
     cursor: pointer;
