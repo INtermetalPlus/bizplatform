@@ -1,37 +1,32 @@
-import React, {useRef, useEffect} from "react";
-import styles from '../UI/ModalWindowInputs.module.scss'
+import React, { useState} from "react";
+import styles from './ModalWindowInputs.module.scss'
 // react-hook-form
 import { SubmitHandler, useForm } from "react-hook-form";
 import { ShippingFormData } from "../lib/form.interface";
-import IMask from "imask";
-// error btn
-import { ErrorInput } from "../UI/ErrorInput";
-import { ErrorPassword } from "../UI/ErrorPassword";
 
 
 export const ModalWindowForm: React.FC = () => {
-    // маска на номер
-    const numberRef = useRef(null)
-
-    useEffect(() => {
-        if(numberRef.current !== null){
-            const mask = IMask(numberRef.current, {
-                mask: '+{996}(000)000-000'
-            })
+    function formatPhoneNumber(value: string) {
+        const cleaned = ('' + value).replace(/\D/g, '');
+        const match = cleaned.match(/^(\d{3})(\d{3})(\d{3})$/);
+        if (match) {
+          return '+996' + '(' + match[3] + ')' + match[3] + '-' + match[3];
         }
-    }, [])
+        return value;
+      }
 
-    
+
     const {
         register, 
         handleSubmit, 
         formState: {errors}, 
-        reset
+        reset,
     } = useForm<ShippingFormData>({
         mode: 'onChange'
     })
 
     const onSubmit:SubmitHandler<ShippingFormData> = (data) => {
+        console.log('Form data saved');
         console.dir(data);
         reset()
     }
@@ -51,23 +46,29 @@ export const ModalWindowForm: React.FC = () => {
                 <div  className={styles.errorButton}>
                     {errors.email.message}
                 </div>
-            )}
-            <input
-            type="text"
-            placeholder="Телефон" 
-            className={`${styles.registerForm__input} ${errors.phone ? styles.registerForm__errorInput : ''}`} 
-            {...register('phone' , {
-                // закоментил чтобы работала форма сохраняя данные в лог
-                required: 'Поле обязательно для заполнения',
-                validate: value => /\+\d{3}\(\d{3}\)\d{3}-\d{3}/.test(value)
+            )} 
+            <input 
+            type="tel" 
+            className={`${styles.registerForm__input} ${errors.email ? styles.registerForm__errorInput : ''}`}
+            placeholder="Телефон"   
+            {...register('phone', {
+                    required: 'Поле обязательно для заполнения',
+                    pattern: {
+                        value: /^\+996\(\d{3}\)\d{3}-\d{3}$/,
+                        message: 'Формат номера неверный',
+                    },
+                    maxLength: {
+                        value: 16,
+                        message: 'Телефон должен быть из 9 цифр'
+                    }
             })}
-            ref={numberRef}
+            onChange={e => e.target.value = formatPhoneNumber(e.target.value)}
             />
             {errors.phone && (
                 <div className={styles.errorButton}>
                     {errors.phone.message}
                 </div>
-            )}
+              )}
             <input 
             type="password" 
             placeholder="Пароль" 
