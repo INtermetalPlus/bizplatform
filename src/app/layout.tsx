@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import  { Navigation } from "../widgets/Header/navigation"
-const inter = Inter({ weight: ["400", "700","300","500"], subsets: ["latin","cyrillic"] });
+import { Navigation } from "../widgets/Header/navigation";
+import { PlatformWork } from "../widgets/PlatformWork/PlatformWork";
+const inter = Inter({
+  weight: ["400", "700", "300", "500"],
+  subsets: ["latin", "cyrillic"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,8 +22,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Navigation />
+        <PlatformWork />
         {children}
-        
       </body>
     </html>
   );
