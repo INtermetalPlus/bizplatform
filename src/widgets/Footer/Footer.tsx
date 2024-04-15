@@ -9,7 +9,7 @@ export const Footer:React.FC = ():React.JSX.Element => {
       <div className={styles.container}>
         <div className={styles.footer_blog}>
             <div className={styles.footer_logo}>
-                <Image src={ibp} alt="" width={96} height={76}/>
+                <Image src={ibp} alt="" width={98} height={76}/>
             </div>
             <div className={styles.footer_info_blog}>
               <div className={styles.footer_info}>
