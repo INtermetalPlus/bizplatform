@@ -1,0 +1,1 @@
+export {ModalWindowReg} from "./ModalWindowReg"

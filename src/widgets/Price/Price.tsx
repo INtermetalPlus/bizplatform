@@ -8,13 +8,23 @@ export const Price:React.FC = () => {
         <div className={styles.content}>
             <div className={styles.container}>
                 <div className={styles.leftSide}>
-                    <h1 className={styles.title}>Сколько это стоит ?</h1>
-                    <h3 className={`${styles.subtitle} ${styles.subSpace}`}>Найти поставщика — бесплатно!</h3>
-                    <div className={styles.text}>Для покупателей платформа бесплатна. Можно размещать неограниченное число заказов, выбирать товары в каталоге и просматривать базу поставщиков.</div>
+                    <h1 className={styles.title}>
+                        Сколько это стоит ?
+                    </h1>
+                    <h3 className={`${styles.subtitle} ${styles.subSpace}`}>
+                        Найти поставщика — бесплатно!
+                    </h3>
+                    <div className={styles.text}>
+                        Для покупателей платформа бесплатна. Можно размещать неограниченное число заказов, выбирать товары в каталоге и просматривать базу поставщиков.
+                    </div>
                     <Button width='180px' text='Найти поставщика'/>
 
-                    <h3 className={`${styles.subtitle} ${styles.top}`}>Найти клиентов</h3>
-                    <div className={styles.text}>Выберите подходящий вам тариф для работы, чтобы получить максимальную выгоду.</div>
+                    <h3 className={`${styles.subtitle} ${styles.top}`}>
+                        Найти клиентов
+                    </h3>
+                    <div className={styles.text}>
+                        Выберите подходящий вам тариф для работы, чтобы получить максимальную выгоду.
+                    </div>
                     <Button width='180px' text='Выбрать тариф' />
                 </div>
                 <div className={styles.rightSide}>
