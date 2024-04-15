@@ -1,0 +1,67 @@
+.main {
+    max-width: 1600px;
+    display: flex;
+    margin: 50px auto;
+    h2 {
+        font-size: 38px;
+    }
+}
+
+.form {
+    padding: 20px;
+    border: 1px solid #88AAFF;
+}
+.grey {
+    font-size: 18px;
+    color: #A0A0A0;
+}
+.secondBlock {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+.stroki {
+    display: flex;
+    gap: 20px;
+}
+
+.stoldec {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    span {
+        font-size: 20px;
+    }
+}
+
+.textarea {
+    padding: 20px;
+    border: 1px solid #A0A0A0;
+    width: 707.64px;
+    height: 78px;
+    font-size: 20px;
+    resize: none;
+}
+.select {
+    background-color: #F2F2F2;
+    width: 365px;
+    height: 64px;
+    font-size: 20px;
+    color: #A0A0A0;
+    padding: 10px 24px;
+
+}
+.paperClip {
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 325.03px;
+    height: 29.04px;
+ color: #A0A0A0;
+    background-color: #EEEEEE;
+    font-size: 22px;
+    border-radius: 2px;
+    border: none;
+}

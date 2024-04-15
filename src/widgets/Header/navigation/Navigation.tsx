@@ -88,6 +88,7 @@ export const Navigation:React.FC = () => {
             />
           </div>
 
+
           <div className={styles.auth}>
             <span>
               <button className={styles.register} onClick={openModalWindow}>Регистрация</button>
