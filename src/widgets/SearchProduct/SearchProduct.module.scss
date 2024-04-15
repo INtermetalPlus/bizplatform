@@ -1,0 +1,28 @@
+.main {
+    margin: 40px auto;
+    width: 1600px;
+
+}
+.headerSearch {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h2 {
+        font-size: 48px;
+    }
+}
+
+.secondBlock {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.thirdBlock {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+
+}

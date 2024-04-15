@@ -1,0 +1,105 @@
+.main {
+  margin: 50px auto;
+  max-width: 1600px;
+  h2 {
+    font-size: 48px;
+  }
+  p {
+    color: #a0a0a0;
+    font-size: 24px;
+  }
+}
+
+.secondBlock {
+  display: flex;
+  gap: 20px;
+}
+.categories {
+  width: 385px;
+}
+.searchField {
+  display: flex;
+  justify-content: space-between;
+  width: 1215px;
+}
+
+.categories {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.categories,
+.select,
+.regions {
+  font-size: 22px;
+}
+
+.icon {
+    position: relative;
+    top: -45px;
+    left: 353px;
+
+}
+
+.selectDiv {
+    height: 69px;
+}
+.select {
+  width: 385px;
+  appearance: none;
+  color: #3971ff;
+  height: 67px;
+  border: none;
+}
+.regions {
+  height: 70px;
+  border: 1px solid #e1e1e1;
+  border-left: none;
+  border-right: none;
+  background: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.inputPrice {
+  width: 224px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  input {
+    width: 65px;
+    height: 22px;
+    padding: 16px;
+    font-size: 20px;
+  }
+}
+.price {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.viewedCheck,
+.completedCheck,
+.price {
+  padding-left: 6px;
+}
+.viewedCheck,
+.completedCheck {
+  height: 68px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+}
+.check {
+  width: 28px;
+  height: 28px;
+}
+
+.viewedCheck, .completedCheck {
+    border-bottom: 1px solid #e1e1e1;
+}
+.viewedCheck {
+    border-top: 1px solid #e1e1e1;
+}
