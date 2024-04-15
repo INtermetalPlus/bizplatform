@@ -1,12 +1,13 @@
-import Image from "next/image";
+import { Footer } from "@/widgets/Footer";
 import styles from "./page.module.css";
-import { Button } from '../shared/ui/button'
-import { Price } from "@/widgets/Price";
+import { Company } from "@/widgets/Company/Company";
+
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <Price />
+    {/* <Company/> */}
+    <Footer/>
     </main>
   );
 }

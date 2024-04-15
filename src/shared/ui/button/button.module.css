@@ -1,0 +1,23 @@
+.btn {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background-color: #f90;
+  color: #fff;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  min-height: 40px;
+  padding: 9px 24px;
+  font-size: 16px;
+  line-height: 22px;
+  transition: all 0.4s ease;
+  outline: 0;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+}
+
+.btn:hover {
+  background-color: #f29100;
+}/*# sourceMappingURL=button.module.css.map */

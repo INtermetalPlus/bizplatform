@@ -1,7 +1,8 @@
 import styles from './Price.module.scss'
 import { Button } from '@/shared/ui/button'
+import React from 'react'
 
-export const Price = () => {
+export const Price:React.FC = () => {
   return (
     <section className={styles.price}>
         <div className={styles.content}>
