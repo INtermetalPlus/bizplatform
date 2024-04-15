@@ -1,9 +1,35 @@
 import type { Metadata } from "next";
+import localFont from 'next/font/local'
 import { Inter } from "next/font/google";
 import "./globals.css";
 import  { Navigation } from "../widgets/Header/navigation"
 import  SearchOrAdd  from "../widgets/SearchOrAdd/SearchOrAdd"
 const inter = Inter({ weight: ["400", "700","300","500"], subsets: ["latin","cyrillic"] });
+
+const sfPro = localFont({
+  src: [
+    {
+      path: './../shared/assets/font/SFPRODISPLAYREGULAR.otf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: './../shared/assets/font/SFPRODISPLAYBLACKITALIC.otf',
+      weight: '400',
+      style: 'italic',
+    },
+    {
+      path: './../shared/assets/font/SFPRODISPLAYBOLD.otf',      
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: './../shared/assets/font/SFPRODISPLAYHEAVYITALIC.otf',      
+      weight: '700',
+      style: 'italic',
+    },
+  ],
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,11 +43,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} ${sfPro.className}`}>
         <Navigation />
         <SearchOrAdd />
         {children}
-        
       </body>
     </html>
   );
