@@ -7,6 +7,7 @@
     background-color: #fff;
     display: flex;
     justify-content: center;
+
 }
 
 .page_header {
@@ -51,6 +52,8 @@
     color: #333;
     font-size: 22px;
     line-height: 22px;
+    // для того чтобы ссылки navbar'a влез в адаптив
+    flex-wrap: wrap;
 }
 
 .nav {
