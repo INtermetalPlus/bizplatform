@@ -21,7 +21,7 @@ export const AboutCompany: React.FC = () => {
                         <div className={`${styles.companyActivity} ${styles.child_blocks}`}>
                             <div className={styles.info_text}>
                                 <h3 className={styles.companyProfile__header}>Деятельность компании</h3>
-                                <p className={styles.companyActivity_text_p}>Lorem ipsum dolor sit amet consectetur. Gravida euismod a amet pulvinar diam id quisque erat in. Maecenas quam eget mi nunc. Sit rhoncus nibh mollis commodo accumsan ultrices varius. Etiam sed porttitor ac est feugiat pellentesque.</p>
+                                <p className={styles.companyActivity_largeText}>Lorem ipsum dolor sit amet consectetur. Gravida euismod a amet pulvinar diam id quisque erat in. Maecenas quam eget mi nunc. Sit rhoncus nibh mollis commodo accumsan ultrices varius. Etiam sed porttitor ac est feugiat pellentesque.</p>
                             </div>
                             <div className={styles.info_text}>
                                 <h3 className={styles.companyProfile__header}>Сферы деятельности</h3>
@@ -123,40 +123,38 @@ export const AboutCompany: React.FC = () => {
                             <div className={styles.company_requisites_text_block}>
                                 <div className={styles.company_requisites_text_child}>
                                     <span className={styles.requisites_data}>ИНН</span>
-                                    <p className={styles.companyActivity_text_p}>8622005136</p>
+                                    <p className={styles.companyActivity_text}>8622005136</p>
                                 </div>
                                 <div className={styles.company_requisites_text_child}>
                                     <span className={styles.requisites_data}>КПП</span>
-                                    <p className={styles.companyActivity_text_p}>8622005136</p>
+                                    <p className={styles.companyActivity_text}>8622005136</p>
                                 </div>
                                 <div className={styles.company_requisites_text_child}>
                                     <span className={styles.requisites_data}>ОГРН</span>
-                                    <p className={styles.companyActivity_text_p}>8622005136</p>
+                                    <p className={styles.companyActivity_text}>8622005136</p>
                                 </div>
                                 <div className={styles.company_requisites_text_child}>
                                     <span className={styles.requisites_data}>ОКПО</span>
-                                    <p className={styles.companyActivity_text_p}>8622005136</p>
+                                    <p className={styles.companyActivity_text}>8622005136</p>
                                 </div>
                                 <div className={styles.company_requisites_text_child}>
                                     <span className={styles.requisites_data}>ОКВЭД</span>
-                                    <p className={styles.companyActivity_text_p}>8622005136</p>
+                                    <p className={styles.companyActivity_text}>8622005136</p>
                                 </div>
                             </div>
                             <div className={styles.requisitesNum}>
                                 <div className={styles.requisitesNumChild}>
                                     <span className={styles.requisites_data}>Расчетный счет</span>
-                                    <p className={styles.companyActivity_text_p}>40702810213500000859</p>
+                                    <p className={styles.companyActivity_text}>40702810213500000859</p>
                                 </div>
                                 <div className={styles.requisitesNumChild}>
                                     <span className={styles.requisites_data}>Корреспондентский счет</span>
-                                    <p className={styles.companyActivity_text_p}>40702810213500000859</p>
+                                    <p className={styles.companyActivity_text}>40702810213500000859</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
-
             </div>
         </section>
     )
