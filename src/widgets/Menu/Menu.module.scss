@@ -1,6 +1,6 @@
 .menu {
   max-width: 1920px;
-  height: 853px;
+  min-height: 853px;
   background: url("../../shared/assets/home/menu/menu.webp") center no-repeat;
   background-size: cover;
   margin: 0 auto;
@@ -11,8 +11,6 @@
 }
 
 .menu_info {
-  width: 1368px;
-  height: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,14 +33,14 @@
   font-weight: 600;
   line-height: 49px;
   text-align: center;
-  width: 1368px;
+  max-width: 1255px;
   display: flex;
   justify-content: center;
   margin: 40px 0 60px;
 }
 .menu_btn {
-  width: 385px;
-  height: 69px;
+  min-width: 385px;
+  min-height: 69px;
   display: flex;
   flex-direction: row;
   justify-content: center;

@@ -1,16 +1,16 @@
 .contact {
   margin: 50px auto;
   font-family: "Inter", sans-serif;
-  width: 1350px;
-  height: 318px;
+  max-width: 1350px;
+  min-height: 318px;
   display: flex;
   flex-wrap: wrap;
   gap: 50px;
 }
 
 .contact_block {
-  width: 650px;
-  height: 134px;
+  min-width: 650px;
+  min-height: 134px;
   display: flex;
   align-items: center;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
@@ -24,8 +24,8 @@
 }
 
 .card_icon {
-  width: 90px;
-  height: 86px;
+  min-width: 90px;
+  min-height: 86px;
   display: flex;
   justify-content: center;
   align-items: center;
