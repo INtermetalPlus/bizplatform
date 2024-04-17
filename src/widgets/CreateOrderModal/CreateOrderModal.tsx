@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import styles from "./CreateOrderModal.module.scss";
 import Okey from "./Group.png";

@@ -37,6 +37,7 @@ export const SimilarOrders = () => {
       ];
   return (
     <div className={styles.main}>
+      <div className={styles.wrapper}>
       <h2>Похожие заказы</h2>
       {orders.map((order, index) => (
             <Order
@@ -49,6 +50,7 @@ export const SimilarOrders = () => {
               supply={order.supply}
             />
           ))}
+      </div>
     </div>
   );
 };

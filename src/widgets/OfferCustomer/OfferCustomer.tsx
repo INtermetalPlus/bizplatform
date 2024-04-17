@@ -100,7 +100,7 @@ export const OfferCustomer = () => {
           </div>
         </div>
 
-        <div></div>
+  
       </div>
     </div>
   );

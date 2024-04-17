@@ -1,13 +1,22 @@
 .main {
     max-width: 1600px;
+    width: 100%;
     display: flex;
-    margin: 50px auto;
+    align-self: center;
+    gap:20px;
     h2 {
         font-size: 38px;
     }
 }
 
+.order,
 .form {
+    max-width: 790px;
+    width: 100%;
+}
+
+.form {
+    margin-top: 20px;
     padding: 20px;
     border: 1px solid #88AAFF;
 }
