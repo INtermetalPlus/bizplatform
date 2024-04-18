@@ -8,14 +8,14 @@ import axios from "axios";
 
 export const ModalWindowForm: React.FC = () => {
     // number mask
-    function formatPhoneNumber(value: string) {
-        const cleaned = ('' + value).replace(/\D/g, '');
-        const match = cleaned.match(/^(\d{3})(\d{3})(\d{3})$/);
-        if (match) {
-          return '+996' + '(' + match[1] + ')' + match[2] + '-' + match[3];
-        }
-        return value;
-      }
+    // function formatPhoneNumber(value: string) {
+    //     const cleaned = ('' + value).replace(/\D/g, '');
+    //     const match = cleaned.match(/^(\d{3})(\d{3})(\d{3})$/);
+    //     if (match) {
+    //       return '+996' + '(' + match[1] + ')' + match[2] + '-' + match[3];
+    //     }
+    //     return value;
+    //   }
 
 
     const {
@@ -60,7 +60,7 @@ export const ModalWindowForm: React.FC = () => {
             {...register('phone', {
                     required: 'Поле обязательно для заполнения',
                     pattern: {
-                        value: /^\+996\(\d{3}\)\d{3}-\d{3}$/,
+                        // value: /^\+996\(\d{3}\)\d{3}-\d{3}$/,
                         message: 'Формат номера неверный',
                     },
                     maxLength: {
@@ -69,7 +69,7 @@ export const ModalWindowForm: React.FC = () => {
                     }
             })}
             // onChange={e => e.target.value = formatPhoneNumber(e.target.value)}
-            onChange={e => setValue('phone', formatPhoneNumber(e.target.value))}
+            // onChange={e => setValue('phone', formatPhoneNumber(e.target.value))}
             />
             {errors.phone && (
                 <div className={styles.errorButton}>

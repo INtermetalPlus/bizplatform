@@ -27,16 +27,26 @@ const Select = ({ text, options }: { text: string; options: string[] }) => {
   );
 };
 export const Navigation:React.FC = () => {
-  const[modalWindow, setModalWindow] = useState(false)
+  const [loginModalOpen, setLoginModalOpen] = useState(false);
+  const [authModalOpen, setAuthModalOpen] = useState(false);
 
   
-  const openModalWindow = () => {
-    setModalWindow(true)  
+  const openLoginWindow = () => {
+    setLoginModalOpen(true);  
   }
 
-  const closeModalWindow = () => {
-    setModalWindow(false)
+  const openAuthWindow = () => {
+    setAuthModalOpen(true);  
   }
+
+  const closeLoginWindow = () => {
+    setLoginModalOpen(false);
+  }
+
+  const closeAuthWindow = () => {
+    setAuthModalOpen(false);
+  }
+
 
   return (
     <div className={styles.header}>
@@ -91,15 +101,15 @@ export const Navigation:React.FC = () => {
 
 
           <div className={styles.auth}>
-            <span>
-              <button className={styles.register} onClick={openModalWindow}>Регистрация</button>
-              <button className={styles.login} onClick={openModalWindow}>Вход</button>
+          <span>
+              <button className={styles.register} onClick={openLoginWindow}>Регистрация</button>
+              <button className={styles.login} onClick={openAuthWindow}>Вход</button>
             </span>
           </div>
         </nav>
       </header>
-      {modalWindow && <ModalWindowReg closeModalWindow={closeModalWindow} />}
-      {modalWindow && <AuthorizationModal closeModalWindow={closeModalWindow} />}
+      {loginModalOpen && <ModalWindowReg closeModalWindow={closeLoginWindow} />}
+      {authModalOpen && <AuthorizationModal closeModalWindow={closeAuthWindow} />}
     </div>
 
   );
