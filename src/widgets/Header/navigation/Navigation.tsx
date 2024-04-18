@@ -5,6 +5,7 @@ import Image from "next/image";
 import languagePick from "./../../../shared/assets/home/header/language_option.png";
 // modal window
 import {ModalWindowReg} from "../../Modalwindow/ModalWindowReg";
+import {AuthorizationModal} from '../../AuthorizationModal/AuthorizationModal'
 
 const Select = ({ text, options }: { text: string; options: string[] }) => {
   const [hover, setHover] = useState(false);
@@ -92,12 +93,13 @@ export const Navigation:React.FC = () => {
           <div className={styles.auth}>
             <span>
               <button className={styles.register} onClick={openModalWindow}>Регистрация</button>
-              <button className={styles.login}>Логин</button>
+              <button className={styles.login} onClick={openModalWindow}>Вход</button>
             </span>
           </div>
         </nav>
       </header>
       {modalWindow && <ModalWindowReg closeModalWindow={closeModalWindow} />}
+      {modalWindow && <AuthorizationModal closeModalWindow={closeModalWindow} />}
     </div>
 
   );

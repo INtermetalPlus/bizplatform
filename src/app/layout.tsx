@@ -10,6 +10,7 @@ import { SearchProduct } from "@/widgets/SearchProduct";
 import { AllOrder } from "@/widgets/AllOrder";
 import { SimilarOrders } from "@/widgets/SimilarOrders";
 import { OfferCustomer } from "@/widgets/OfferCustomer";
+import { ModalWindowReg } from "@/widgets/Modalwindow";
 
 import  { Navigation } from "../widgets/Header/navigation"
 import  SearchOrAdd  from "../widgets/SearchOrAdd/SearchOrAdd"
@@ -57,6 +58,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} ${sfPro.className} ${styles.body}`}>
         <Navigation />
+        
         <PlatformWork />
         <SearchOrAdd />
         {children}
