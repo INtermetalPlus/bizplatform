@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from 'next/font/local'
 import { Inter } from "next/font/google";
-import "./globals.css";
+import styles from "./globals.module.scss";
 
 import { Footer } from "@/widgets/Footer";
 import { CommentBlock } from "@/widgets/CommentBlock";
@@ -13,6 +13,9 @@ import { OfferCustomer } from "@/widgets/OfferCustomer";
 
 import  { Navigation } from "../widgets/Header/navigation"
 import  SearchOrAdd  from "../widgets/SearchOrAdd/SearchOrAdd"
+import { PlatformWork } from "@/widgets/PlatformWork";
+// import { CreateOrderModal } from "@/widgets/CreateOrderModal";
+import { Company } from "@/widgets/Company/Company";
 const inter = Inter({ weight: ["400", "700","300","500"], subsets: ["latin","cyrillic"] });
 
 const sfPro = localFont({
@@ -52,14 +55,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} ${sfPro.className}`}>
+      <body className={`${inter.className} ${sfPro.className} ${styles.body}`}>
         <Navigation />
+        <PlatformWork />
         <SearchOrAdd />
         {children}
+        {/* <Comments /> */}
         <OfferCustomer/>
-        <SimilarOrders/>
-        <Footer/>
+        {/* <SimilarOrders/> */}
+        <Company />
 
+        <AllOrder/>
+        
+        {/* <SearchProduct /> */}
+        <Footer/>
       </body>
     </html>
   );

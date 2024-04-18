@@ -9,14 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
-<<<<<<< HEAD
     "axios": "^1.6.8",
     "next": "14.1.3",
     "react": "^18.2.0",
-=======
-    "next": "^14.1.3",
-    "react": "^18",
->>>>>>> 4e09a749450487c075ae40e5a5fc271f60fdb704
+    "framer-motion": "^11.1.1",
     "react-dom": "^18",
     "react-hook-form": "^7.51.2",
     "react-phone-number-input": "^3.3.12",
