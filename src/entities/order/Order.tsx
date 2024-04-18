@@ -10,8 +10,9 @@ interface OrderProps {
   date: string;
   supply: string;
   type: "viewed" | "completed" | string;
-  category?: string; // добавлено
-  deliveryFrom?: string; // добавлено
+  category?: string;
+  deliveryFrom?: string; 
+  showImage?: boolean;
 }
 
 export const Order: React.FC<OrderProps> = ({
@@ -21,8 +22,9 @@ export const Order: React.FC<OrderProps> = ({
   date,
   supply,
   type,
-  category, // добавлено
-  deliveryFrom, // добавлено
+  category,
+  deliveryFrom,
+  showImage = true,
 }) => {
   return (
     <div className={type === "completed" ? styles.completed : styles.main}>
@@ -56,7 +58,7 @@ export const Order: React.FC<OrderProps> = ({
       </div>
       <div className={styles.supplyEye}>
         <span className={styles.supply}>{supply}</span>
-        {type === "viewed" && (
+        {showImage && type === "viewed" && (
           <div className={styles.eye}>
             <Image src={Eye} alt="eye" width={30} height={30} />
           </div>

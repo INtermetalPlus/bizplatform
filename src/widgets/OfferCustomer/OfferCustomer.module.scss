@@ -1,6 +1,7 @@
 .main {
     max-width: 1600px;
     display: flex;
+    gap: 20px;
     margin: 50px auto;
     h2 {
         font-size: 38px;
@@ -64,4 +65,15 @@
     font-size: 22px;
     border-radius: 2px;
     border: none;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.order {
+    margin-top: -20px;
+    width: 790px;
 }

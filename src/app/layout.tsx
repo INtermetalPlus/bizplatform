@@ -13,6 +13,8 @@ import { OfferCustomer } from "@/widgets/OfferCustomer";
 
 import  { Navigation } from "../widgets/Header/navigation"
 import  SearchOrAdd  from "../widgets/SearchOrAdd/SearchOrAdd"
+import { TariffsForSuppliers } from "@/widgets/TariffsForSuppliers";
+
 const inter = Inter({ weight: ["400", "700","300","500"], subsets: ["latin","cyrillic"] });
 
 const sfPro = localFont({
@@ -58,6 +60,7 @@ export default function RootLayout({
         {children}
         <OfferCustomer/>
         <SimilarOrders/>
+        <TariffsForSuppliers/>
         <Footer/>
 
       </body>
