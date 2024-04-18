@@ -1,16 +1,18 @@
-import React, { useState} from "react";
+import React, {useState} from "react";
 import styles from './ModalWindowInputs.module.scss'
 // react-hook-form
 import { SubmitHandler, useForm } from "react-hook-form";
 import { ShippingFormData } from "../lib/form.interface";
+import axios from "axios";
 
 
 export const ModalWindowForm: React.FC = () => {
+    // number mask
     function formatPhoneNumber(value: string) {
         const cleaned = ('' + value).replace(/\D/g, '');
         const match = cleaned.match(/^(\d{3})(\d{3})(\d{3})$/);
         if (match) {
-          return '+996' + '(' + match[3] + ')' + match[3] + '-' + match[3];
+          return '+996' + '(' + match[1] + ')' + match[2] + '-' + match[3];
         }
         return value;
       }
@@ -21,13 +23,16 @@ export const ModalWindowForm: React.FC = () => {
         handleSubmit, 
         formState: {errors}, 
         reset,
+        setValue
     } = useForm<ShippingFormData>({
         mode: 'onChange'
     })
 
-    const onSubmit:SubmitHandler<ShippingFormData> = (data) => {
+    
+    const onSubmit:SubmitHandler<ShippingFormData> = async (data) => {
+        const request = await axios.post(`http://167.172.161.102:82/api/v1/registration/`, data)
         console.log('Form data saved');
-        console.dir(data);
+        console.log(request.data);
         reset()
     }
 
@@ -41,6 +46,7 @@ export const ModalWindowForm: React.FC = () => {
                 required: 'Поле обязательно для заполнения',
                 pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
             })}
+            onChange={(e) => setValue('email', e.target.value)}
             />
             {errors.email && (
                 <div  className={styles.errorButton}>
@@ -62,7 +68,8 @@ export const ModalWindowForm: React.FC = () => {
                         message: 'Телефон должен быть из 9 цифр'
                     }
             })}
-            onChange={e => e.target.value = formatPhoneNumber(e.target.value)}
+            // onChange={e => e.target.value = formatPhoneNumber(e.target.value)}
+            onChange={e => setValue('phone', formatPhoneNumber(e.target.value))}
             />
             {errors.phone && (
                 <div className={styles.errorButton}>
@@ -80,13 +87,16 @@ export const ModalWindowForm: React.FC = () => {
                     message: 'Пароль должен составлять не менее 8 символов'
                 }
             })}
+            onChange={(e) => setValue('password', e.target.value)}
             />
             {errors.password && (
                 <div className={styles.errorButton}>
                     {errors.password.message}
                 </div>
             )}
-            <button className={styles.registerForm__submit}>Зарегестрироваться</button>
+            <button className={styles.registerForm__submit}>
+                Зарегестрироваться
+            </button>
         </form>
     )
 }
