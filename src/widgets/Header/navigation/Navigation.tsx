@@ -6,6 +6,7 @@ import languagePick from "./../../../shared/assets/home/header/language_option.p
 // modal window
 import {ModalWindowReg} from "../../Modalwindow/ModalWindowReg";
 
+
 const Select = ({ text, options }: { text: string; options: string[] }) => {
   const [hover, setHover] = useState(false);
   return (
@@ -52,7 +53,7 @@ export const Navigation:React.FC = () => {
             </a>
           </div>
           <div className={styles.nav}>
-            <a href="#" className={styles.menu_item}>
+            <a href="№" className={styles.menu_item}>
               Товары
             </a>
           </div>
