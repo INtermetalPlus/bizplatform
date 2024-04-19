@@ -1,0 +1,99 @@
+.header {
+    color: rgb(0, 0, 0);
+    font-size: 48px;
+    line-height: 58px;
+    margin: 0;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+
+.placeProductBtn {
+    border-radius: 2px;
+    background: rgb(57, 113, 255);
+    color: rgb(255, 255, 255);
+    font-family: 'Inter';
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 29px;
+    padding: 20px 83px;
+    border: none;
+    cursor: pointer;
+}
+
+
+.orderSearch {
+    width: 790px;
+    border-radius: 2px;
+    border: 2px solid rgb(57, 113, 255);
+    background: rgb(255, 255, 255);
+    padding: 0;
+}
+
+    .orderSearch::placeholder {
+        color: rgb(181, 181, 181);
+        font-family: 'Inter';
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 29px;
+        padding-left: 20px;
+    }
+
+
+.setCountry {
+    display: flex;
+    flex-direction: column;
+    width: 385px;
+    height: auto;
+    background: #ff0d0d;
+}
+
+.setCountry__firstCountry {
+    position: relative;
+    display: flex;
+    max-width: 385px;
+    padding: 20px 10px 20px 10px;
+    border-radius: 2px;
+    background: rgb(247, 247, 247);
+    border-left: 3px solid rgba(57, 113, 255, 0);
+    cursor: pointer;
+    align-items: center;
+}
+    .setCountry__firstCountry:hover {
+        transition: 0.3s;
+        border-left: 3px solid rgb(57, 113, 255);
+    }
+
+    .setCountry__header {
+        margin: auto;
+    }
+
+.setCountry__list {
+    position: absolute;
+    display: flex;
+    width: 385px;
+    flex-direction: column;
+    margin-top: 60px;
+}
+    .list__country {
+        padding: 20px 10px 20px 10px;
+        border-radius: 2px;
+        background: rgb(247, 247, 247);
+        border-left: 3px solid rgba(57, 113, 255, 0);
+        cursor: pointer;
+    }
+        .list__country:hover {
+            transition: 0.3s;
+            border-left: 3px solid rgb(57, 113, 255);
+        }
+
+
+
+
+
+
+
+
+
+
+
