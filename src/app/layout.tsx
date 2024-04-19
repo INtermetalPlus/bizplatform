@@ -15,7 +15,7 @@ import  { Navigation } from "../widgets/Header/navigation"
 import  SearchOrAdd  from "../widgets/SearchOrAdd/SearchOrAdd"
 import { PlatformWork } from "@/widgets/PlatformWork";
 // import { CreateOrderModal } from "@/widgets/CreateOrderModal";
-// import NewPassword from "@/shared/modals/newPassword/NewPassword";
+import NewPassword from "@/shared/modals/newPassword/NewPassword";
 import VerificationCode from "@/shared/modals/newPassword(code)/VerificationCode";
 import LogIn from "@/shared/modals/logIn/LogIn";
 import { Company } from "@/widgets/Company/Company";
@@ -62,9 +62,9 @@ export default function RootLayout({
         <Navigation />
         {/* <PlatformWork /> */}
         {/* <SearchOrAdd /> */}
-        {/* <NewPassword /> */}
+        <NewPassword />
         {/* <VerificationCode /> */}
-        <LogIn />
+        {/* <LogIn /> */}
         {children}
         {/* <Comments /> */}
         {/* <OfferCustomer/> */}
