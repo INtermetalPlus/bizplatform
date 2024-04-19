@@ -17,6 +17,7 @@ import { PlatformWork } from "@/widgets/PlatformWork";
 // import { CreateOrderModal } from "@/widgets/CreateOrderModal";
 // import NewPassword from "@/shared/modals/newPassword/NewPassword";
 import VerificationCode from "@/shared/modals/newPassword(code)/VerificationCode";
+import LogIn from "@/shared/modals/logIn/LogIn";
 import { Company } from "@/widgets/Company/Company";
 const inter = Inter({ weight: ["400", "700","300","500"], subsets: ["latin","cyrillic"] });
 
@@ -62,7 +63,8 @@ export default function RootLayout({
         {/* <PlatformWork /> */}
         {/* <SearchOrAdd /> */}
         {/* <NewPassword /> */}
-        <VerificationCode />
+        {/* <VerificationCode /> */}
+        <LogIn />
         {children}
         {/* <Comments /> */}
         {/* <OfferCustomer/> */}

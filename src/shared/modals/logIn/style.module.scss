@@ -33,6 +33,7 @@ $IBPBlue: #3971ff;
 				text-align: left;
 				padding-top: 24px;
         margin: 0;
+        padding-bottom: 37px;
 			}
 
 			.closeIcon {
@@ -45,33 +46,6 @@ $IBPBlue: #3971ff;
 				position: absolute;
 				pointer-events: none;
 			}
-
-			.register {
-				display: flex;
-				flex-direction: column;
-				padding-left: 50px;
-				padding-bottom: 10px;
-
-				p {
-					font-family: 'Montserrat';
-					font-size: 24px;
-					font-weight: 600;
-					line-height: 29.26px;
-					text-align: left;
-					color: $IBPBlue;
-          margin-top: 30px;
-          margin-bottom: 40px;
-				}
-
-				span {
-					font-family: 'Montserrat';
-					font-size: 24px;
-					font-weight: 600;
-					line-height: 29.26px;
-					text-align: left;
-					color: black;
-				}
-			}
 		}
   
     .form {
@@ -79,14 +53,13 @@ $IBPBlue: #3971ff;
       flex-direction: column;
       align-items: flex-end;
 
-
       input {
         width: 470px;
         height: 70px;
         gap: 0px;
-        margin-bottom: 73px;
+        margin-bottom: 12px;
         border-radius: 2px;
-        border: 1.5px solid #9C9C9C;
+        border: 1.5px solid rgba(156, 156, 156, 1);
         background-color: rgba(241, 241, 241, 1);
 
         &::placeholder {
@@ -101,36 +74,28 @@ $IBPBlue: #3971ff;
         }
       }
 
-      .warningInput {
-        width: 470px;
-        height: 70px;
-        gap: 0px;
-        margin-bottom: 73px;
-        border-radius: 2px;
-        border: 1.5px solid red;
-        background-color: rgba(241, 241, 241, 1);
-
-        &::placeholder {
-          font-family: 'Montserrat';
-          font-size: 20px;
-          font-weight: 600;
-          line-height: 24.38px;
-          text-align: left;
-          color: rgba(93, 93, 93, 1);
-          padding: 23px 395px 23px 0px;
-          text-indent: 16px;
-        }
-
-        &:focus {
-          outline-color: red;
-        }
+      a {
+        font-family: 'Montserrat';
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 24.38px;
+        text-align: left;
+        color: $IBPBlue;
+        text-decoration: none;
       }
 
-      .warningIcon {
+      .eyeCloseIcon {
         display: flex;
         position: absolute;
         left: 1160px;
-        top: 422px;
+        top: 410px;
+      }
+
+      .eyeOpenIcon {
+        display: none;
+        position: absolute;
+        left: 1160px;
+        top: 410px;
       }
     }
 
@@ -140,6 +105,8 @@ $IBPBlue: #3971ff;
       border-radius: 2px;
       background-color: $IBPBlue;
       border: none;
+      margin-top: 36px;
+      margin-bottom: 36px;
 
       display: flex;
       align-items: center;
@@ -150,6 +117,19 @@ $IBPBlue: #3971ff;
       line-height: 29.26px;
       text-align: left;
       color: white;
+    }
+
+    p {
+      font-family: Montserrat;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 24.38px;
+      text-align: left;
+
+      a {
+        color: $IBPBlue;
+      }
+
     }
 	}
 }

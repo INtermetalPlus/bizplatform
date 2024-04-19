@@ -32,6 +32,7 @@
   text-align: left;
   padding-top: 24px;
   margin: 0;
+  padding-bottom: 37px;
 }
 .newPasswordModalBlock .container .changePassword .closeIcon {
   width: 15px;
@@ -43,30 +44,6 @@
   position: absolute;
   pointer-events: none;
 }
-.newPasswordModalBlock .container .changePassword .register {
-  display: flex;
-  flex-direction: column;
-  padding-left: 50px;
-  padding-bottom: 10px;
-}
-.newPasswordModalBlock .container .changePassword .register p {
-  font-family: "Montserrat";
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 29.26px;
-  text-align: left;
-  color: #3971ff;
-  margin-top: 30px;
-  margin-bottom: 40px;
-}
-.newPasswordModalBlock .container .changePassword .register span {
-  font-family: "Montserrat";
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 29.26px;
-  text-align: left;
-  color: black;
-}
 .newPasswordModalBlock .container .form {
   display: flex;
   flex-direction: column;
@@ -76,9 +53,9 @@
   width: 470px;
   height: 70px;
   gap: 0px;
-  margin-bottom: 73px;
+  margin-bottom: 12px;
   border-radius: 2px;
-  border: 1.5px solid #9C9C9C;
+  border: 1.5px solid rgb(156, 156, 156);
   background-color: rgb(241, 241, 241);
 }
 .newPasswordModalBlock .container .form input::-moz-placeholder {
@@ -101,43 +78,26 @@
   padding: 23px 395px 23px 0px;
   text-indent: 16px;
 }
-.newPasswordModalBlock .container .form .warningInput {
-  width: 470px;
-  height: 70px;
-  gap: 0px;
-  margin-bottom: 73px;
-  border-radius: 2px;
-  border: 1.5px solid red;
-  background-color: rgb(241, 241, 241);
-}
-.newPasswordModalBlock .container .form .warningInput::-moz-placeholder {
+.newPasswordModalBlock .container .form a {
   font-family: "Montserrat";
   font-size: 20px;
   font-weight: 600;
   line-height: 24.38px;
   text-align: left;
-  color: rgb(93, 93, 93);
-  padding: 23px 395px 23px 0px;
-  text-indent: 16px;
+  color: #3971ff;
+  text-decoration: none;
 }
-.newPasswordModalBlock .container .form .warningInput::placeholder {
-  font-family: "Montserrat";
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 24.38px;
-  text-align: left;
-  color: rgb(93, 93, 93);
-  padding: 23px 395px 23px 0px;
-  text-indent: 16px;
-}
-.newPasswordModalBlock .container .form .warningInput:focus {
-  outline-color: red;
-}
-.newPasswordModalBlock .container .form .warningIcon {
+.newPasswordModalBlock .container .form .eyeCloseIcon {
   display: flex;
   position: absolute;
   left: 1160px;
-  top: 422px;
+  top: 410px;
+}
+.newPasswordModalBlock .container .form .eyeOpenIcon {
+  display: none;
+  position: absolute;
+  left: 1160px;
+  top: 410px;
 }
 .newPasswordModalBlock .container .loginBtn {
   width: 470px;
@@ -145,6 +105,8 @@
   border-radius: 2px;
   background-color: #3971ff;
   border: none;
+  margin-top: 36px;
+  margin-bottom: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -154,4 +116,14 @@
   line-height: 29.26px;
   text-align: left;
   color: white;
+}
+.newPasswordModalBlock .container p {
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24.38px;
+  text-align: left;
+}
+.newPasswordModalBlock .container p a {
+  color: #3971ff;
 }/*# sourceMappingURL=style.module.css.map */
