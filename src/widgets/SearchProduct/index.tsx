@@ -1,1 +1,1 @@
-export {SearchProduct} from './SearchProduct'
+export { SearchProduct } from './SearchProduct'
