@@ -29,10 +29,18 @@ const Select = ({ text, options }: { text: string; options: string[] }) => {
 };
 export const Navigation:React.FC = () => {
   const[modalWindow, setModalWindow] = useState(false)
-
+  const [loginWindow, setLoginWindow] = useState(false)
   
   const openModalWindow = () => {
     setModalWindow(true)  
+  }
+
+  const openLoginWindow = () => {
+    setLoginWindow(true)
+  }
+
+  const closeLoginWindow = () => {
+    setLoginWindow(false)
   }
 
   const closeModalWindow = () => {
@@ -94,7 +102,7 @@ export const Navigation:React.FC = () => {
           <div className={styles.auth}>
             <span>
               <button className={styles.register} onClick={openModalWindow}>Регистрация</button>
-              <button className={styles.login}>Логин</button>
+              <button className={styles.login} onClick={openLoginWindow}>Логин</button>
             </span>
           </div>
         </nav>
