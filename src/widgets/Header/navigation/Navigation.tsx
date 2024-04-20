@@ -3,8 +3,9 @@ import React, { useState } from "react";
 import styles from "./Navigation.module.scss";
 import Image from "next/image";
 import languagePick from "./../../../shared/assets/home/header/language_option.png";
-// modal window
 import {ModalWindowReg} from "../../Modalwindow/ModalWindowReg";
+import {AuthorizationModal} from '../../AuthorizationModal/AuthorizationModal'
+
 import Link from "next/link";
 
 
@@ -28,24 +29,26 @@ const Select = ({ text, options }: { text: string; options: string[] }) => {
   );
 };
 export const Navigation:React.FC = () => {
-  const[modalWindow, setModalWindow] = useState(false)
-  const [loginWindow, setLoginWindow] = useState(false)
+  const [loginModalOpen, setLoginModalOpen] = useState(false);
+  const [authModalOpen, setAuthModalOpen] = useState(false);
+
   
-  const openModalWindow = () => {
-    setModalWindow(true)  
+  const openLoginWindow = () => {
+    setLoginModalOpen(true);  
   }
 
-  const openLoginWindow = () => {
-    setLoginWindow(true)
+  const openAuthWindow = () => {
+    setAuthModalOpen(true);  
   }
 
   const closeLoginWindow = () => {
-    setLoginWindow(false)
+    setLoginModalOpen(false);
   }
 
-  const closeModalWindow = () => {
-    setModalWindow(false)
+  const closeAuthWindow = () => {
+    setAuthModalOpen(false);
   }
+
 
   return (
     <div className={styles.header}>
@@ -100,14 +103,15 @@ export const Navigation:React.FC = () => {
 
 
           <div className={styles.auth}>
-            <span>
-              <button className={styles.register} onClick={openModalWindow}>Регистрация</button>
-              <button className={styles.login} onClick={openLoginWindow}>Логин</button>
+          <span>
+              <button className={styles.register} onClick={openLoginWindow}>Регистрация</button>
+              <button className={styles.login} onClick={openAuthWindow}>Вход</button>
             </span>
           </div>
         </nav>
       </header>
-      {modalWindow && <ModalWindowReg closeModalWindow={closeModalWindow} />}
+      {loginModalOpen && <ModalWindowReg closeModalWindow={closeLoginWindow} />}
+      {authModalOpen && <AuthorizationModal closeModalWindow={closeAuthWindow} />}
     </div>
 
   );
