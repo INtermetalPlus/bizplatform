@@ -1,5 +1,5 @@
 "use client"
-import React, {useState} from "react";
+import React, {useEffect,useState} from "react";
 import styles from "./TariffsForSuppliers.module.scss";
 import { BlueButton } from "@/shared/ui/blueButton";
 import Image from "next/image";
@@ -9,6 +9,7 @@ import Standart from "./Стандарт.png";
 import Check123 from "./check123.png";
 import Chel from "./Group (1).png";
 import { Input } from "@/shared/ui/input";
+import useTariffStore from "@/features/Fariff/useFariffStor";
 
 interface Price {
   standard: number;
@@ -18,6 +19,11 @@ interface Price {
  export const TariffsForSuppliers: React.FC = () => {
   const [currency, setCurrency] = useState<string>('USD');
   const [price, setPrice] = useState<Price>({ standard: 100, premium: 300 });
+  const { tariffs, fetchTariffs } = useTariffStore();
+
+  useEffect(() => {
+    fetchTariffs(); // Fetch tariffs when the component mounts
+  }, []);
 
   const handleCurrencyChange = (event: React.ChangeEvent<HTMLInputElement>) => {
       const value = event.target.value;

@@ -30,11 +30,5 @@ export interface Order {
     search?: string;
   }
 
-  const options: Intl.DateTimeFormatOptions = {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-    hour: "numeric",
-    minute: "numeric",
-  };
+ 
   
