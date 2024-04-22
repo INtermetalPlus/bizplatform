@@ -2,21 +2,10 @@ import type { Metadata } from "next";
 import localFont from 'next/font/local'
 import { Inter } from "next/font/google";
 import styles from "./globals.module.scss";
-
 import { Footer } from "@/widgets/Footer";
-import { CommentBlock } from "@/widgets/CommentBlock";
-import { Comments } from "@/widgets/Comments";
-import { SearchProduct } from "@/widgets/SearchProduct";
-import { AllOrder } from "@/widgets/AllOrder";
-import { SimilarOrders } from "@/widgets/SimilarOrders";
-import { OfferCustomer } from "@/widgets/OfferCustomer";
-
 import  { Navigation } from "../widgets/Header/navigation"
-import  SearchOrAdd  from "../widgets/SearchOrAdd/SearchOrAdd"
-import { TariffsForSuppliers } from "@/widgets/TariffsForSuppliers";
-import { PlatformWork } from "@/widgets/PlatformWork";
-// import { CreateOrderModal } from "@/widgets/CreateOrderModal";
-import { Company } from "@/widgets/Company/Company";
+import ProtectedRoute from "@/features/Login/ProtectedRoute";
+
 
 const inter = Inter({ weight: ["400", "700","300","500"], subsets: ["latin","cyrillic"] });
 
@@ -59,23 +48,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} ${sfPro.className} ${styles.body}`}>
         <Navigation />
-<<<<<<< HEAD
-        <SearchProduct/>
-       <AllOrder/>
-=======
-        <PlatformWork />
-        <SearchOrAdd />
->>>>>>> 0b669f26585940d519e847f960c1900fb93f8889
+        <ProtectedRoute>
         {children}
-        {/* <Comments /> */}
-        <OfferCustomer/>
-        <SimilarOrders/>
-        <TariffsForSuppliers/>
-        <Footer/>
-        {/* <SimilarOrders/> */}
-        <Company />
-        <AllOrder/>
-        {/* <SearchProduct /> */}
+        </ProtectedRoute>
         <Footer/>
       </body>
     </html>

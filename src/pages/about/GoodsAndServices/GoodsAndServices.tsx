@@ -10,7 +10,6 @@ export const GoodsAndServices: React.FC = () => {
     return (
         <>
             <Navigation/>
-            test
         </>
     )
 }

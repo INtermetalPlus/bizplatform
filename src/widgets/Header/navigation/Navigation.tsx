@@ -3,8 +3,10 @@ import React, { useState } from "react";
 import styles from "./Navigation.module.scss";
 import Image from "next/image";
 import languagePick from "./../../../shared/assets/home/header/language_option.png";
-// modal window
 import {ModalWindowReg} from "../../Modalwindow/ModalWindowReg";
+import {AuthorizationModal} from '../../AuthorizationModal/AuthorizationModal'
+
+import Link from "next/link";
 
 
 const Select = ({ text, options }: { text: string; options: string[] }) => {
@@ -27,55 +29,65 @@ const Select = ({ text, options }: { text: string; options: string[] }) => {
   );
 };
 export const Navigation:React.FC = () => {
-  const[modalWindow, setModalWindow] = useState(false)
+  const [loginModalOpen, setLoginModalOpen] = useState(false);
+  const [authModalOpen, setAuthModalOpen] = useState(false);
 
   
-  const openModalWindow = () => {
-    setModalWindow(true)  
+  const openLoginWindow = () => {
+    setLoginModalOpen(true);  
   }
 
-  const closeModalWindow = () => {
-    setModalWindow(false)
+  const openAuthWindow = () => {
+    setAuthModalOpen(true);  
   }
+
+  const closeLoginWindow = () => {
+    setLoginModalOpen(false);
+  }
+
+  const closeAuthWindow = () => {
+    setAuthModalOpen(false);
+  }
+
 
   return (
     <div className={styles.header}>
       <header className={styles.page_header}>
         <div className={styles.icon}>
-          <a className={styles.link} href="/ru/">
+          <a className={styles.link} href="/">
             <span className={styles.first}>IBP</span>
           </a>
         </div>
         <nav className={styles.item_nav}>
           <div className={styles.nav}>
-            <a href="#" className={styles.menu_item}>
+            <Link href="/orders" className={styles.menu_item}>
               Все заказы
-            </a>
+            </Link>
           </div>
           <div className={styles.nav}>
-            <a href="№" className={styles.menu_item}>
+            <Link href="/goods" className={styles.menu_item}>
               Товары
-            </a>
+            </Link>
           </div>
           <div className={styles.nav}>
-            <a href="#" className={styles.menu_item}>
+            <Link href="/tariffs" className={styles.menu_item}>
               Цены на тарифы
-            </a>
+            </Link>
           </div>
           <div className={styles.nav}>
-            <a href="#" className={styles.menu_item}>
+            <Link href="/about" className={styles.menu_item}>
               О платформе
-            </a>
+            </Link>
           </div>
           <div className={styles.nav}>
-            <a href="#" className={`${styles.menu_item} ${styles.activeMenu}`}>
+            <Link href="/requisites" className={`${styles.menu_item} ${styles.activeMenu}`}>
               Реквизиты
-            </a>
+            </Link>
           </div>
           <div className={styles.nav}>
-            <a href="#" className={styles.menu_item}>
+            <Link href="#" className={styles.menu_item}>
               Помощь
-            </a>
+            </Link>
           </div>
           <Select text="Еще" options={["Блог"]} />
 
@@ -91,14 +103,15 @@ export const Navigation:React.FC = () => {
 
 
           <div className={styles.auth}>
-            <span>
-              <button className={styles.register} onClick={openModalWindow}>Регистрация</button>
-              <button className={styles.login}>Логин</button>
+          <span>
+              <button className={styles.register} onClick={openLoginWindow}>Регистрация</button>
+              <button className={styles.login} onClick={openAuthWindow}>Вход</button>
             </span>
           </div>
         </nav>
       </header>
-      {modalWindow && <ModalWindowReg closeModalWindow={closeModalWindow} />}
+      {loginModalOpen && <ModalWindowReg closeModalWindow={closeLoginWindow} />}
+      {authModalOpen && <AuthorizationModal closeModalWindow={closeAuthWindow} />}
     </div>
 
   );
