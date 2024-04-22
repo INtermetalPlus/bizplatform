@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./AllOrder.module.scss";
 import { SearchField } from "@/features/searchField";
 import { BlueButton } from "@/shared/ui/blueButton";
@@ -8,11 +8,15 @@ import Image from "next/image";
 import Plus from "./plus.svg";
 import Strelka from "./arrow_forward_ios (1).svg";
 import { CreateOrderModal } from "../CreateOrderModal";
+<<<<<<< HEAD
 import { Select } from "antd";
 import SelectIcon from "./Frame 220.png";
 import { IndicateRegion } from "../IndicateRegion";
 
 const { Option } = Select;
+=======
+import useOrderStore from '../../features/GetOrder/useOrderStor'
+>>>>>>> d1c2144146f7bcfc42b6ef03ef738aa1b6a4bd0d
 
 export const AllOrder = () => {
   
@@ -23,6 +27,7 @@ export const AllOrder = () => {
     setIsRegionModalOpen(true);
   };
   
+<<<<<<< HEAD
   const handleCloseRegionModal = () => {
     setIsRegionModalOpen(false);
   };
@@ -35,28 +40,41 @@ export const AllOrder = () => {
     setIsOrderModalOpen(false);
   };
   
+=======
 
-  const orders = [
-    {
-      type: "completed",
-      orderNumber: 323423,
-      name: "Автотовары",
-      commentText:
-        "Увеличьте свой автомобильный бизнес с нашими оптовыми заказами автотоваров! Мы предлагаем широкий ассортимент качественных автозапчастей, аксессуаров и инструментов по оптовым ценам.",
-      date: "2 апреля 2024, 13:09",
-      supply: "Поставка в Бишкек",
-    },
+  const {fetchOrders, orders} = useOrderStore()
 
-    {
-      type: "viewed",
-      orderNumber: 323423,
-      name: "Автотовары",
-      commentText:
-        "Увеличьте свой автомобильный бизнес с нашими оптовыми заказами автотоваров! Мы предлагаем широкий ассортимент качественных автозапчастей, аксессуаров и инструментов по оптовым ценам.",
-      date: "2 апреля 2024, 13:09",
-      supply: "Поставка в Бишкек",
-    },
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+   useEffect(() => {
+    fetchOrders()
+});
+   
+>>>>>>> d1c2144146f7bcfc42b6ef03ef738aa1b6a4bd0d
 
+  // const orders = [
+  //   {
+  //     type: "completed",
+  //     orderNumber: 323423,
+  //     name: "Автотовары",
+  //     commentText:
+  //       "Увеличьте свой автомобильный бизнес с нашими оптовыми заказами автотоваров! Мы предлагаем широкий ассортимент качественных автозапчастей, аксессуаров и инструментов по оптовым ценам.",
+  //     date: "2 апреля 2024, 13:09",
+  //     supply: "Поставка в Бишкек",
+  //   },
+
+  //   {
+  //     type: "viewed",
+  //     orderNumber: 323423,
+  //     name: "Автотовары",
+  //     commentText:
+  //       "Увеличьте свой автомобильный бизнес с нашими оптовыми заказами автотоваров! Мы предлагаем широкий ассортимент качественных автозапчастей, аксессуаров и инструментов по оптовым ценам.",
+  //     date: "2 апреля 2024, 13:09",
+  //     supply: "Поставка в Бишкек",
+  //   },
+
+<<<<<<< HEAD
     {
       type: "viewed",
       orderNumber: 323423,
@@ -79,6 +97,18 @@ export const AllOrder = () => {
     { value: 'Строительство Недвижимость Ремонт', label: 'Строительство Недвижимость Ремонт' },
 
   ];
+=======
+  //   {
+  //     type: "viewed",
+  //     orderNumber: 323423,
+  //     name: "Автотовары",
+  //     commentText:
+  //       "Вне зависимости от того, вам нужны строительные материалы, электроинструменты, краски и лаки, или же материалы для отделочных работ, мы можем удовлетворить ваши потребности и оказать полную поддержку  вашему бизнесу. \n \n Благодаря нашей оперативной доставке и высокому уровню обслуживания, вы можете быть уверены, что ваш заказ будет выполнен вовремя и с максимальным удобством для вас. Сделайте следующий шаг к успеху вашего бизнеса в области ремонта, сделайте оптовую закупку у нас сегодня и дайте вашему бизнесу рост и процветание!",
+  //     date: "2 апреля 2024, 13:09",
+  //     supply: "Поставка в Бишкек",
+  //   },
+  // ];
+>>>>>>> d1c2144146f7bcfc42b6ef03ef738aa1b6a4bd0d
   return (
     <div className={styles.main}>
       <h2>Все заказы</h2>
@@ -172,15 +202,16 @@ export const AllOrder = () => {
 </div>
 
           {orders.map((order, index) => (
-            <Order
-              key={index}
-              type={order.type}
-              orderNumber={323423}
-              name={order.name}
-              commentText={order.commentText}
-              date={order.date}
-              supply={order.supply}
-            />
+           <Order
+           key={index}
+           type={order.category.toString()} // Приводим к строке, если category - это число
+           orderNumber={order.order_number}
+           name={order.order_title}
+           commentText={order.order_text}
+           date={order.created_at}
+           price={order.price}
+         />
+         
           ))}
         </div>
       </div>

@@ -48,9 +48,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} ${sfPro.className} ${styles.body}`}>
         <Navigation />
-        <ProtectedRoute>
+        {/* <ProtectedRoute> */}
         {children}
-        </ProtectedRoute>
+        {/* </ProtectedRoute> */}
         <Footer/>
       </body>
     </html>
