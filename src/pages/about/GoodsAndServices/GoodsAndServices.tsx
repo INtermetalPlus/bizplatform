@@ -20,5 +20,7 @@ export const GoodsAndServices: React.FC = () => {
             <OrderList/>
             <Footer/>
         </div>
+        </>
+
     )
 }
