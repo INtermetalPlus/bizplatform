@@ -4,6 +4,10 @@ import { Inter } from "next/font/google";
 import styles from "./globals.module.scss";
 import { Footer } from "@/widgets/Footer";
 import  { Navigation } from "../widgets/Header/navigation"
+import {Menu} from "@/widgets/Menu/Menu";
+import {Contact} from "@/widgets/Contact/Contact";
+import Card from "@/widgets/Card/Card";
+import {AboutCompany} from "@/widgets/aboutCompany/AboutCompany";
 import ProtectedRoute from "@/features/Login/ProtectedRoute";
 
 const inter = Inter({ weight: ["400", "700","300","500"], subsets: ["latin","cyrillic"] });
