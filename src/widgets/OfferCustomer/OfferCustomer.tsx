@@ -101,7 +101,6 @@ export const OfferCustomer = () => {
             /> 
           </div>
         </div>
-
       </div>
       <BlueButton
              type="secondaryButton"

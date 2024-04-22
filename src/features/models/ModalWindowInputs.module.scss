@@ -73,5 +73,10 @@
 
 .registerForm__errorInput {
     border: 1.5px solid rgb(255, 0, 0);
+    // icon error
+    background-image: url(../../shared/assets/home/header/icons/errorValidate-icon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-x: 439px;
 }
 
