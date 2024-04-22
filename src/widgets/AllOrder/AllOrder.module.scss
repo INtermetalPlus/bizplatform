@@ -30,10 +30,16 @@
 }
 .categories,
 .select,
-.regions {
+.regions,
+.divSelect,
+.ant-select-selection-item {
   font-size: 22px;
 }
-
+.divSelect {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 .icon {
     position: relative;
     top: -45px;
@@ -44,12 +50,14 @@
 .selectDiv {
     height: 69px;
 }
+
 .select {
+  font-size: 22em !important;
   width: 385px;
   appearance: none;
-  color: #3971ff;
+  color:  #3971ff !important; 
   height: 67px;
-  border: none;
+  border: none !important;
 }
 .regions {
   height: 70px;
