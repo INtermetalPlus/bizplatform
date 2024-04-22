@@ -21,6 +21,7 @@ export const SearchProduct = () => {
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
+  const [options, setOptions] = useState(["Кыргызстан", "Казахстан", "Россия", "Украина", ]);
 
   return (
     <div className={styles.main}>
@@ -31,7 +32,7 @@ export const SearchProduct = () => {
 
       </div>
       <div className={styles.secondBlock}>
-        <Select type="primarySelect" width="385px" options={["Кыргызстан", "Казахстан", "Россия"]} />
+        <Select type="primarySelect" width="385px" options={options} />
         <SearchField />
         <div>
           <BlueButton type="primaryButton" width="192.5px" text="Заказы" />
