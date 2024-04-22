@@ -2,22 +2,13 @@ import type { Metadata } from "next";
 import localFont from 'next/font/local'
 import { Inter } from "next/font/google";
 import styles from "./globals.module.scss";
-
 import { Footer } from "@/widgets/Footer";
-import { CommentBlock } from "@/widgets/CommentBlock";
-import { Comments } from "@/widgets/Comments";
-import { SearchProduct } from "@/widgets/SearchProduct";
-import { AllOrder } from "@/widgets/AllOrder";
-import { SimilarOrders } from "@/widgets/SimilarOrders";
-import { OfferCustomer } from "@/widgets/OfferCustomer";
-
 import  { Navigation } from "../widgets/Header/navigation"
 import  SearchOrAdd  from "../widgets/SearchOrAdd/SearchOrAdd"
 import { TariffsForSuppliers } from "@/widgets/TariffsForSuppliers";
 import { PlatformWork } from "@/widgets/PlatformWork";
 // import { CreateOrderModal } from "@/widgets/CreateOrderModal";
 import { Company } from "@/widgets/Company/Company";
-import { OurRequisitesPage } from "@/pages/OurRequisitesPage";
 
 const inter = Inter({ weight: ["400", "700","300","500"], subsets: ["latin","cyrillic"] });
 
@@ -71,7 +62,6 @@ export default function RootLayout({
         {/* <SimilarOrders/> */}
         <Company />
         <AllOrder/>
-        <OurRequisitesPage/>
         {/* <SearchProduct /> */}
         <Footer/>
       </body>

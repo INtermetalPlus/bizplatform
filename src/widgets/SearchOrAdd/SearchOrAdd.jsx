@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './style.module.css'
 import { Button } from '@/shared/ui/button'
 
-const About = () => {
+const SearchOrAdd = () => {
 
 	
 
@@ -312,4 +312,4 @@ const About = () => {
 	)
 }
 
-export default About
+export default SearchOrAdd
