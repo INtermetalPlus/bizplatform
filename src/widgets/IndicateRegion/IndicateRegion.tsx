@@ -55,6 +55,7 @@ export const IndicateRegion: React.FC<IndicateRegionProps> = ({ onClose }) => {
           >
             {options.map((option) => (
               <Option
+                key={option.value}
                 optionFontSize={22}
                 value={option.value}
                 label={option.label}
