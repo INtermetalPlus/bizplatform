@@ -45,7 +45,7 @@
     flex-direction: column;
     width: 385px;
     height: auto;
-    background: #ff0d0d;
+    // background: #ff0d0d;
 }
 
 .setCountry__firstCountry {
@@ -88,10 +88,12 @@
         }
 
 
-
-
-
-
+.GASContent {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 150px;
+}
 
 
 

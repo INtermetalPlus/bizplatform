@@ -1,6 +1,5 @@
-import React, {useState} from "react";
+import React from "react";
 import styles from './ModalWindowInputs.module.scss'
-// react-hook-form
 import { SubmitHandler, useForm } from "react-hook-form";
 import { ShippingFormData } from "../lib/form.interface";
 import axios from "axios";
