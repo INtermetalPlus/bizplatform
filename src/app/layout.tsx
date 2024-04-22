@@ -17,6 +17,7 @@ import { TariffsForSuppliers } from "@/widgets/TariffsForSuppliers";
 import { PlatformWork } from "@/widgets/PlatformWork";
 // import { CreateOrderModal } from "@/widgets/CreateOrderModal";
 import { Company } from "@/widgets/Company/Company";
+import { OurRequisitesPage } from "@/pages/OurRequisitesPage";
 
 const inter = Inter({ weight: ["400", "700","300","500"], subsets: ["latin","cyrillic"] });
 
@@ -59,13 +60,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} ${sfPro.className} ${styles.body}`}>
         <Navigation />
-<<<<<<< HEAD
-        <SearchProduct/>
-       <AllOrder/>
-=======
         <PlatformWork />
         <SearchOrAdd />
->>>>>>> 0b669f26585940d519e847f960c1900fb93f8889
         {children}
         {/* <Comments /> */}
         <OfferCustomer/>
@@ -75,6 +71,7 @@ export default function RootLayout({
         {/* <SimilarOrders/> */}
         <Company />
         <AllOrder/>
+        <OurRequisitesPage/>
         {/* <SearchProduct /> */}
         <Footer/>
       </body>
