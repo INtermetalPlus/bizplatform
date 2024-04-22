@@ -1,12 +1,41 @@
 import type { Metadata } from "next";
+import localFont from 'next/font/local'
 import { Inter } from "next/font/google";
-import "./globals.css";
+import styles from "./globals.module.scss";
+import { Footer } from "@/widgets/Footer";
 import  { Navigation } from "../widgets/Header/navigation"
 import {Menu} from "@/widgets/Menu/Menu";
 import {Contact} from "@/widgets/Contact/Contact";
 import Card from "@/widgets/Card/Card";
 import {AboutCompany} from "@/widgets/aboutCompany/AboutCompany";
+import ProtectedRoute from "@/features/Login/ProtectedRoute";
+
 const inter = Inter({ weight: ["400", "700","300","500"], subsets: ["latin","cyrillic"] });
+
+const sfPro = localFont({
+  src: [
+    {
+      path: './../shared/assets/font/SFPRODISPLAYREGULAR.otf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: './../shared/assets/font/SFPRODISPLAYBLACKITALIC.otf',
+      weight: '400',
+      style: 'italic',
+    },
+    {
+      path: './../shared/assets/font/SFPRODISPLAYBOLD.otf',      
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: './../shared/assets/font/SFPRODISPLAYHEAVYITALIC.otf',      
+      weight: '700',
+      style: 'italic',
+    },
+  ],
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,14 +49,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} ${sfPro.className} ${styles.body}`}>
         <Navigation />
-        <Menu/>
-        <Contact />
-        <Card/>
-        <AboutCompany/>
+        {/* <ProtectedRoute> */}
         {children}
-
+        {/* </ProtectedRoute> */}
+        <Footer/>
       </body>
     </html>
   );

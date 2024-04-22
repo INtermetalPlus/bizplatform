@@ -6,6 +6,11 @@ import languagePick from "./../../../shared/assets/home/header/language_option.p
 import mailHeader from "./../../../shared/assets/home/header/mail_header.png";
 import menuHeader from "./../../../shared/assets/home/header/menu_header.png";
 import messageHeader from "./../../../shared/assets/home/header/message_header.png";
+import {ModalWindowReg} from "../../Modalwindow/ModalWindowReg";
+import {AuthorizationModal} from '../../AuthorizationModal/AuthorizationModal'
+import Link from "next/link";
+
+
 
 const Select = ({ text, options }: { text: string; options: string[] }) => {
   const [hover, setHover] = useState(false);
@@ -26,80 +31,90 @@ const Select = ({ text, options }: { text: string; options: string[] }) => {
       </div>
   );
 };
-export const Navigation: React.FC = () => {
+export const Navigation:React.FC = () => {
+  const [loginModalOpen, setLoginModalOpen] = useState(false);
+  const [authModalOpen, setAuthModalOpen] = useState(false);
+
+  
+  const openLoginWindow = () => {
+    setLoginModalOpen(true);  
+  }
+
+  const openAuthWindow = () => {
+    setAuthModalOpen(true);  
+  }
+
+  const closeLoginWindow = () => {
+    setLoginModalOpen(false);
+  }
+
+  const closeAuthWindow = () => {
+    setAuthModalOpen(false);
+  }
+
+
   return (
-      <div className={styles.header}>
-        <header className={styles.page_header}>
-          <div className={styles.icon}>
-            <a className={styles.link} href="">
-              <span className={styles.first}>IBP</span>
-            </a>
+    <div className={styles.header}>
+      <header className={styles.page_header}>
+        <div className={styles.icon}>
+          <a className={styles.link} href="/">
+            <span className={styles.first}>IBP</span>
+          </a>
+        </div>
+        <nav className={styles.item_nav}>
+          <div className={styles.nav}>
+            <Link href="/orders" className={styles.menu_item}>
+              Все заказы
+            </Link>
           </div>
-          <nav className={styles.item_nav}>
-            <div className={styles.nav}>
-              <a href="#" className={styles.menu_item}>
-                Все заказы
-              </a>
-            </div>
-            <div className={styles.nav}>
-              <a href="#" className={styles.menu_item}>
-                Товары
-              </a>
-            </div>
-            <div className={styles.nav}>
-              <a href="#" className={styles.menu_item}>
-                Цены на тарифы
-              </a>
-            </div>
-            <div className={styles.nav}>
-              <a href="#" className={styles.menu_item}>
-                О платформе
-              </a>
-            </div>
-            <div className={styles.nav}>
-              <a href="#" className={`${styles.menu_item}`}>
-                Реквизиты
-              </a>
-            </div>
-            <div className={styles.nav}>
-              <a href="#" className={styles.menu_item}>
-                Помощь
-              </a>
-            </div>
-            <Select text="Еще" options={["Блог"]} />
+          <div className={styles.nav}>
+            <Link href="/goods" className={styles.menu_item}>
+              Товары
+            </Link>
+          </div>
+          <div className={styles.nav}>
+            <Link href="/tariffs" className={styles.menu_item}>
+              Цены на тарифы
+            </Link>
+          </div>
+          <div className={styles.nav}>
+            <Link href="/about" className={styles.menu_item}>
+              О платформе
+            </Link>
+          </div>
+          <div className={styles.nav}>
+            <Link href="/requisites" className={`${styles.menu_item} ${styles.activeMenu}`}>
+              Реквизиты
+            </Link>
+          </div>
+          <div className={styles.nav}>
+            <Link href="#" className={styles.menu_item}>
+              Помощь
+            </Link>
+          </div>
+          <Select text="Еще" options={["Блог"]} />
 
-            <div className={styles.header_info}>
-              <Image
-                  src={languagePick}
-                  width={24}
-                  height={24}
-                  alt="logoRussian"
-                  className="lang"
-              />
-            </div>
+          <div className={styles.header_info}>
+            <Image
+              src={languagePick}
+              width={24}
+              height={24}
+              alt="ru lang"
+              className="lang"
+            />
+          </div>
 
-            <div className={styles.auth}>
-              <Image
-                  src={messageHeader}
-                  width={28}
-                  height={28}
-                  alt="icon-header"
-              />
-              <Image
-                  src={mailHeader}
-                  width={28}
-                  height={28}
-                  alt="icon-header"
-              />
-              <Image
-                  src={menuHeader}
-                  width={28}
-                  height={28}
-                  alt="icon-header"
-              />
-            </div>
-          </nav>
-        </header>
-      </div>
+
+          <div className={styles.auth}>
+          <span>
+              <button className={styles.register} onClick={openLoginWindow}>Регистрация</button>
+              <button className={styles.login} onClick={openAuthWindow}>Вход</button>
+            </span>
+          </div>
+        </nav>
+      </header>
+      {loginModalOpen && <ModalWindowReg closeModalWindow={closeLoginWindow} />}
+      {authModalOpen && <AuthorizationModal closeModalWindow={closeAuthWindow} />}
+    </div>
   );
 };

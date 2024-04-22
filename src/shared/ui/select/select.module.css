@@ -1,0 +1,37 @@
+.primarySelect {
+  height: 69px;
+  border-radius: 2px;
+  color: #FFFFFF;
+  display: flex;
+  text-align: center;
+  background-color: #477BFF;
+  font-size: 24px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  position: relative;
+}
+
+.secondarySelect {
+  height: 69px;
+  border-radius: 2px;
+  color: #0B1623;
+  display: flex;
+  text-align: center;
+  background-color: #FFFFFF;
+  font-size: 24px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  position: relative;
+}
+
+.selectContainer {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.icon {
+  position: relative;
+}/*# sourceMappingURL=select.module.css.map */
