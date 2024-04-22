@@ -56,7 +56,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} ${sfPro.className}`}>
         <Navigation />
-        <SearchOrAdd />
+        <SearchProduct/>
+       <AllOrder/>
         {children}
         <OfferCustomer/>
         <SimilarOrders/>
