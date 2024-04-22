@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+.newPasswordModalBlock {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.35);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+.newPasswordModalBlock .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  width: 578px;
+  height: 507px;
+  border-radius: 2px;
+}
+.newPasswordModalBlock .container .changePassword {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.newPasswordModalBlock .container .changePassword h2 {
+  font-family: "Montserrat";
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 34.13px;
+  text-align: left;
+  padding-top: 24px;
+  margin: 0;
+  padding-bottom: 37px;
+}
+.newPasswordModalBlock .container .changePassword .closeIcon {
+  width: 15px;
+  height: 15px;
+  top: 220px;
+  left: 1220px;
+  gap: 0px;
+  border: 2px;
+  position: absolute;
+  pointer-events: none;
+}
+.newPasswordModalBlock .container .form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.newPasswordModalBlock .container .form input {
+  width: 470px;
+  height: 70px;
+  gap: 0px;
+  margin-bottom: 12px;
+  border-radius: 2px;
+  border: 1.5px solid rgb(156, 156, 156);
+  background-color: rgb(241, 241, 241);
+}
+.newPasswordModalBlock .container .form input::-moz-placeholder {
+  font-family: "Montserrat";
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24.38px;
+  text-align: left;
+  color: rgb(93, 93, 93);
+  padding: 23px 395px 23px 0px;
+  text-indent: 16px;
+}
+.newPasswordModalBlock .container .form input::placeholder {
+  font-family: "Montserrat";
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24.38px;
+  text-align: left;
+  color: rgb(93, 93, 93);
+  padding: 23px 395px 23px 0px;
+  text-indent: 16px;
+}
+.newPasswordModalBlock .container .form a {
+  font-family: "Montserrat";
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24.38px;
+  text-align: left;
+  color: #3971ff;
+  text-decoration: none;
+}
+.newPasswordModalBlock .container .form .eyeCloseIcon {
+  display: flex;
+  position: absolute;
+  left: 1160px;
+  top: 410px;
+}
+.newPasswordModalBlock .container .form .eyeOpenIcon {
+  display: none;
+  position: absolute;
+  left: 1160px;
+  top: 410px;
+}
+.newPasswordModalBlock .container .loginBtn {
+  width: 470px;
+  height: 56px;
+  border-radius: 2px;
+  background-color: #3971ff;
+  border: none;
+  margin-top: 36px;
+  margin-bottom: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Montserrat";
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 29.26px;
+  text-align: left;
+  color: white;
+}
+.newPasswordModalBlock .container p {
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24.38px;
+  text-align: left;
+}
+.newPasswordModalBlock .container p a {
+  color: #3971ff;
+}/*# sourceMappingURL=style.module.css.map */
