@@ -6,7 +6,6 @@ import { Footer } from "@/widgets/Footer";
 import  { Navigation } from "../widgets/Header/navigation"
 import ProtectedRoute from "@/features/Login/ProtectedRoute";
 
-
 const inter = Inter({ weight: ["400", "700","300","500"], subsets: ["latin","cyrillic"] });
 
 const sfPro = localFont({
