@@ -1,3 +1,4 @@
+'use client'
 import React, { useEffect, useState } from "react";
 import styles from './GAS_shared.module.scss'
 import GAS_orderStore from "@/entities/GAS_orderStore/GAS_orderStore";
@@ -21,9 +22,8 @@ export const GAS_SetCountry: React.FC = () => {
     return (
         <>
             {country.map((item) => (
-                <div className={styles.setCountry}>
+                <div key={item.id} className={styles.setCountry}>
                     <div 
-                    key={item.id} 
                     className={styles.setCountry__firstCountry}
                     onClick={openToClick}
                     >

@@ -1,6 +1,6 @@
 import React from "react";
 import styles from './StatickDataItem.module.scss'
-import gameIcon from '../../../public/orderGamePad-icon.png'
+import gameIcon from '../../../../public/orderGamePad-icon.png'
 import Image from "next/image";
 
 

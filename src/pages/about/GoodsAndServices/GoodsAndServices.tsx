@@ -13,6 +13,7 @@ import { OrderList } from "@/shared/ui/GoodsAndServices/OrderList";
 
 export const GoodsAndServices: React.FC = () => {
     return (
+        <>
         <div className="container">
             <Navigation/>
             <GAS_Header/>

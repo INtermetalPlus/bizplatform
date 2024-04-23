@@ -1,3 +1,4 @@
+'use client'
 import React, { useEffect } from "react";
 import GAS_orderStore from "@/entities/GAS_orderStore/GAS_orderStore";
 import { StatickData } from "./GAS_statickData";
