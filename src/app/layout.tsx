@@ -14,10 +14,11 @@ import { OfferCustomer } from "@/widgets/OfferCustomer";
 import  { Navigation } from "../widgets/Header/navigation"
 import  SearchOrAdd  from "../widgets/SearchOrAdd/SearchOrAdd"
 import { PlatformWork } from "@/widgets/PlatformWork";
-// import { CreateOrderModal } from "@/widgets/CreateOrderModal";
+import { CreateOrderModal } from "@/widgets/CreateOrderModal";
 import NewPassword from "@/shared/modals/newPassword/NewPassword";
 import VerificationCode from "@/shared/modals/newPassword(code)/VerificationCode";
 import LogIn from "@/shared/modals/logIn/LogIn";
+import ProductSlider from "@/widgets/ProductSlider/ProductSlider";
 import { Company } from "@/widgets/Company/Company";
 const inter = Inter({ weight: ["400", "700","300","500"], subsets: ["latin","cyrillic"] });
 
@@ -62,9 +63,10 @@ export default function RootLayout({
         <Navigation />
         {/* <PlatformWork /> */}
         {/* <SearchOrAdd /> */}
-        <NewPassword />
+        {/* <NewPassword /> */}
         {/* <VerificationCode /> */}
         {/* <LogIn /> */}
+        <ProductSlider />
         {children}
         {/* <Comments /> */}
         {/* <OfferCustomer/> */}
@@ -74,7 +76,7 @@ export default function RootLayout({
         {/* <AllOrder/> */}
         
         {/* <SearchProduct /> */}
-        <Footer/>
+        {/* <Footer/> */}
       </body>
     </html>
   );
