@@ -58,7 +58,7 @@ export const Navigation:React.FC = () => {
       <header className={styles.page_header}>
         <div className={styles.icon}>
           <a className={styles.link} href="/">
-            <span className={styles.first}>IBP</span>
+            <span className={`${styles.first}`}>IBP</span>
           </a>
         </div>
         <nav className={styles.item_nav}>

@@ -10,11 +10,12 @@ import Card from "@/widgets/Card/Card";
 import {AboutCompany} from "@/widgets/aboutCompany/AboutCompany";
 import ProtectedRoute from "@/features/Login/ProtectedRoute";
 
-const inter = Inter({ weight: ["400", "700","300","500"], subsets: ["latin","cyrillic"] });
-
+const inter = Inter({ weight: ["400", "700","300","500"], subsets: ["latin","cyrillic"], variable: "--font-inter" });
 const sfPro = localFont({
+  variable:'--font-sfPro',
   src: [
     {
+    
       path: './../shared/assets/font/SFPRODISPLAYREGULAR.otf',
       weight: '400',
       style: 'normal',
@@ -49,7 +50,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} ${sfPro.className} ${styles.body}`}>
+      <body className={`${inter.variable} ${sfPro.variable} ${styles.body}`}>
         <Navigation />
         {/* <ProtectedRoute> */}
         {children}

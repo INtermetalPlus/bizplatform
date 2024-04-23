@@ -30,6 +30,7 @@
 }
 
 .first {
+    font-family: var(--font-sfPro), sans-serif;
     color:#3971FF;
     flex-shrink: 0;
     font-size: 40px;
@@ -73,13 +74,15 @@
     transition: all ease .5;
 }
 
-.activeMenu {
-    border-bottom: 2px solid #f90;
+.menu_item:active {
+    color: #22469F;
 }
 
 .menu_item:hover {
-    border-bottom: 2px solid #f90;
+    color: #22469F;
 }
+
+
 
 .header_info {
     display: flex;
