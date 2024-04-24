@@ -9,6 +9,7 @@ import { TariffsForSuppliers } from "@/widgets/TariffsForSuppliers";
 import { PlatformWork } from "@/widgets/PlatformWork";
 // import { CreateOrderModal } from "@/widgets/CreateOrderModal";
 import { Company } from "@/widgets/Company/Company";
+import { OurRequisitesPage } from "@/pages/OurRequisitesPage";
 
 const inter = Inter({ weight: ["400", "700","300","500"], subsets: ["latin","cyrillic"] });
 
@@ -54,15 +55,11 @@ export default function RootLayout({
         <PlatformWork />
         <SearchOrAdd />
         {children}
-        {/* <Comments /> */}
-        <OfferCustomer/>
-        <SimilarOrders/>
         <TariffsForSuppliers/>
         <Footer/>
-        {/* <SimilarOrders/> */}
         <Company />
-        <AllOrder/>
-        {/* <SearchProduct /> */}
+        <OurRequisitesPage/>
+    
         <Footer/>
       </body>
     </html>

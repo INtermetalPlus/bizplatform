@@ -19,6 +19,7 @@
     "react-dom": "^18",
     "react-hook-form": "^7.51.2",
     "react-phone-number-input": "^3.3.12",
+    "react-toastify": "^10.0.5",
     "sass": "^1.72.0",
     "yup": "^1.4.0",
     "zustand": "^4.5.2"
