@@ -1,0 +1,10 @@
+.ContactsFrame {
+    display: flex;
+    flex-direction: column;
+    max-width: 480px;
+    width: 100%;
+    height: auto;
+    border-right: 1px solid rgb(234, 234, 234);
+    padding: 20px;
+    gap: 10px;
+}
