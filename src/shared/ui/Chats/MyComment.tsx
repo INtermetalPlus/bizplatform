@@ -20,13 +20,22 @@ export const MyComment: React.FC = () => {
                     <p>
                         11:22
                     </p>
-                    <Image
-                    width={30}
-                    height={24}
-                    src={check}
-                    alt="check message"
-                    className={styles.check}
-                    />
+                    <div className={styles.checkBLock}>
+                        <Image
+                        width={16}
+                        height={11}
+                        src={check}
+                        alt="check message"
+                        className={styles.checkArrowOne}
+                        />
+                        <Image
+                        width={16}
+                        height={11}
+                        src={check}
+                        alt="check message"
+                        className={styles.checkArrowTwo}
+                        />
+                    </div>
                 </div>
             </div>
         </>
