@@ -6,4 +6,3 @@ export const Button = ({ width, text }: { width?: string, text: string }): JSX.E
     </button>
   )
 }
-

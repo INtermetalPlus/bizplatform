@@ -22,7 +22,6 @@
 }
 
 .link {
-    flex-shrink: 0;
     font-size: 24px;
     line-height: 30px;
     font-weight: 700;
@@ -31,6 +30,7 @@
 }
 
 .first {
+    font-family: var(--font-sfPro), sans-serif;
     color:#3971FF;
     flex-shrink: 0;
     font-size: 40px;
@@ -61,7 +61,6 @@
     flex-grow: 1;
     align-items: center;
     justify-content: center !important;
-    min-width: 0;
     color: #333;
     font-size: 22px;
     line-height: 26.63px;
@@ -70,19 +69,20 @@
 .menu_item {
     position: relative;
     color:black;
-    flex-shrink: 0;
     margin-right: 44px;
     text-decoration: none;
     transition: all ease .5;
 }
 
-.activeMenu {
-    border-bottom: 2px solid #f90;
+.menu_item:active {
+    color: #22469F;
 }
 
 .menu_item:hover {
-    border-bottom: 2px solid #f90;
+    color: #22469F;
 }
+
+
 
 .header_info {
     display: flex;
@@ -173,14 +173,12 @@
 }
 
 .auth {
-    position: relative;
     display: flex;
-    flex-shrink: 0;
+    gap: 24px;
+    position: relative;
     align-items: center;
     justify-content: flex-end;
     cursor: pointer;
-    font-size: 16px;
-    line-height: 22px;
 }
 
 .register {

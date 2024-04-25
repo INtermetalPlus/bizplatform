@@ -4,18 +4,19 @@ import { Inter } from "next/font/google";
 import styles from "./globals.module.scss";
 import { Footer } from "@/widgets/Footer";
 import  { Navigation } from "../widgets/Header/navigation"
-import  SearchOrAdd  from "../widgets/SearchOrAdd/SearchOrAdd"
-import { TariffsForSuppliers } from "@/widgets/TariffsForSuppliers";
-import { PlatformWork } from "@/widgets/PlatformWork";
-// import { CreateOrderModal } from "@/widgets/CreateOrderModal";
-import { Company } from "@/widgets/Company/Company";
-import { OurRequisitesPage } from "@/pages/OurRequisitesPage";
+import {Menu} from "@/widgets/Menu/Menu";
+import {Contact} from "@/widgets/Contact/Contact";
+import Card from "@/widgets/Card/Card";
+import {AboutCompany} from "@/widgets/aboutCompany/AboutCompany";
+import ProtectedRoute from "@/features/Login/ProtectedRoute";
 
-const inter = Inter({ weight: ["400", "700","300","500"], subsets: ["latin","cyrillic"] });
+const inter = Inter({ weight: ["400", "700","300","500"], subsets: ["latin","cyrillic"], variable: "--font-inter" });
 
 const sfPro = localFont({
+  variable:'--font-sfPro',
   src: [
     {
+    
       path: './../shared/assets/font/SFPRODISPLAYREGULAR.otf',
       weight: '400',
       style: 'normal',
@@ -50,16 +51,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} ${sfPro.className} ${styles.body}`}>
+      <body className={`${inter.variable} ${sfPro.variable} ${styles.body}`}>
         <Navigation />
-        <PlatformWork />
-        <SearchOrAdd />
+        {/* <ProtectedRoute> */}
         {children}
-        <TariffsForSuppliers/>
-        <Footer/>
-        <Company />
-        <OurRequisitesPage/>
-    
+        {/* </ProtectedRoute> */}
         <Footer/>
       </body>
     </html>

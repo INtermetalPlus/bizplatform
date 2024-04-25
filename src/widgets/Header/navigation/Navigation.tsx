@@ -3,29 +3,32 @@ import React, { useState } from "react";
 import styles from "./Navigation.module.scss";
 import Image from "next/image";
 import languagePick from "./../../../shared/assets/home/header/language_option.png";
+import mailHeader from "./../../../shared/assets/home/header/mail_header.png";
+import menuHeader from "./../../../shared/assets/home/header/menu_header.png";
+import messageHeader from "./../../../shared/assets/home/header/message_header.png";
 import {ModalWindowReg} from "../../Modalwindow/ModalWindowReg";
 import {AuthorizationModal} from '../../AuthorizationModal/AuthorizationModal'
-
 import Link from "next/link";
+
 
 
 const Select = ({ text, options }: { text: string; options: string[] }) => {
   const [hover, setHover] = useState(false);
   return (
-    <div
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-      className={styles.menu_item_d}
-    >
-      {text}
-      <div className={styles.dropdown}>
-        {options.map((item) => (
-          <div className={styles.dropdown_menu} key={item}>
-            {item}
-          </div>
-        ))}
+      <div
+          onMouseEnter={() => setHover(true)}
+          onMouseLeave={() => setHover(false)}
+          className={styles.menu_item_d}
+      >
+        {text}
+        <div className={styles.dropdown}>
+          {options.map((item) => (
+              <div className={styles.dropdown_menu} key={item}>
+                {item}
+              </div>
+          ))}
+        </div>
       </div>
-    </div>
   );
 };
 export const Navigation:React.FC = () => {
@@ -55,7 +58,7 @@ export const Navigation:React.FC = () => {
       <header className={styles.page_header}>
         <div className={styles.icon}>
           <a className={styles.link} href="/">
-            <span className={styles.first}>IBP</span>
+            <span className={`${styles.first}`}>IBP</span>
           </a>
         </div>
         <nav className={styles.item_nav}>
@@ -113,6 +116,5 @@ export const Navigation:React.FC = () => {
       {loginModalOpen && <ModalWindowReg closeModalWindow={closeLoginWindow} />}
       {authModalOpen && <AuthorizationModal closeModalWindow={closeAuthWindow} />}
     </div>
-
   );
 };

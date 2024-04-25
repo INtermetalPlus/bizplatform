@@ -1,0 +1,35 @@
+.main {
+  margin: 40px auto;
+  width: 1600px;
+}
+
+.headerComment {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.headerComment h2 {
+  font-size: 48px;
+}
+.headerComment label {
+  font-size: 24px;
+  color: #3971FF;
+}
+
+.comments {
+  -moz-column-count: 2;
+       column-count: 2;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  margin-top: 40px;
+}
+
+.comments > div {
+  -moz-column-break-inside: avoid;
+       break-inside: avoid;
+  margin-bottom: 70px;
+}
+
+.comments > div:first-child {
+  margin-top: 0;
+}/*# sourceMappingURL=Comments.module.css.map */
