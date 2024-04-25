@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import styles from "./globals.module.scss";
 import { Footer } from "@/widgets/Footer";
 import  { Navigation } from "../widgets/Header/navigation"
+import {NumberText} from '../widgets/NamberText/NumberText'
 import {SendAnApplication} from "../widgets/SendAnApplicationModal/SendAnApplication"
 import {Menu} from "@/widgets/Menu/Menu";
 import {Contact} from "@/widgets/Contact/Contact";
@@ -57,7 +58,7 @@ export default function RootLayout({
         {children}
         {/* </ProtectedRoute> */}
         <Footer/>
-        <SendAnApplication/>
+        <NumberText/>
       </body>
     </html>
   );
