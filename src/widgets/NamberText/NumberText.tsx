@@ -1,6 +1,7 @@
 import styles from "./NumberText.module.scss";
 import Image from "next/image";
 import Frame from '../../shared/assets/home/header/icons/Frame.png'
+import Frame1 from '../../shared/assets/home/header/icons/Frame1.png'
 export const NumberText = () => {
     return(
         <div className={styles.numberText}>
@@ -30,7 +31,7 @@ export const NumberText = () => {
                 <div className={styles.numberText_block}>
                 <div className={styles.blog_icon}>
                     <Image
-                        src={Frame}
+                        src={Frame1}
                         width={150}
                         height={150}
                     />
