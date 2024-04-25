@@ -11,6 +11,7 @@ import {AboutCompany} from "@/widgets/aboutCompany/AboutCompany";
 import ProtectedRoute from "@/features/Login/ProtectedRoute";
 
 const inter = Inter({ weight: ["400", "700","300","500"], subsets: ["latin","cyrillic"], variable: "--font-inter" });
+
 const sfPro = localFont({
   variable:'--font-sfPro',
   src: [
