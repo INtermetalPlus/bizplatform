@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import {Navigation} from "@/widgets/Header/navigation";
-import {TradeOperations} from "@/widgets/tradeOperations/TradeOperations";
+import {ProviderModal} from "@/widgets/ProviderModal/ProviderModal";
 const inter = Inter({ weight: ["400", "700","300","500"], subsets: ["latin","cyrillic"] });
 
 export const metadata: Metadata = {
@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         {/*<Navigation />*/}
-        <TradeOperations />
+        <ProviderModal />
         {children}
 
       </body>
