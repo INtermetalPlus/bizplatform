@@ -12,9 +12,13 @@ export const ChatingBlock: React.FC= () => {
         <>
             <div className={styles.chatingBlock}>
                 <Commentator/>
-                <DayStatusInChat/>
-                <MyComment/>
-                <ContactComment/>
+                <div className={styles.mainChat}>
+                    <DayStatusInChat/>
+                    <MyComment/>
+                    <ContactComment/>
+                    <MyComment/>
+                    <ContactComment/>   
+                </div>
                 <EnterComments/>
             </div>
         </>

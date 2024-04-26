@@ -4,8 +4,6 @@ import { Button } from '@/shared/ui/button'
 
 const SearchOrAdd = () => {
 
-	
-
 	return (
 		<div className={styles.SearchOrAddBlock}>
 			<div className={styles.container}>

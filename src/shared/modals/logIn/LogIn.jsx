@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './style.module.css'
 
-const NewPassword = () => {
+const Login = () => {
 	return (
 		<div className={styles.newPasswordModalBlock}>
 			<div className={styles.container}>
@@ -81,4 +81,4 @@ const NewPassword = () => {
 	)
 }
 
-export default NewPassword
+export default Login

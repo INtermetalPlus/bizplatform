@@ -1,0 +1,44 @@
+.main {
+    margin: 0 auto;
+  width: 1600px;
+  h2 {
+    font-size: 48px;
+    font-weight: 700;
+  }
+}
+.table {
+  width: 1600px;
+  font-size: 28px;
+  background-color: #f7f7f7;
+  border-collapse: collapse;
+
+  tr {
+    font-size: 20px;
+    color: #515050;
+    border-bottom: 1px solid #f0efef;
+    height: 65px;
+    padding: 0 20px;
+  }
+  th {
+    display: flex;
+    align-items: center;
+    height: 65px;
+    white-space: nowrap;
+    width: 35px;
+    margin-left: 20px;
+  }
+  td {
+    height: 65px;
+    font-size: 22px;
+    color: #000000;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  img {
+    margin-right: -17px;
+  }
+  
+}
+.toast_container {
+  padding-top: 40px; 
+}

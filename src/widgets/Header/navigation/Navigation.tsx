@@ -2,15 +2,15 @@
 import React, { useState } from "react";
 import styles from "./Navigation.module.scss";
 import Image from "next/image";
+import { useAuthStore } from "@/features/Login/api/useAuthStore";
 import languagePick from "./../../../shared/assets/home/header/language_option.png";
 import mailHeader from "./../../../shared/assets/home/header/mail_header.png";
 import menuHeader from "./../../../shared/assets/home/header/menu_header.png";
 import messageHeader from "./../../../shared/assets/home/header/message_header.png";
-import {ModalWindowReg} from "../../Modalwindow/ModalWindowReg";
+import { ModalWindowReg } from "../../Modalwindow/ModalWindowReg";
 import {AuthorizationModal} from '../../AuthorizationModal/AuthorizationModal'
 import Link from "next/link";
-
-
+import RegisterVerification from "@/shared/modals/registerVerification/RegisterVerification";
 
 const Select = ({ text, options }: { text: string; options: string[] }) => {
   const [hover, setHover] = useState(false);
@@ -32,9 +32,10 @@ const Select = ({ text, options }: { text: string; options: string[] }) => {
   );
 };
 export const Navigation:React.FC = () => {
-  const [loginModalOpen, setLoginModalOpen] = useState(false);
-  const [authModalOpen, setAuthModalOpen] = useState(false);
-
+ 
+ const { isAuthenticated, setLoginModalOpen, setAuthModalOpen, loginModalOpen, authModalOpen,
+  registerVerification, setRegisterVerification
+  } = useAuthStore()
   
   const openLoginWindow = () => {
     setLoginModalOpen(true);  
@@ -50,6 +51,10 @@ export const Navigation:React.FC = () => {
 
   const closeAuthWindow = () => {
     setAuthModalOpen(false);
+  }
+
+  const closeVerificationWidnow = () => {
+    setRegisterVerification(false);
   }
 
 
@@ -106,15 +111,31 @@ export const Navigation:React.FC = () => {
 
 
           <div className={styles.auth}>
-          <span>
-              <button className={styles.register} onClick={openLoginWindow}>Регистрация</button>
-              <button className={styles.login} onClick={openAuthWindow}>Вход</button>
-            </span>
+            {!isAuthenticated ? (
+               <span>
+               <button className={styles.register} onClick={openAuthWindow}>Регистрация</button>
+               <button className={styles.login} onClick={openLoginWindow}>Вход</button>
+             </span>
+            ): (
+              <>
+              <Link href={'/mail'}>
+                <Image src={mailHeader} alt="mail" width={24} height={24} />
+              </Link>
+              <Link href={'/chat'}>
+                <Image src={messageHeader} alt="message" width={24} height={24} />
+              </Link>
+             
+                <Image onClick={() => console.log('Clicked on menu')} src={menuHeader} alt="menu" width={24} height={24} />
+             
+              </>
+            )}
+         
           </div>
         </nav>
       </header>
-      {loginModalOpen && <ModalWindowReg closeModalWindow={closeLoginWindow} />}
-      {authModalOpen && <AuthorizationModal closeModalWindow={closeAuthWindow} />}
+      {authModalOpen && <ModalWindowReg closeModalWindow={closeAuthWindow} />}
+      {loginModalOpen && <AuthorizationModal closeModalWindow={closeLoginWindow} />}
+      {registerVerification && <RegisterVerification closeModalWindow={closeVerificationWidnow} /> }
     </div>
   );
 };

@@ -1,10 +1,10 @@
 import { Chats } from '@/pages/Chats'
 import React from 'react'
 
-const About = () => {
+const Chat = () => {
   return (
-   <>About</>
+    <Chats />
   )
 }
 
-export default About
+export default Chat
