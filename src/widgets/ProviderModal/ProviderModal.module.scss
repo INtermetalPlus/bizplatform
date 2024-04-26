@@ -1,0 +1,114 @@
+.modal {
+  max-width: 790px;
+  min-height: 695px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 20px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  border: 1px solid rgb(136, 170, 255);
+  border-radius: 4px;
+  background: rgb(255, 255, 255);
+  font-size: 20px;
+}
+.modalInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.modal__title {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.modal__title__header {
+  color: rgb(0, 0, 0);
+  font-size: 28px;
+  line-height: 34px;
+  text-align: left;
+}
+
+.modal__span {
+  color: rgb(160, 160, 160);
+  font-size: 18px;
+  line-height: 22px;
+  text-align: left;
+}
+
+.modalBlock__input {
+  max-width: 750px;
+  min-height: 334px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.modalBlock__input input {
+}
+.input__bigBlock {
+  display: flex;
+  flex-direction: column;
+  max-width: 750px;
+  gap: 10px;
+  min-height: 98px;
+}
+.input__bigBlock input {
+  max-height: 64px;
+  padding: 20px;
+}
+.modalBlock__inputFlex {
+  display: flex;
+  gap: 20px;
+}
+.input__childBlock {
+  max-width: 365px;
+  min-height: 98px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.input__childBlock input {
+  width: 365px;
+  height: 64px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid rgb(173, 173, 173);
+  border-radius: 2px;
+  background: rgb(255, 255, 255);
+}
+
+
+.input__p {
+  line-height: 24px;
+  text-align: left;
+}
+
+.input__p span {
+  color: rgb(160, 160, 160);
+}
+
+.modal__btn {
+  border-radius: 2px;
+  background: rgb(57, 113, 255);/* Кнопка */
+  width: 385px;
+  height: 69px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 29px;
+}
