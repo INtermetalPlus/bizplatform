@@ -220,13 +220,14 @@
   line-height: 26.63px;
   text-align: left;
 }
-.ProductSliderBlock .container .product .productInfo .teg span {
+.ProductSliderBlock .container .product .productInfo .teg a {
   font-family: "Inter";
   font-size: 22px;
   font-weight: 500;
   line-height: 26.63px;
   text-align: left;
   color: #3971ff;
+  text-decoration: none;
 }
 .ProductSliderBlock .container .product .productInfo button {
   position: absolute;

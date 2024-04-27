@@ -1,7 +1,67 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 import styles from './style.module.scss'
+import { motion, AnimatePresence, wrap } from 'framer-motion'
+
+const images = [
+	'https://asiastore.kg/image/cachewebp/catalog/iphone/iphone14/iphone14/starlight/wwen_iphone14_q422_starlight_pdp_image_position-1a-450x450.webp',
+
+	'https://asiastore.kg/image/cachewebp/catalog/iphone/iphone14/iphone14/purple/wwen_iphone14_q422_purple_pdp_image_position-1a-450x450.webp',
+
+	'https://asiastore.kg/image/cachewebp/catalog/iphone/iphone14/iphone14plus/yellow/rukz_iphone14plus_q223_yellow_pdp_image_position-1a-450x450.webp',
+
+	'https://asiastore.kg/image/cachewebp/catalog/iphone/iphone14/iphone14/midnight/wwen_iphone14_q422_midnight_pdp_image_position-1a-450x450.webp',
+
+	'https://asiastore.kg/image/cachewebp/catalog/iphone/iphone14/iphone14/blue/wwen_iphone14_q422_blue_pdp_image_position-1a-450x450.webp',
+]
+
+    const variants = {
+			enter: (direction: number) => {
+				return {
+					duration: 0.1,
+					y: direction > 0 ? 270 : 270,
+					transition: { duration: 0.3, ease: 'easeInOut' },
+				}
+			},
+			center: {
+				y: 0,
+				opacity: 1,
+			},
+			exit: (direction: number) => {
+				return {
+					y: direction < 0 ? 270 : -270,
+          duration: 0.1,
+					transition: { duration: 0.3, ease: 'easeInOut' },
+				}
+			},
+		}
 
 const ProductSlider = () => {
+
+  const [[page, direction], setPage] = useState([0, 0]);
+  const firstImageIndex = wrap(0, images.length, page)
+	const secondImageIndex = wrap(0, images.length, page + 1)
+
+
+  const paginate = (newDirection: number) => {
+    const totalPages = images.length;
+    let newPage = page + newDirection;
+  
+    if (newPage < 0) {
+      newPage = totalPages - 1; 
+    } else if (newPage > totalPages) {
+      newPage = 0;
+    }
+  
+    setPage([newPage, newDirection]);
+  };
+  
+
+  const swipeConfidenceThreshold = 10000;
+  const swipePower = (offset: number, velocity: number) => {
+  return Math.abs(offset) * velocity;
+  };
+
   return (
 		<div className={styles.ProductSliderBlock}>
 			<div className={styles.container}>
@@ -54,7 +114,10 @@ const ProductSlider = () => {
 								alt='product'
 							/>
 							<div className={styles.slider}>
-								<div className={styles.sliderButton1}>
+								<div
+									className={styles.sliderButton1}
+									onClick={() => paginate(1)}
+								>
 									<svg
 										xmlns='http://www.w3.org/2000/svg'
 										width='8'
@@ -71,17 +134,64 @@ const ProductSlider = () => {
 										/>
 									</svg>
 								</div>
-								<img
-									className={styles.productSmallImage}
-									src='https://media.wired.com/photos/6500ad57fe61eb702d721b58/1:1/w_1800,h_1800,c_limit/Apple-iPhone-15-Pro-Hero-Gear.jpg'
-									alt='productSmall'
-								/>
-								<img
-									className={styles.productSmallImage}
-									src='https://media.wired.com/photos/6500ad57fe61eb702d721b58/1:1/w_1800,h_1800,c_limit/Apple-iPhone-15-Pro-Hero-Gear.jpg'
-									alt='productSmall'
-								/>
-								<div className={styles.sliderButton2}>
+								<AnimatePresence initial={false} custom={direction}>
+									<motion.img
+										key={firstImageIndex}
+										src={images[firstImageIndex]}
+										className={styles.productSmallImage}
+										// custom={direction}
+										variants={variants}
+										initial='enter'
+										animate='center'
+										exit='exit'
+										// transition={{
+										// 	y: { type: 'spring' },
+										// 	opacity: { duration: 0.2 },
+										// }}
+										// drag='y'
+										// dragConstraints={{ top: 0, bottom: 0 }}
+										// dragElastic={1}
+										// onDragEnd={(e, { offset, velocity }) => {
+										// 	const swipe = swipePower(offset.y, velocity.y)
+
+										// 	if (swipe < -swipeConfidenceThreshold) {
+										// 		paginate(1)
+										// 	} else if (swipe > swipeConfidenceThreshold) {
+										// 		paginate(-1)
+										// 	}
+										// }}
+									/>
+									<motion.img
+										className={styles.productSmallImage}
+										key={secondImageIndex + 1}
+										src={images[secondImageIndex]}
+										// custom={direction}
+										variants={variants}
+										initial='enter'
+										animate='center'
+										exit='exit'
+										// transition={{
+										// 	y: { type: 'spring' },
+										// 	opacity: { duration: 0.2 },
+										// }}
+										// drag='y'
+										// dragConstraints={{ top: 0, bottom: 0 }}
+										// dragElastic={1}
+										// onDragEnd={(e, { offset, velocity }) => {
+										// 	const swipe = swipePower(offset.y, velocity.y)
+
+										// 	if (swipe < -swipeConfidenceThreshold) {
+										// 		paginate(1)
+										// 	} else if (swipe > swipeConfidenceThreshold) {
+										// 		paginate(-1)
+										// 	}
+										// }}
+									/>
+								</AnimatePresence>
+								<div
+									className={styles.sliderButton2}
+									onClick={() => paginate(-1)}
+								>
 									<svg
 										xmlns='http://www.w3.org/2000/svg'
 										width='8'
@@ -100,7 +210,6 @@ const ProductSlider = () => {
 								</div>
 							</div>
 						</div>
-
 						<div className={styles.provider}>
 							<h2>
 								Поставщик
@@ -142,7 +251,6 @@ const ProductSlider = () => {
 							<p>Бишкек</p>
 						</div>
 					</div>
-
 					<div className={styles.productInfo}>
 						<h5>
 							В наличии

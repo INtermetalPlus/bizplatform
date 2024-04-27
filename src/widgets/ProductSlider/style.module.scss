@@ -55,18 +55,21 @@ $IBPBlue: #3971ff;
           display: flex;
 
           .productImage {
-            width: 520px;
-            height: 520px;
+            max-width: 520px;
+            max-height: 520px;
             border-radius: 2px;
-            object-fit: contain;
           }
 
           .slider {
+            max-height: 520px;
             display: flex;
             align-items: center;
             flex-direction: column;
+            // object-fit: contain;
+            overflow: hidden;
 
             .sliderButton1 {
+              z-index: 5;
               position: absolute;
               display: flex;
               justify-content: center;
@@ -89,6 +92,7 @@ $IBPBlue: #3971ff;
             }
 
             .sliderButton2 {
+              z-index: 5;
               position: absolute;
               display: flex;
               justify-content: center;
@@ -253,13 +257,14 @@ $IBPBlue: #3971ff;
 
           }
 
-          span {
+          a {
             font-family: 'Inter';
             font-size: 22px;
             font-weight: 500;
             line-height: 26.63px;
             text-align: left;
-            color: $IBPBlue
+            color: $IBPBlue;
+            text-decoration: none;
           }
 
         }

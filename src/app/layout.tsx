@@ -61,7 +61,7 @@ export default function RootLayout({
         {/* <VerificationCode /> */}
         {/* <LogIn /> */}
         <ProductSlider />
-        {children}
+        {/* {children} */}
         {/* <Comments /> */}
         {/* <OfferCustomer/> */}
         {/* <SimilarOrders/> */}
@@ -72,7 +72,7 @@ export default function RootLayout({
         {/* <SearchProduct /> */}
         {/* <Footer/> */}
         {/* <ProtectedRoute> */}
-        {children}
+        {/* {children} */}
         {/* </ProtectedRoute> */}
         {/* <Footer/> */}
       </body>
