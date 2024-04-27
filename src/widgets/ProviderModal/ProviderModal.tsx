@@ -42,7 +42,7 @@ export const ProviderModal: React.FC = () => {
                             <div className={styles.modalBlock__inputFlex}>
                                 <div className={styles.input__childBlock}>
                                     <span className={styles.input__p}>Номер телефона</span>
-                                    <input type="text" placeholder="+996"/>
+                                    <input type="number" placeholder="+996"/>
                                 </div>
                                 <div className={styles.input__childBlock}>
                                     <span className={styles.input__p}>Электронная почта</span>
