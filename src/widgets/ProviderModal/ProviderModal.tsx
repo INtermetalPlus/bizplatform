@@ -1,6 +1,9 @@
 import React from "react";
 import styles from "./ProviderModal.module.scss"
 import './../../app/globals.css'
+import Image from "next/image";
+import modalIconClose from './iconModal/x-close.png'
+
 
 export const ProviderModal: React.FC = () => {
     return (
@@ -8,9 +11,16 @@ export const ProviderModal: React.FC = () => {
             <div className="container">
                 <div className={styles.modalInfo}>
                     <div className={styles.modal__title}>
-                        <h2 className={styles.modal__title__header}>
-                            Написать поставщику
-                        </h2>
+                        <div className={styles.modal__title_close}>
+                            <h2 className={styles.modal__title__header}>
+                                Написать поставщику
+                            </h2>
+                            <Image
+                                src={modalIconClose}
+                                alt="icon"
+                                className={styles.modal__icon}
+                                />
+                             </div>
                         <span className={styles.modal__span}>В данном поле вы можете ввести предложение или вопрос заказчику о его товаре или услуге.</span>
                     </div>
                     <div className={styles.modalBlock}>
