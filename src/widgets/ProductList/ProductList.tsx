@@ -1,4 +1,3 @@
-
 "use client";
 import React, { useState } from "react";
 import styles from './ProductList.module.scss'
@@ -37,37 +36,7 @@ export const ProductList = () => {
   };
   
 
-  const orders = [
-    {
-      type: "completed",
-      orderNumber: 323423,
-      name: "Автотовары",
-      commentText:
-        "Увеличьте свой автомобильный бизнес с нашими оптовыми заказами автотоваров! Мы предлагаем широкий ассортимент качественных автозапчастей, аксессуаров и инструментов по оптовым ценам.",
-      date: "2 апреля 2024, 13:09",
-      supply: "Поставка в Бишкек",
-    },
-
-    {
-      type: "viewed",
-      orderNumber: 323423,
-      name: "Автотовары",
-      commentText:
-        "Увеличьте свой автомобильный бизнес с нашими оптовыми заказами автотоваров! Мы предлагаем широкий ассортимент качественных автозапчастей, аксессуаров и инструментов по оптовым ценам.",
-      date: "2 апреля 2024, 13:09",
-      supply: "Поставка в Бишкек",
-    },
-
-    {
-      type: "viewed",
-      orderNumber: 323423,
-      name: "Автотовары",
-      commentText:
-        "Вне зависимости от того, вам нужны строительные материалы, электроинструменты, краски и лаки, или же материалы для отделочных работ, мы можем удовлетворить ваши потребности и оказать полную поддержку  вашему бизнесу. \n \n Благодаря нашей оперативной доставке и высокому уровню обслуживания, вы можете быть уверены, что ваш заказ будет выполнен вовремя и с максимальным удобством для вас. Сделайте следующий шаг к успеху вашего бизнеса в области ремонта, сделайте оптовую закупку у нас сегодня и дайте вашему бизнесу рост и процветание!",
-      date: "2 апреля 2024, 13:09",
-      supply: "Поставка в Бишкек",
-    },
-  ];
+ 
 
   const options = [
     { value: 'Электроника', label: 'Электроника' },
@@ -79,6 +48,57 @@ export const ProductList = () => {
     { value: 'Строительство Недвижимость Ремонт', label: 'Дизайн и Декор' },
     { value: 'Строительство Недвижимость Ремонт', label: 'Инженерные Системы' },
   ];
+  
+    
+    const orders = [
+      {
+        name: "Ветровка/Флоранс",
+        price: "от 1200с за 1шт.",
+        description:
+          "Женская ветровка, на осень/весну. Материал: холодок, приятный к телу.",
+        location: "Место отправки: Москва",
+        contact: "Контакты: +773 090909",
+      },
+      {
+        name: "Ветровка/Флоранс",
+        price: "от 1200с за 1шт.",
+        description:
+          "Женская ветровка, на осень/весну. Материал: холодок, приятный к телу.",
+        location: "Место отправки: Москва",
+        contact: "Контакты: +773 090909",
+      },
+      {
+        name: "Ветровка/Флоранс",
+        price: "от 1200с за 1шт.",
+        description:
+          "Женская ветровка, на осень/весну. Материал: холодок, приятный к телу.",
+        location: "Место отправки: Москва",
+        contact: "Контакты: +773 090909",
+      },
+      {
+        name: "Ветровка/Флоранс",
+        price: "от 1200с за 1шт.",
+        description:
+          "Женская ветровка, на осень/весну. Материал: холодок, приятный к телу.",
+        location: "Место отправки: Москва",
+        contact: "Контакты: +773 090909",
+      },{
+        name: "Ветровка/Флоранс",
+        price: "от 1200с за 1шт.",
+        description:
+          "Женская ветровка, на осень/весну. Материал: холодок, приятный к телу.",
+        location: "Место отправки: Москва",
+        contact: "Контакты: +773 090909",
+      },{
+        name: "Ветровка/Флоранс",
+        price: "от 1200с за 1шт.",
+        description:
+          "Женская ветровка, на осень/весну. Материал: холодок, приятный к телу.",
+        location: "Место отправки: Москва",
+        contact: "Контакты: +773 090909",
+      },
+    ];
+    
   
   return (
     <div className={styles.main}>
@@ -97,7 +117,7 @@ export const ProductList = () => {
               suffixIcon={null}
               className={styles.select}
               
-              defaultValue="Товары"
+              defaultValue=""
               optionLabelProp="label"
               variant="borderless"
             >
@@ -178,7 +198,7 @@ export const ProductList = () => {
 
           </div>
             <div className={styles.see_also_link}>
-              
+
             </div>
           </div>
           </div>
@@ -196,40 +216,50 @@ export const ProductList = () => {
 {isOrderModalOpen && <CreateOrderModal onClose={handleCloseOrderModal} />}
 
 </div>
-<div className={styles.orderList}>
-          <div className={styles.orderList_imag}>
-            <div className={styles.orderList_blog}>
-              
-            </div>
-            <div className={styles.orderList_blog_title}>
-              <div className={styles.orderList_blog_title_text}>
-                <span>Ветровка/Флоранс </span>
-              </div>
-              <div className={styles.orderList_blog_title_text}>
-                <span>от 1200с за 1шт. </span>
-              </div>
-            </div>
-            <div className={styles.orderList_blog_bigText}>
-                <span>Женская ветровка, на осень/весну. Материал: холодок,приятный к телу.Женская ветровка</span>
-              </div>
-              <div className={styles.orderList_blog_smallText}>
-                <h3>Место отправки <span>Москва</span></h3>
-                <h3>Контакты: <span>+773 090909</span></h3>
-              </div>
-
-              <BlueButton
-              type="primaryButton"
-              width="385px"
-              text="Написать поставщику "
-              onClick={handleOpenOrderModal}
-              />
-
+{orders.reduce((rows, order, index) => {
+  if (index % 2 === 0) rows.push([]);
+  rows[rows.length - 1].push(
+    <div key={index} className={styles.blog_card}>
+      <div className={styles.orderList_imag}>
+        <div className={styles.orderList_blog}></div>
+        <div className={styles.orderList_blog_title}>
+          <div className={styles.orderList_blog_title_text}>
+            <span>{order.name}</span>
+          </div>
+          <div className={styles.orderList_blog_title_text}>
+            <span>{order.price}</span>
           </div>
         </div>
-         
+        <div className={styles.orderList_blog_bigText}>
+          <span>{order.description}</span>
         </div>
-       
+        <div className={styles.orderList_blog_smallText}>
+          <h3>{order.location}</h3>
+          <h3>{order.contact}</h3>
+        </div>
+        <BlueButton
+          type="primaryButton"
+          width="385px"
+          text="Написать поставщику"
+          onClick={handleOpenOrderModal}
+        />
       </div>
     </div>
   );
+  return rows;
+}, []).map((row, index) => (
+  <div key={index} className={styles.orderRow}>
+    {row}
+  </div>
+))}
+
+        </div>
+        </div>
+      </div>
+    
+    
+
+    
+  );
 };
+

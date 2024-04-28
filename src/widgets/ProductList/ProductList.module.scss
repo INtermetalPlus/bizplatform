@@ -131,9 +131,10 @@
     width: 563px;
     height: 400px;
     background-color: #E4E4E4;
+    margin-top: 50px;
   }
   .orderList_blog_title{
-    margin-top: 46px;
+    margin-bottom: 35px;
     display: flex;
     justify-content: space-between;
   }
@@ -168,6 +169,13 @@
 
   .see_also{
     margin-top: 20px;
+  }
+
+  .orders{
+    max-width: 562px;
+  }
+  .blog_card{
+    display: flex;
   }
 
   
