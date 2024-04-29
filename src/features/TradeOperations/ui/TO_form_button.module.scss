@@ -1,0 +1,55 @@
+.tradeOperation__btnContainer {
+    max-width: 555px;
+    min-height: 145px;
+}
+    .btnContainer__description {
+        display: flex;
+        max-width: 580px;
+        width: 100%;
+        height: auto;
+        color: rgb(0, 0, 0);
+        font-size: 18px;
+        margin: 32px 0 32px 0;
+    }
+    .btnContainer__btnText {
+        max-width: 385px;
+        width: 100%;
+        height: auto;
+        padding: 20px 10px 20px 10px;
+        border-radius: 2px;
+        border: none;
+        padding: 20px 10px;
+        font-size: 24px;
+        font-weight: 600;
+        color: rgb(255, 255, 255);
+        background: rgb(71, 123, 255);
+        cursor: pointer;
+    }
+
+
+.tradeOperation__header {
+    color: rgb(71, 123, 255);
+    font-family: 'Inter', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 32px;
+}
+
+
+.tradeOperation__firstHeader {
+    color: rgb(11, 22, 35);
+    font-family: 'Inter', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.tradeOperation__secondHeader {
+    color: rgb(57, 113, 255);
+    font-family: 'Inter', sans-serif;
+    font-size: 56px;
+    font-weight: 700;
+    margin: 0;
+    margin-bottom: 60px;
+}

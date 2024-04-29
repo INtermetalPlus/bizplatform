@@ -3,7 +3,7 @@ import { TradeOperations } from './TradeOperations'
 
 
 const meta: Meta<typeof TradeOperations> = {
-    title: '19.04.2024 - Товары и услуги (странирца)',
+    title: '29.04.2024',
     component: TradeOperations
 }
 export default meta

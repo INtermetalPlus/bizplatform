@@ -1,5 +1,6 @@
 export interface TO_shippingData {
+    detail: string,
     orderName: string,
-    number: string,
+    number: number,
     email: string
 }
