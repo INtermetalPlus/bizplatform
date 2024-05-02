@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import styles from './ModalWindowAuthori.module.scss';
 import axios from "axios";
+import { useAuthStore } from "../Login/api/useAuthStore"
+
 
 interface AuthorizationData {
     email: string;
     password: string;
+    access: string;
 }
 
 export const ModalWindowAuthori: React.FC = () => {
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
+    const { login } = useAuthStore();
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -22,6 +26,10 @@ export const ModalWindowAuthori: React.FC = () => {
                 }
             );
             console.log("Authorization successful:", response.data);
+            
+            // Вызываем функцию для входа с токеном из ответа сервера
+            login(response.data.access);
+            
             // Обработка успешной авторизации здесь
         } catch (error: any) {
             console.error("Authorization error:", error.response?.data);
