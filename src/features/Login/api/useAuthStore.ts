@@ -22,8 +22,15 @@ interface AuthStore {
 export const useAuthStore = create<AuthStore>(set => ({
   isAuthenticated: false,
   token: null,
-  login: (token: string) => set({ isAuthenticated: true, token }),
-  logout: () => set({ isAuthenticated: false, token: null }),
+  login: (token: string) => {
+    set({ isAuthenticated: true, token });
+    localStorage.setItem('accessToken', token);
+  },
+  logout: () => {
+    set({ isAuthenticated: false, token: null });
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('refreshToken');
+  },
   registerVerification: false,
   setRegisterVerification: (cond: boolean) => set({ registerVerification: cond }),
   verificationToken: '',
