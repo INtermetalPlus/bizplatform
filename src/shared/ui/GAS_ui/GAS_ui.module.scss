@@ -1,0 +1,93 @@
+* {
+    -webkit-user-select: none; /* Для браузеров, основанных на WebKit (Chrome, Safari) */
+    -moz-user-select: none; /* Для браузеров, основанных на Gecko (Firefox) */
+    -ms-user-select: none; /* Для браузеров Internet Explorer/Edge */
+    user-select: none; /* Стандартное свойство */
+}
+
+
+.imageBlock {
+    display: block;
+    width: 250px;
+    height: 250px;
+    background-image: url(../../assets/icons/addFileBlock-icon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #DEDEDE;
+}
+    .addedFile {
+        width: 250px;
+        height: 250px;
+    }
+
+
+.header {
+    font-size: 20px;
+    font-family: 'Inter';
+    color: #0B1623;
+    margin-bottom: 36px;
+    margin-right: auto;
+    margin-top: 0;
+}
+
+.addOrder {
+    max-width: 385px;
+    width: 100%;
+    height: auto;
+    border-radius: 2px;
+    background: rgb(57, 113, 255);
+    padding: 20px 10px 20px 10px;
+    border: none;
+    // text
+    /* Header/H4_Semibold_24 */
+    color: rgb(255, 255, 255);
+    font-family: 'Inter';
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 32px;
+    cursor: pointer;
+}
+
+
+.checkboxForm {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: start;
+}
+    input[type="checkbox"] {
+        display: none;
+    }
+
+    .checkboxLabel {
+        cursor: pointer;
+        // text styles
+        color: rgb(0, 0, 0);
+        font-family: 'Inter';
+        font-size: 22px;
+    }
+
+    .checkboxLabel::before {
+        content: '';
+        display: inline-flex;
+        width: 23.34px;
+        height: 23.34px;
+        border-radius: 50px;
+        border: 2px solid rgb(57, 113, 255);
+        margin-right: 10.33px;
+        transition: 0.1s;
+    }
+
+    input[type="checkbox"]:checked + .checkboxLabel::before{
+        background: rgb(57, 113, 255);
+        border: 2px solid rgb(0, 0, 0);
+    }
+
+
+
+
+
+
+
+

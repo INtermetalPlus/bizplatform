@@ -21,7 +21,7 @@ export const GAS_SetCountry: React.FC = () => {
     return (
         <>
             {country.map((item) => (
-                <div className={styles.setCountry}>
+                <div className={styles.setCountry} key={item.id}>
                     <div 
                     key={item.id} 
                     className={styles.setCountry__firstCountry}

@@ -1,1 +1,1 @@
-import { GoodsAndServices } from "./GoodsAndServices/GoodsAndServices";
+export { GoodsAndServices } from "./GoodsAndServices";
