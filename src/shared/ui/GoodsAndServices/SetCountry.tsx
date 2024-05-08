@@ -4,7 +4,6 @@ import GAS_orderStore from "@/entities/GAS_orderStore/GAS_orderStore";
 
 
 export const GAS_SetCountry: React.FC = () => {
-    const[isList, setIsList] = useState(false)
     const {country, fetchCountry} = GAS_orderStore(state => ({
         country: state.countries,
         fetchCountry: state.fetchCountry
@@ -13,42 +12,18 @@ export const GAS_SetCountry: React.FC = () => {
     useEffect(() => {
         fetchCountry();
     },[fetchCountry])
-    
-    const openToClick = () => {
-        setIsList(!isList)
-    }
 
     return (
         <>
-            {country.map((item) => (
-                <div className={styles.setCountry} key={item.id}>
-                    <div 
-                    key={item.id} 
-                    className={styles.setCountry__firstCountry}
-                    onClick={openToClick}
-                    >
-                        <span>{item.country_name}</span>
-                    </div>
-                    {isList && (
-                        <div className={styles.setCountry__list} onClick={openToClick}>
-                            <div 
-                            key={item.id} 
-                            className={styles.setCountry__firstCountry}
-                            onClick={openToClick}
-                            >
-                                <span>{item.country_name}</span>
-                            </div>
-                            <div 
-                            key={item.id} 
-                            className={styles.setCountry__firstCountry}
-                            onClick={openToClick}
-                            >
-                                <span>{item.country_name}</span>
-                            </div>
-                        </div>
-                    )}
-                </div>
-            ))}
+            <label className={styles.setCountry}>
+                {country.map((item) => (
+                    <select name="selectedCountry" key={item.id} className={styles.setCountrylist}>
+                        <option value={1} className={styles.setCountrylist__option}>{item.country_name}</option>
+                        <option value={2} className={styles.setCountrylist__option}>{item.country_name}</option>
+                        <option value={3} className={styles.setCountrylist__option}>{item.country_name}</option>
+                    </select>
+                ))}
+            </label>
         </>
     )
 }

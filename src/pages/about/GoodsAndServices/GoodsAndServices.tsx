@@ -6,6 +6,7 @@ import { GAS_Header } from "@/shared/ui/GoodsAndServices/Header";
 import { PlaceProductBlock } from "@/widgets/PlaceProductBlock/PlaceBroductBlock";
 import { Footer } from "@/widgets/Footer";
 import { GAS_ModalWindow } from "@/widgets/GAS_ModalWindow";
+import { GAS_statickData } from "@/shared/ui/GoodsAndServices/GAS_statickData";
 
 
 export const GoodsAndServices: React.FC = () => {
@@ -15,7 +16,7 @@ export const GoodsAndServices: React.FC = () => {
             <Navigation/>
             <GAS_Header/>
             <PlaceProductBlock/>
-            {/* <OrderList/> */}
+            <GAS_statickData/>
             <Footer/>
             <GAS_ModalWindow/>
         </div>
