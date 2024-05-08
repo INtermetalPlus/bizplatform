@@ -23,7 +23,7 @@ export const ModalWindowAuthori: React.FC = () => {
             );
             console.log("Authorization successful:", response.data);
             // Обработка успешной авторизации здесь
-        } catch (error) {
+        } catch (error: any) {
             console.error("Authorization error:", error.response?.data);
             // Обработка ошибки авторизации здесь
         }

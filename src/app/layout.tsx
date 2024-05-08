@@ -12,13 +12,21 @@ import VerificationCode from "@/shared/modals/newPassword(code)/VerificationCode
 import LogIn from "@/shared/modals/logIn/LogIn";
 import ProductSlider from "@/widgets/ProductSlider/ProductSlider";
 import { Company } from "@/widgets/Company/Company";
+import {Menu} from "@/widgets/Menu/Menu";
+import {Contact} from "@/widgets/Contact/Contact";
+import Card from "@/widgets/Card/Card";
+import {AboutCompany} from "@/widgets/aboutCompany/AboutCompany";
 import ProtectedRoute from "@/features/Login/ProtectedRoute";
+import { AddProductModal } from "@/widgets/AllOrder/AddProductModal";
+import { GoodsAndServices } from "@/pages/about/GoodsAndServices/GoodsAndServices";
 
-const inter = Inter({ weight: ["400", "700","300","500"], subsets: ["latin","cyrillic"] });
+const inter = Inter({ weight: ["400", "700","300","500"], subsets: ["latin","cyrillic"], variable: "--font-inter" });
 
 const sfPro = localFont({
+  variable:'--font-sfPro',
   src: [
     {
+    
       path: './../shared/assets/font/SFPRODISPLAYREGULAR.otf',
       weight: '400',
       style: 'normal',
@@ -53,14 +61,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} ${sfPro.className} ${styles.body}`}>
+      <body className={`${inter.variable} ${sfPro.variable} ${styles.body}`}>
         <Navigation />
         {/* <PlatformWork /> */}
         {/* <SearchOrAdd /> */}
         {/* <NewPassword /> */}
         {/* <VerificationCode /> */}
         {/* <LogIn /> */}
-        <ProductSlider />
+        {/* <ProductSlider /> */}
+        {/* <AddProductModal /> */}
+        <GoodsAndServices />
+        {/* {children} */}
         {/* {children} */}
         {/* <Comments /> */}
         {/* <OfferCustomer/> */}
@@ -75,6 +86,10 @@ export default function RootLayout({
         {/* {children} */}
         {/* </ProtectedRoute> */}
         {/* <Footer/> */}
+        {/* <ProtectedRoute> */}
+        {/* {children} */}
+        {/* </ProtectedRoute> */}
+        <Footer/>
       </body>
     </html>
   );

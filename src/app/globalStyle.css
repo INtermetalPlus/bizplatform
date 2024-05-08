@@ -1,0 +1,23 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url(../shared/assets/font/Inter/static/Inter-Medium.ttf);
+}
+
+* {
+    font-family: "Inter";
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1600px;
+    height: auto;
+    /* background: rgba(64, 255, 0, 0.50); */
+    margin: auto;
+}

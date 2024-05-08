@@ -70,15 +70,15 @@ export const AllOrder = () => {
 
   const options = [
     { value: 'Электроника', label: 'Электроника' },
-    { value: 'Строительство Недвижимость Ремонт', label: 'Строительство Недвижимость Ремонт' },
-    { value: 'Строительство Недвижимость Ремонт', label: 'Строительство Недвижимость Ремонт' },
-    { value: 'Строительство Недвижимость Ремонт', label: 'Строительство Недвижимость Ремонт' },
-    { value: 'Строительство Недвижимость Ремонт', label: 'Строительство Недвижимость Ремонт' },
-    { value: 'Строительство Недвижимость Ремонт', label: 'Строительство Недвижимость Ремонт' },
-    { value: 'Строительство Недвижимость Ремонт', label: 'Строительство Недвижимость Ремонт' },
-    { value: 'Строительство Недвижимость Ремонт', label: 'Строительство Недвижимость Ремонт' },
-
+    { value: 'Строительство Недвижимость Ремонт', label: 'Строительство и Ремонт' },
+    { value: 'Строительство Недвижимость Ремонт', label: 'Недвижимость' },
+    { value: 'Строительство Недвижимость Ремонт', label: 'Строительство' },
+    { value: 'Строительство Недвижимость Ремонт', label: 'Ремонт' },
+    { value: 'Строительство Недвижимость Ремонт', label: 'Строительные Материалы' },
+    { value: 'Строительство Недвижимость Ремонт', label: 'Дизайн и Декор' },
+    { value: 'Строительство Недвижимость Ремонт', label: 'Инженерные Системы' },
   ];
+  
   return (
     <div className={styles.main}>
       <h2>Все заказы</h2>
@@ -104,7 +104,7 @@ export const AllOrder = () => {
               variant="borderless"
             >
                {options.map((option) => (
-      <Option optionFontSize={22} value={option.value} label={option.label}>
+      <Option key={option.label} optionFontSize={22} value={option.value} label={option.label}>
         <div className={styles.divSelect}>
           <Image src={SelectIcon} alt="eye" width={48} height={48} />
           {option.label.split(' ').map((word, index, array) => (
