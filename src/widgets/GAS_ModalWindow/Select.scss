@@ -1,5 +1,4 @@
 .custom-select {
-    
     &__control {
         background: rgb(251, 251, 251) !important;
         width: 385px;
@@ -9,14 +8,14 @@
         font-family: 'Inter', sans-serif;
         font-size: 18px;
         text-align: left;
+        padding-left: 15px;
         &--menu-is-open {
             background: rgb(251, 251, 251) !important;
         }
-        border: none;
         border-radius: 0px;
     }
-   &__single-value {
-        color: red;
+    &__single-value {
+        color: rgb(160, 160, 160) !important;
     }
     &__indicators {
         cursor: pointer;
@@ -28,7 +27,8 @@
         height: 183px;
         color: rgba(11, 22, 35);
         font-family: 'Inter';
-        font-size: 20px;
+        font-size: 18px;
+        text-align: left;
         &:hover {
             background: rgb(251, 251, 251) !important;
         }
@@ -46,6 +46,7 @@
         background: rgb(251, 251, 251) !important;
         color: rgb(11, 22, 35) !important;
         cursor: pointer;
+        padding-left: 26px !important;
         &:hover {
             background: rgb(242, 242, 242) !important;
             color: rgb(160, 160, 160) !important;

@@ -45,23 +45,27 @@
     flex-direction: column;
     width: 385px;
     height: auto;
-    // background: #ff0d0d;
 }
 
 .setCountry__firstCountry {
     position: relative;
+    color: rgb(57, 113, 255);
+    font-size: 24px;
     display: flex;
     max-width: 385px;
+    height: 69px;
     padding: 20px 10px 20px 10px;
     border-radius: 2px;
     background: rgb(247, 247, 247);
     border-left: 3px solid rgba(57, 113, 255, 0);
     cursor: pointer;
     align-items: center;
+    padding-left: 94px;
 }
     .setCountry__firstCountry:hover {
         transition: 0.3s;
         border-left: 3px solid rgb(57, 113, 255);
+        color: rgb(181, 181, 181);
     }
 
     .setCountry__header {
@@ -69,11 +73,14 @@
     }
 
 .setCountry__list {
+    color: rgb(57, 113, 255);
+    font-size: 24px;
     position: absolute;
     display: flex;
     width: 385px;
     flex-direction: column;
-    margin-top: 60px;
+    margin-top: 109px;
+    border-top: 4px solid rgb(228, 228, 228);
 }
     .list__country {
         padding: 20px 10px 20px 10px;
