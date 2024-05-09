@@ -45,13 +45,11 @@ export const IndicateRegion: React.FC<IndicateRegionProps> = ({ onClose }) => {
           <Select
             maxCount={MAX_COUNT}
             mode="multiple"
-            className={styles.select}
-            defaultValue="Категории"
+            className={styles.optionList}
             optionLabelProp="label"
             style={{ width: "100%" }}
             placeholder="Найти регион"
             open={true}
-
           >
             {options.map((option) => (
               <Option
@@ -59,6 +57,7 @@ export const IndicateRegion: React.FC<IndicateRegionProps> = ({ onClose }) => {
                 optionFontSize={22}
                 value={option.value}
                 label={option.label}
+                className={styles.optionList__label_main}
               >
                 <div className={styles.divSelect}>{option.label}</div>
               </Option>

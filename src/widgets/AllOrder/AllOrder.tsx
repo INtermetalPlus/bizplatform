@@ -1,6 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import styles from "./AllOrder.module.scss";
+// another styles
+import '../../app/globalStyle.css'
+// other
 import { SearchField } from "@/features/searchField";
 import { BlueButton } from "@/shared/ui/blueButton";
 import { Order } from "@/entities/order";
@@ -11,6 +14,8 @@ import { CreateOrderModal } from "../CreateOrderModal";
 import { Select } from "antd";
 import SelectIcon from "./Frame 220.png";
 import { IndicateRegion } from "../IndicateRegion";
+import { AO_header } from "@/shared/ui/AllOrder/AO_header";
+import { AO_headerInfo } from "@/shared/ui/AllOrder/AO_headerInfo";
 
 const { Option } = Select;
 
@@ -81,21 +86,11 @@ export const AllOrder = () => {
   
   return (
     <div className={styles.main}>
-      <h2>Все заказы</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur. Pellentesque rhoncus mi
-        venenatis sem.
-      </p>
+      <AO_header/>
+      <AO_headerInfo/>
       <div className={styles.secondBlock}>
         <div className={styles.categories}>
           <div className={styles.selectDiv}>
-            {/* <select className={styles.select} name="" id="">
-              {options.map((option, index) => (
-                <option key={index} value={option}>
-                  {option}
-                </option>
-              ))}
-            </select> */}
             <Select
               suffixIcon={null}
               className={styles.select}
@@ -103,23 +98,23 @@ export const AllOrder = () => {
               optionLabelProp="label"
               variant="borderless"
             >
-               {options.map((option) => (
-      <Option key={option.label} optionFontSize={22} value={option.value} label={option.label}>
-        <div className={styles.divSelect}>
-          <Image src={SelectIcon} alt="eye" width={48} height={48} />
-          {option.label.split(' ').map((word, index, array) => (
-            <>
-              {word}
-              {index < array.length - 1 && <br />}
-            </>
-          ))}
-        </div>
-      </Option>
-    ))}
+            {options.map((option) => (
+              <Option key={option.label} optionFontSize={22} value={option.value} label={option.label}>
+                <div className={styles.divSelect} key={1}>
+                  <Image src={SelectIcon} alt="eye" width={48} height={48} />
+                  {option.label.split(' ').map((word, index, array) => (
+                    <>
+                      {word}
+                      {index < array.length - 1 && <br />}
+                    </>
+                  ))}
+                </div>
+              </Option>
+            ))}
             </Select>
             <div className={styles.icon}>
               {" "}
-              <Image src={Strelka} alt="strelka" width={20} height={20} />
+              <Image src={Strelka} alt="strelka" width={20} height={20} className={styles.select__arrow}/>
             </div>
           </div>
           <button className={styles.regions} onClick={handleOpenRegionModal}>
@@ -150,7 +145,6 @@ export const AllOrder = () => {
               Скрыть просмотренные{" "}
               <input type="checkbox" className={styles.check} />
             </div>
-
             <div className={styles.completedCheck}>
               Скрыть завершенные{" "}
               <input type="checkbox" className={styles.check} />
@@ -160,17 +154,14 @@ export const AllOrder = () => {
         <div className={styles.orders}>
           <div className={styles.searchField}>
             <SearchField />
-
             <BlueButton
-              type="primaryButton"
-              width="385px"
-              text="Создать заказ"
-              onClick={handleOpenOrderModal}
-              />
-{isOrderModalOpen && <CreateOrderModal onClose={handleCloseOrderModal} />}
-
-</div>
-
+            type="primaryButton"
+            width="385px"
+            text="Создать заказ"
+            onClick={handleOpenOrderModal}
+            />
+            {isOrderModalOpen && <CreateOrderModal onClose={handleCloseOrderModal} />}
+          </div>
           {orders.map((order, index) => (
             <Order
               key={index}

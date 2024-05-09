@@ -26,6 +26,7 @@ export const Order: React.FC<OrderProps> = ({
   deliveryFrom,
   showImage = true,
 }) => {
+  
   return (
     <div className={type === "completed" ? styles.completed : styles.main}>
       <div className={styles.orderAndDate}>
@@ -36,12 +37,12 @@ export const Order: React.FC<OrderProps> = ({
         <p className={styles.name}> {name}</p>
         <span className={styles.comment}>
           {" "}
-          {commentText.split("\n").map((line, i) => (
+          {typeof commentText === 'string' ? commentText.split("\n").map((line, i) => (
             <React.Fragment key={i}>
-              {line}
-              <br />
+                {line}
+                <br />
             </React.Fragment>
-          ))}
+          )) : null}
         </span>
         {category && ( // добавлено
         <div className={styles.category}>
