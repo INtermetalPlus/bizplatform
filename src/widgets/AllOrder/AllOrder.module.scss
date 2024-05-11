@@ -1,6 +1,7 @@
 .main {
   margin: 50px auto;
   max-width: 1600px;
+  width: 100%;
   h2 {
     font-size: 48px;
   }
@@ -13,6 +14,7 @@
 .secondBlock {
   display: flex;
   gap: 20px;
+  margin-top: 60px;
 }
 .categories {
   width: 385px;
@@ -20,7 +22,8 @@
 .searchField {
   display: flex;
   justify-content: space-between;
-  width: 1215px;
+  max-width: 1215px;
+  width: 100%;
 }
 
 .categories {
@@ -39,6 +42,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  font-size: 20px;
 }
 .icon {
     position: relative;
@@ -51,14 +55,26 @@
     height: 69px;
 }
 
+
 .select {
-  font-size: 22em !important;
-  width: 385px;
-  appearance: none;
-  color:  #3971ff !important; 
+  max-width: 385px;
+  width: 100%;
   height: 67px;
   border: none !important;
+  transition: 0.3s;
+  &__arrow {
+    margin-left: -23px;
+  }
+  &:hover {
+    background: rgb(245, 245, 245);
+  }
+  font-size: 24px !important;
 }
+:global(.ant-select-selector) {
+  font-size:29px !important;
+  color: rgb(57, 113, 255) !important;
+}
+
 .regions {
   height: 70px;
   border: 1px solid #e1e1e1;
@@ -68,6 +84,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
 }
 
 .inputPrice {
@@ -92,6 +109,11 @@
 .price {
   padding-left: 6px;
 }
+
+.completedCheck {
+  color: rgb(160, 160, 160);
+}
+
 .viewedCheck,
 .completedCheck {
   height: 68px;
@@ -110,4 +132,11 @@
 }
 .viewedCheck {
     border-top: 1px solid #e1e1e1;
+}
+
+.orders {
+  max-width: 1216px;
+  width: 100%;
+  height: auto;
+  margin-left: 5px;
 }

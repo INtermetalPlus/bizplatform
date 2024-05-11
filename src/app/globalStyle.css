@@ -10,6 +10,10 @@ html, body {
 
 * {
     font-family: "Inter";
+    -webkit-user-select: none; /* Для браузеров, основанных на WebKit (Chrome, Safari) */
+	-moz-user-select: none; /* Для браузеров, основанных на Gecko (Firefox) */
+	-ms-user-select: none; /* Для браузеров Internet Explorer/Edge */
+	user-select: none; /* Стандартное свойство */
 }
 
 
@@ -20,4 +24,10 @@ html, body {
     height: auto;
     /* background: rgba(64, 255, 0, 0.50); */
     margin: auto;
+}
+
+
+input {
+    outline: none !important;
+    cursor: pointer;
 }
