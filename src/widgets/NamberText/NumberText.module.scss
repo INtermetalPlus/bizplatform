@@ -1,0 +1,77 @@
+.numberText {
+    display: flex;
+    flex-direction: column;
+    font-family: "Inter", sans-serif;
+    text-align: left;
+    max-width: 1600px;
+    width: 100%;
+    align-self: center;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    
+    width: 100%;
+    margin: 0 auto; /* Центрирует контейнеры по горизонтали */
+  }
+  
+  .block1{
+    max-width: 655px;
+    min-height: 661px;
+    display: flex;
+    
+    padding: 0;
+    width: 48%; /* Установите одинаковую ширину для обоих контейнеров */
+  }
+  
+  .block2 {
+    max-width: 531px;
+    min-height: 661px;
+    display: flex;
+    
+    padding: 0;
+    width: 48%; /* Установите одинаковую ширину для обоих контейнеров */
+  }
+  
+  .numberText_block {
+    display: contents;
+    width: 620px;
+  }
+  
+  .blog {
+    width: 424px;
+    margin-left: 30px; /* Если нужно добавить отступ между блоками */
+  }
+  
+  .blog_text {
+    display: flex;
+    align-items: center; 
+  }
+  
+  .blueText {
+    color: blue;
+    margin-right: 5px;
+  }
+  
+  .blackText {
+    color: black;
+  }
+
+
+  
+  .blog_text h1 {
+    width: 654px;
+    font-size: 48px;
+    font-weight: 700;
+    height: 7px;
+  }
+  
+  .blog_text span {
+    color: blue;
+  }
+  
+  .blog_icon {
+    margin-top: 30px;
+  }
+  
