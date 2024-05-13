@@ -22,8 +22,8 @@ export const GAS_ModalWindow: React.FC = () => {
 
     const onSubmit: SubmitHandler<ShippingProductData> = async (data) => {
         await productsRequest(data)
-        console.log(data);
-        console.log('Product added');
+        // console.log(data);
+        // console.log('Product added');
         
     }
 
