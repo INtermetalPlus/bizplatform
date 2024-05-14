@@ -10,9 +10,10 @@ export const NumberText = () => {
                 <div className={styles.numberText_block}>
                 <div className={styles.blog_icon}>
                     <Image
+                        alt="icon"
                         src={Frame}
-                        width={150}
-                        height={150}
+                        width={147}
+                        height={126}
                     />
                 </div>
                 <div className={styles.blog}>
@@ -31,9 +32,10 @@ export const NumberText = () => {
                 <div className={styles.numberText_block}>
                 <div className={styles.blog_icon}>
                     <Image
+                        alt="icon"
                         src={Frame1}
-                        width={150}
-                        height={150}
+                        width={130}
+                        height={143}
                     />
                 </div>
                 <div className={styles.blog}>

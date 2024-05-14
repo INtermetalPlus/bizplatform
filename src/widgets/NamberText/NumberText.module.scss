@@ -5,43 +5,43 @@
     text-align: left;
     max-width: 1600px;
     width: 100%;
+    margin-top: 120px;
     align-self: center;
   }
   
   .container {
     display: flex;
     justify-content: space-between;
-    
     width: 100%;
-    margin: 0 auto; /* Центрирует контейнеры по горизонтали */
+    margin: 0 auto; 
   }
   
   .block1{
-    max-width: 655px;
-    min-height: 661px;
+    max-width: 620px;
+    min-height: 150px;
     display: flex;
-    
     padding: 0;
-    width: 48%; /* Установите одинаковую ширину для обоих контейнеров */
+    width: 48%; 
   }
   
   .block2 {
-    max-width: 531px;
-    min-height: 661px;
+    max-width: 627px;
+    min-height: 150px;
     display: flex;
-    
     padding: 0;
-    width: 48%; /* Установите одинаковую ширину для обоих контейнеров */
+    justify-content: space-between;
+    width: 48%;
   }
   
   .numberText_block {
-    display: contents;
-    width: 620px;
+    display: flex;
+    justify-content: space-between;
   }
   
   .blog {
+    display: flex;
     width: 424px;
-    margin-left: 30px; /* Если нужно добавить отступ между блоками */
+    margin-left: 30px; 
   }
   
   .blog_text {
@@ -61,10 +61,11 @@
 
   
   .blog_text h1 {
-    width: 654px;
+    margin: 0;
+    line-height: 58.09px;
     font-size: 48px;
     font-weight: 700;
-    height: 7px;
+  
   }
   
   .blog_text span {

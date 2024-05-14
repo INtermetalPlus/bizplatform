@@ -11,7 +11,7 @@ import {Contact} from "@/widgets/Contact/Contact";
 import Card from "@/widgets/Card/Card";
 import {AboutCompany} from "@/widgets/aboutCompany/AboutCompany";
 import ProtectedRoute from "@/features/Login/ProtectedRoute";
-
+import { BottomBlock } from "@/shared/ui/layoutBottomBlock/BottomBlock";
 const inter = Inter({ weight: ["400", "700","300","500"], subsets: ["latin","cyrillic"], variable: "--font-inter" });
 
 const sfPro = localFont({
@@ -59,7 +59,7 @@ export default function RootLayout({
         {children}
         {/* </ProtectedRoute> */}
         <Footer/>
-        <ProductList/>
+        <BottomBlock />
       </body>
     </html>
   );

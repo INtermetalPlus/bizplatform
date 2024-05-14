@@ -7,6 +7,10 @@
     border-top: 1px solid rgb(217, 217, 217);
 }
 
+.container {
+    margin: auto;
+}
+
 .footer_logo{
     margin: auto;
     margin-right: 177px;
@@ -20,6 +24,7 @@
 .footer_blog{
     padding-top: 40px;
     display: flex;
+    background-color: #FFFFFF;
    
 }
 .footer_info{

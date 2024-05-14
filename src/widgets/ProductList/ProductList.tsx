@@ -6,10 +6,10 @@ import { BlueButton } from "@/shared/ui/blueButton";
 import { Order } from "@/entities/order";
 import Image from "next/image";
 import Plus from "../AllOrder/plus.svg";
-import Strelka from "../AllOrder/arrow_forward_ios (1).svg";
+import Strelka from "../../shared/assets/icons/arrow_forward_ios (1).svg";
 import { CreateOrderModal } from "../CreateOrderModal";
 import { Select } from "antd";
-import SelectIcon from "../AllOrder/Frame 220.png";
+import SelectIcon from "../../shared/assets/icons/Frame 220.png";
 import { IndicateRegion } from "../IndicateRegion";
 
 const { Option } = Select;
