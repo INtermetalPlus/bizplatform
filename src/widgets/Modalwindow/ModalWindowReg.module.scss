@@ -8,8 +8,6 @@
     backdrop-filter: blur(10px);
     background: linear-gradient(-45deg,rgba(0, 0, 0, 0.35), rgb(57, 113, 255, 0.35), #4400ff52);
     background-size: 400% 400%;
-    animation: modalBG 10s ease-in-out infinite;
-    z-index: 999;
     top: 0;
 }
 

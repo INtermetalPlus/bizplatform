@@ -1,5 +1,5 @@
 import React from "react";
-import { StatickDataItem } from "@/widgets/StatickData/GAS_statickDataItem";
+import { StatickDataItem } from "@/shared/ui/StatickData/GAS_statickDataItem";
 import styles from './GAS_shared.module.scss'
 
 

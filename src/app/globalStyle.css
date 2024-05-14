@@ -11,6 +11,10 @@ html, body {
 
 * {
     font-family: "Inter";
+    -webkit-user-select: none; /* Для браузеров, основанных на WebKit (Chrome, Safari) */
+	-moz-user-select: none; /* Для браузеров, основанных на Gecko (Firefox) */
+	-ms-user-select: none; /* Для браузеров Internet Explorer/Edge */
+	user-select: none; /* Стандартное свойство */
 }
 
 
@@ -39,3 +43,8 @@ input[type=number] {
         font-size: 18px;
         font-weight: 500;
     }
+
+input {
+    outline: none !important;
+    cursor: pointer;
+}

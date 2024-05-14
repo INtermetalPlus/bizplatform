@@ -1,0 +1,63 @@
+.orderList__container {
+  display: flex;
+  gap: 20px;
+  margin: auto;
+}
+
+.orderList {
+  display: flex;
+  max-width: 1600px;
+  height: auto;
+}
+
+.orderList__orderFrame {
+  display: flex;
+  flex-direction: column;
+  max-width: 385px;
+  height: auto;
+  align-items: left;
+  border-radius: 2px;
+  background: rgb(247, 247, 247);
+  padding: 20px 0 50px 20px;
+  cursor: pointer;
+}
+
+.orderFrame__header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: rgb(0, 0, 0);
+  font-family: "Inter";
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.orderFrame_content {
+  display: flex;
+  flex-direction: column;
+  margin: auto 69px;
+  max-width: 197px;
+  gap: 16px;
+}
+
+.orderFrame__icon {
+  border-radius: 50px;
+  padding: 6px;
+  background: rgb(57, 113, 255);
+}
+
+.orderFrame__infoText {
+  color: rgb(0, 0, 0);
+  font-family: "Inter";
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.OrderFrame__showMore {
+  color: rgb(34, 70, 159);
+  font-family: "Inter";
+  font-size: 20px;
+  text-decoration: none;
+  margin-top: 4px;
+}/*# sourceMappingURL=StatickDataItem.module.css.map */

@@ -1,63 +1,66 @@
 import React from "react";
 import styles from "./IndicateRegion.module.scss";
-import Krestik from "./x-close.png";
+import './IR_styles.css'
+
 import Image from "next/image";
-import { BlueButton } from "@/shared/ui/blueButton";
+import cross from "../../shared/assets/icons/x-close.png";
+import { IR_btn } from "@/shared/ui/IndicateRegion/IR_btn";
+import { closeModal } from "@/features/lib/helpers/CloseHook";
 import { Select } from "antd";
+
 
 const { Option } = Select;
 const options = [
-  { value: "Электроника", label: "Кыргызстан" },
-  { value: "С", label: "Кыргызстан" },
-  { value: "Стрww", label: "Кыргызстан" },
-  { value: "Стрw1", label: "Кыргызстан" },
-  { value: "Стрw", label: "Кыргызстан" },
-  { value: "Строw", label: "Кыргызстан" },
-  { value: "Строите", label: "Кыргызстан" },
-  { value: "Строитель", label: "Кыргызстан" },
+  { value: 1, label: "Чуйская область" },
+  { value: 2, label: "-" },
+  { value: 3, label: "-" },
+  { value: 4, label: "-" },
+  { value: 5, label: "-" },
+  { value: 6, label: "-" },
+  { value: 7, label: "-" },
+  { value: 8, label: "-" },
 ];
 
 interface IndicateRegionProps {
   onClose: () => void;
 }
 
-export const IndicateRegion: React.FC<IndicateRegionProps> = ({ onClose }) => {
-  const handleOutsideClick = (event: React.MouseEvent) => {
-    if (event.currentTarget === event.target) {
-      onClose();
-    }
-  };
+export const IndicateRegion: React.FC<IndicateRegionProps> = () => {
+  const {isOpen, close} = closeModal()
+
   const MAX_COUNT = 1;
 
   return (
-    <div className={styles.modal} onClick={handleOutsideClick}>
+    <>
+    {isOpen && (
+      <div className={styles.modal}>
       <Image
-        src={Krestik}
-        width={24}
-        height={24}
-        alt="krestik"
-        className={styles.krestik}
-        onClick={handleOutsideClick}
+      src={cross}
+      width={24}
+      height={24}
+      alt="close"
+      className={styles.closeModal__icon}
+      onClick={close}
       />
       <div className={styles.main}>
         <div>
           <p>Укажите регион</p>
           <Select
-            maxCount={MAX_COUNT}
-            mode="multiple"
-            className={styles.select}
-            defaultValue="Категории"
-            optionLabelProp="label"
-            style={{ width: "100%" }}
-            placeholder="Найти регион"
-            open={true}
-
+          maxCount={MAX_COUNT}
+          mode="multiple"
+          className={styles.optionList}
+          optionLabelProp="label"
+          style={{ width: "100%" }}
+          placeholder="Найти регион"
+          open={true}
           >
             {options.map((option) => (
               <Option
-                optionFontSize={22}
-                value={option.value}
-                label={option.label}
+              key={option.value}
+              optionFontSize={22}
+              value={option.value}
+              label={option.label}
+              className={styles.optionList__label_main}
               >
                 <div className={styles.divSelect}>{option.label}</div>
               </Option>
@@ -65,13 +68,11 @@ export const IndicateRegion: React.FC<IndicateRegionProps> = ({ onClose }) => {
           </Select>
         </div>
         <div>
-          <BlueButton
-            type="primaryButton"
-            width="460px"
-            text="Выбрать регион"
-          />
+          <IR_btn/>
         </div>
       </div>
     </div>
+    )}
+    </>
   );
 };

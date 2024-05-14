@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { useAuthStore } from "../Login/api/useAuthStore";
 import styles from './ModalWindowInputs.module.scss'
 import { SubmitHandler, useForm } from "react-hook-form";
 import { ShippingFormData } from "../lib/form.interface";
@@ -29,6 +29,7 @@ export const ModalWindowForm: React.FC = () => {
         return value;
     }
     
+    const { setVerificationToken, setAuthModalOpen, setRegisterVerification } = useAuthStore()
 
     const {
         register,
@@ -42,10 +43,19 @@ export const ModalWindowForm: React.FC = () => {
 
 
     const onSubmit: SubmitHandler<ShippingFormData> = async (data) => {
-        const request = await axios.post(`http://167.172.161.102:82/api/v1/registration/`, data)
-        console.log('Form data saved');
-        console.log(request.data);
-        reset()
+        try {
+            const request = await axios.post(`http://167.172.161.102:82/api/v1/registration/`, data)
+            if(request.status === 200) {
+            console.log('Form data saved');
+            console.log(request.data);
+            reset()
+            setVerificationToken(request?.data?.verification_token)
+            setAuthModalOpen(false)
+            setRegisterVerification(true)
+        }
+    } catch (e:any) {
+            console.log('Error sending data ',e);
+        }
     }
 
     return (

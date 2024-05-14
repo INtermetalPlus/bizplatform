@@ -1,0 +1,20 @@
+/* antd Select styles */
+.ant-select-arrow{
+    font-size: 30px !important;
+  }
+  
+  .ant-select-dropdown {
+    border: none !important;
+  }
+  
+  .rc-virtual-list-scrollbar {
+    background: rgb(238, 238, 238) !important;
+  }
+    .rc-virtual-list-scrollbar-thumb {
+      background: rgb(160, 160, 160) !important;
+    }
+  
+  
+  .ant-select-selector {
+    font-size: 18px !important;
+  }

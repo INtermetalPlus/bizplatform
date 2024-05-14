@@ -1,0 +1,1 @@
+export {OurRequisitesPage} from "./OurRequisitesPage"
