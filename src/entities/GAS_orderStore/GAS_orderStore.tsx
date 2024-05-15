@@ -23,7 +23,7 @@ interface initialState {
 }
 
 
-const GAS_orderStore = create<initialState>((set) => ({
+export const GAS_orderStore = create<initialState>((set) => ({
     orders: [],
     fetchOrder: async () => {
         const request = await axios.get('http://167.172.161.102:82/api/v1/orders/')
@@ -35,5 +35,3 @@ const GAS_orderStore = create<initialState>((set) => ({
         set({countries: request.data})
     }
 }))
-
-export default GAS_orderStore

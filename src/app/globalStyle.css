@@ -1,6 +1,7 @@
 html, body {
     margin: 0;
     padding: 0;
+    scrollbar-color: #3971FF #F7F7F7;
 }
 
 @font-face {
@@ -26,6 +27,22 @@ html, body {
     margin: auto;
 }
 
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+    input[type=number] {
+        color: rgb(173, 173, 173);
+        font-family: 'Inter', sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+    }
 
 input {
     outline: none !important;
