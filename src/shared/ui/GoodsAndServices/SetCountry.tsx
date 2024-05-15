@@ -5,6 +5,7 @@ import { GAS_orderStore } from "@/entities/GAS_orderStore/GAS_orderStore";
 
 
 export const GAS_SetCountry: React.FC = () => {
+    const [isList,setIsList] = useState(false)
     const {country, fetchCountry} = GAS_orderStore(state => ({
         country: state.countries,
         fetchCountry: state.fetchCountry
@@ -16,34 +17,34 @@ export const GAS_SetCountry: React.FC = () => {
 
     return (
         <>
-            {country.map((item) => (
+            {/* {country.map((item) => (
                 <div key={item.id} className={styles.setCountry}>
                     <div 
                     className={styles.setCountry__firstCountry}
-                    onClick={openToClick}
+                    onClick={() => console.log('opened')}
                     >
                         <span>{item.country_name}</span>
                     </div>
                     {isList && (
-                        <div className={styles.setCountry__list} onClick={openToClick}>
+                        <div className={styles.setCountry__list} onClick={() => console.log('opened')}>
                             <div 
                             key={item.id} 
                             className={styles.setCountry__firstCountry}
-                            onClick={openToClick}
+                            onClick={() => console.log('opened')}
                             >
                                 <span>{item.country_name}</span>
                             </div>
                             <div 
                             key={item.id} 
                             className={styles.setCountry__firstCountry}
-                            onClick={openToClick}
+                            onClick={() => console.log('opened')}
                             >
                                 <span>{item.country_name}</span>
                             </div>
                         </div>
                     )}
                 </div>
-            ))}
+            ))} */}
             <label className={styles.setCountry}>
                 <select name="selectedCountry" className={styles.setCountrylist}>
                     {country.map((item) => (
