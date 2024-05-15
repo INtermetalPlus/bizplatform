@@ -1,4 +1,3 @@
-'use client'
 import React, { useEffect } from "react";
 import styles from './GAS_shared.module.scss'
 import { GAS_orderStore } from "@/entities/GAS_orderStore/GAS_orderStore";
