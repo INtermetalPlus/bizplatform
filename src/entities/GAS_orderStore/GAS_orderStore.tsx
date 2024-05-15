@@ -26,7 +26,7 @@ interface initialState {
 export const GAS_orderStore = create<initialState>((set) => ({
     orders: [],
     fetchOrder: async () => {
-        const request = await axios.get('http://167.172.161.102:82/api/v1/orders/')
+        const request = await axios.get('http://167.172.161.102:82/api/v1/orders/', {params: {company: 10}})
         set({orders: request.data})
     },
     countries: [],

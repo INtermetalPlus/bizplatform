@@ -1,3 +1,4 @@
+'use client'
 import React, { useEffect } from "react";
 import styles from './GAS_shared.module.scss'
 import { useModal } from "@/features/lib/GAS_modalWindowHook";

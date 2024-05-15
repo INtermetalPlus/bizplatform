@@ -36,6 +36,7 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
     -moz-appearance: textfield;
+    appearance: textfield;
 }
     input[type=number] {
         color: rgb(173, 173, 173);

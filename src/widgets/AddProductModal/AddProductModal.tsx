@@ -20,7 +20,7 @@ export const AddProductModal: React.FC<AddProductModalProps> = ({ onClose }) => 
     <div className={styles.modal} onClick={handleOutsideClick}>
     <div className={styles.main}>
       <div className={styles.header}>
-        <h3>Добавление товара и услуги</h3>
+        <h3>Добавление товара или услуги</h3>
       </div>
       <div className={styles.block}>
         <div className={styles.photo}></div>
@@ -71,7 +71,7 @@ export const AddProductModal: React.FC<AddProductModalProps> = ({ onClose }) => 
             </label>
           </div>
           <label style={{ marginBottom: "0", marginTop: "0" }}>
-            Категория вашего товара/услуги
+            Категория 
             <Select
               type="secondarySelect"
               width="364px"
