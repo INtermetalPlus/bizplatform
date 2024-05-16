@@ -1,0 +1,232 @@
+.chats__header {
+    color: rgb(0, 0, 0);
+    font-family: Inter;
+    font-size: 48px;
+    line-height: 58px;
+    margin: 0;
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+
+
+.contact {
+    max-width: 440px;
+    width: 100%;
+    margin: auto;
+}
+
+.contactFrame__topContent {
+    display: flex;
+    gap: 158px;
+    margin-bottom: 10px;
+}
+    .topContent__orderName {
+        margin-left: auto;
+        color: rgb(70, 70, 70);
+        font-family: 'Inter';
+        font-size: 18px;
+        line-height: 22px;
+        white-space: nowrap;
+        margin-left: 0;
+    }
+
+    .topContent__id {
+        color: rgb(70, 70, 70);
+        font-family: 'Inter';
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+.contactFrame {
+    height: auto;
+    display: flex;
+    height: 70px;
+    gap: 16px;
+    justify-content: center;
+}
+
+.rightContent {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: -20px;
+}
+    .rightContent__header {
+        color: rgb(11, 22, 35);
+        font-family: 'Inter';
+        font-size: 20px;
+        margin: 0;
+        margin-top: -20px;
+    }
+
+    .rightContent__text {
+        color: rgb(153, 153, 153);
+        font-family: 'Inter';
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+
+.commentator {
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 20px;
+    border-bottom: 1px solid rgb(234, 234, 234);
+    background: rgb(255, 255, 255);
+    padding: 20px;
+}
+    .commentator__avatar {
+        border: 1px solid rgb(234, 234, 234);
+        border-radius: 50px;
+    }
+    .commentator__leftContent {
+        display: flex;
+        max-width: 203px;
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .commentator__header {
+        color: rgb(11, 22, 35);
+        font-family: 'Inter';
+        font-size: 24px;
+        line-height: 29px;
+        margin: 0;
+    }
+    .commentator__orderName {
+        color: rgb(70, 70, 70);
+        font-family: 'Inter';
+        font-size: 20px;
+    }
+    .commentator__id {
+        color: rgb(70, 70, 70);
+        font-family: 'Inter';
+        font-size: 20px;
+    }
+
+.day {
+    max-width: 96px;
+    width: 100%;
+    height: 42px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 125px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    background: rgba(255, 254, 254, 0.94);
+}
+
+.dayInfo {
+    color: #B3B2B2;
+    font-family: 'Inter';
+    font-size: 18px;
+    font-weight: 600;
+    margin: 10px auto;
+}
+
+
+.myComment {
+    display: flex;
+    max-width: 635px;
+    width: 100%;
+    height: auto;
+    gap: 198px;
+    justify-content: center;
+    border-radius: 20px 20px 0px 20px;
+    background: rgb(255, 255, 255);
+    margin-left: auto;
+    margin-right: 20px;
+    margin-bottom: 25px;
+}
+
+.rightContent {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.rightContent > h4 {
+    color: rgb(11, 22, 35);
+    font-family: 'Inter';
+    font-size: 20px;
+    margin: 0;
+    margin-top: 24px;
+}
+
+.rightContent > span {
+    max-width: 352px;
+    width: 100%;
+    color: rgb(70, 70, 70);
+    font-family: 'Inter';
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.check {
+    margin-top: 64px;
+    margin-left: 14px;
+}
+
+
+.ContactComment {
+    max-width: 770px;
+    width: 100%;
+    border-radius: 20px 20px 20px 0px;
+    background: rgb(230, 238, 255);
+    justify-content: space-around;
+    padding: 20px 0 19px 0;
+    margin-right: auto;
+    margin-left: 20px;
+}
+    .ContactComment__text {
+        display: flex;
+        max-width: 730px;
+        width: 100%;
+        flex-direction: column;
+        gap: 4px;  
+        margin: auto;
+    }
+    .ContactComment__text > p {
+        color: rgb(160, 160, 160);
+        font-family: 'Inter';
+        font-size: 18px;
+        line-height: 30px;
+        margin: 0;
+    }
+    .ContactComment__text > span {
+        color: rgb(70, 70, 70);
+        font-family: 'Inter';
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 30px;
+    }
+
+.enterMessageOnChat {
+    max-width: 1040px;
+    width: 100%;
+    height: 62px;
+    margin: auto;
+    padding-left: 20px;
+    border: 1px solid rgb(173, 173, 173);
+    border-radius: 2px;
+    font-size: 18px;
+    color: rgb(173, 173, 173);
+    transition: 0.1s;
+    cursor: pointer;
+    outline: none;
+}
+    .enterMessageOnChat::placeholder {
+        color: rgb(173, 173, 173);
+        font-family: 'Inter';
+        font-size: 18px;
+    }
+    .enterMessageOnChat:hover {
+        border: 1px solid rgb(57, 113, 255);
+    }
+    .enterMessageOnChat:focus {
+       
+        border: 1px solid #FF9900;
+    }

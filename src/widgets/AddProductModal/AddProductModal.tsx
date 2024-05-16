@@ -1,8 +1,10 @@
+'use client'
 import React, { useState } from "react";
 import styles from "./AddProductModal.module.scss";
 import { Select } from "@/shared/ui/select";
 import { BlueButton } from "@/shared/ui/blueButton";
 import axios from "axios";
+
 
 interface AddProductModalProps {
   onClose: () => void;

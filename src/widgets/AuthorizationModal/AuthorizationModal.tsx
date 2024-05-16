@@ -33,17 +33,13 @@ export const AuthorizationModal: React.FC<ModalWindowRegProps> = ({ closeModalWi
                     <ModalWindowAuthori/>
                     <div className={styles.modalWindow__signUpBlock}>
                         <h3 className={styles.modalWindow__unswer}>
-                            Уже зарегистрированы?
+                            Еще нет аккаунта ?
                         </h3>
                         <a href="#" className={styles.modalWindow__becomeAccount}>
-                            <p>Войти</p>
+                            <p>Зарегистрироваться</p>
                         </a>
                     </div>
-                    <span className={styles.modalWindow__info}>
-                        Нажимая на кнопку “Зарегистрироваться”, вы
-                        соглашаетесь с <a href="#" className={styles.modalWindow__infoLink}>условиями использования</a> и
-                        обработкой персональных данных
-                    </span>
+                  
             </div>
         </div>
     )
