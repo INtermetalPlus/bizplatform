@@ -22,7 +22,11 @@ export const ModalWindowAuthori: React.FC = () => {
                 }
             );
             console.log("Authorization successful:", response.data);
-            // Обработка успешной авторизации здесь
+
+            // Сохранение токенов в локальное хранилище
+            localStorage.setItem('access', response.data.access);
+            localStorage.setItem('refresh', response.data.refresh);
+
         } catch (error) {
             console.error("Authorization error:", error.response?.data);
             // Обработка ошибки авторизации здесь

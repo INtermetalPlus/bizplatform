@@ -1,22 +1,73 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./AddProductModal.module.scss";
 import { Select } from "@/shared/ui/select";
 import { BlueButton } from "@/shared/ui/blueButton";
-
+import axios from "axios";
 
 interface AddProductModalProps {
   onClose: () => void;
 }
 
+// Создайте экземпляр axios с предварительно настроенными параметрами
+const api = axios.create({
+  baseURL: "http://167.172.161.102:82/api/v1/",
+});
+
+// Используйте промежуточное ПО axios для добавления токена в заголовки запроса
+api.interceptors.request.use((config) => {
+  const token = localStorage.getItem('access'); // Получите токен из локального хранилища
+  if (token) {
+    config.headers.Authorization = `JWT ${token}`; // Добавьте токен в заголовок запроса
+  }
+  return config;
+}, (error) => {
+  return Promise.reject(error);
+});
+
 export const AddProductModal: React.FC<AddProductModalProps> = ({ onClose }) => {
+  // Define state variables for each form field
+  const [productName, setProductName] = useState("");
+  const [productDescription, setProductDescription] = useState("");
+  const [characteristics, setCharacteristics] = useState("");
+  const [price, setPrice] = useState(0);
+  const [currency, setCurrency] = useState(0);
+  const [existance, setExistance] = useState(true);
+  const [categories, setCategories] = useState([0]);
+
   const handleOutsideClick = (event: React.MouseEvent) => {
     if (event.currentTarget === event.target) {
       onClose();
     }
   };
 
+  // Handle form submission
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+
+    // Create product object
+    const product = {
+      id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      company: 0,
+      product_name: productName,
+      product_description: productDescription,
+      characteristics: characteristics,
+      price: price,
+      currency: currency,
+      existance: existance,
+      categories: categories,
+    };
+
+    // Send POST request
+    try {
+      const response = await api.post('products/', product);
+      console.log("Product added successfully:", response.data);
+    } catch (error) {
+      console.error("Error adding product:", error);
+    }
+  };
+
   return (
-    <div className={styles.modal} onClick={handleOutsideClick}>
+    <form className={styles.modal} onClick={handleOutsideClick} onSubmit={handleSubmit}>
     <div className={styles.main}>
       <div className={styles.header}>
         <h3>Добавление товара и услуги</h3>
@@ -91,11 +142,13 @@ export const AddProductModal: React.FC<AddProductModalProps> = ({ onClose }) => 
             type="primaryButton"
             width="385px"
             text="Добавить товар"
+            onClick={handleSubmit}
+
           />
           </div>
         </div>
       </div>
     </div>
-    </div>
+    </form>
   );
 };

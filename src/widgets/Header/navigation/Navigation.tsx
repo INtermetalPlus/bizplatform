@@ -7,6 +7,7 @@ import {ModalWindowReg} from "../../Modalwindow/ModalWindowReg";
 import {AuthorizationModal} from '../../AuthorizationModal/AuthorizationModal'
 
 import Link from "next/link";
+import { AddProductModal } from "@/widgets/AddProductModal";
 
 
 const Select = ({ text, options }: { text: string; options: string[] }) => {
@@ -31,6 +32,8 @@ const Select = ({ text, options }: { text: string; options: string[] }) => {
 export const Navigation:React.FC = () => {
   const [loginModalOpen, setLoginModalOpen] = useState(false);
   const [authModalOpen, setAuthModalOpen] = useState(false);
+  const [isAddProductModalOpen, setIsAddProductModalOpen] = useState(false);
+
 
   
   const openLoginWindow = () => {
@@ -41,6 +44,10 @@ export const Navigation:React.FC = () => {
     setAuthModalOpen(true);  
   }
 
+  const openAddProductWindow = () => {
+    setIsAddProductModalOpen(true)
+  }
+
   const closeLoginWindow = () => {
     setLoginModalOpen(false);
   }
@@ -48,6 +55,11 @@ export const Navigation:React.FC = () => {
   const closeAuthWindow = () => {
     setAuthModalOpen(false);
   }
+
+  const closeAddProductWindow = () => {
+    setIsAddProductModalOpen(false);
+  }
+
 
 
   return (
@@ -112,6 +124,8 @@ export const Navigation:React.FC = () => {
       </header>
       {loginModalOpen && <ModalWindowReg closeModalWindow={closeLoginWindow} />}
       {authModalOpen && <AuthorizationModal closeModalWindow={closeAuthWindow} />}
+      {isAddProductModalOpen && <AddProductModal onClose={closeAddProductWindow} />}
+
     </div>
 
   );

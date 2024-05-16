@@ -10,6 +10,7 @@ import { PlatformWork } from "@/widgets/PlatformWork";
 // import { CreateOrderModal } from "@/widgets/CreateOrderModal";
 import { Company } from "@/widgets/Company/Company";
 import { OurRequisitesPage } from "@/pages/OurRequisitesPage";
+import { SearchProduct } from "@/widgets/SearchProduct";
 
 const inter = Inter({ weight: ["400", "700","300","500"], subsets: ["latin","cyrillic"] });
 
@@ -53,7 +54,7 @@ export default function RootLayout({
       <body className={`${inter.className} ${sfPro.className} ${styles.body}`}>
         <Navigation />
         <PlatformWork />
-        <SearchOrAdd />
+        <SearchProduct/>
         {children}
         <TariffsForSuppliers/>
         <Footer/>
