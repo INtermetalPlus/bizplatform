@@ -1,3 +1,4 @@
+'use client'
 import { AO_footerGreyBlock } from '@/shared/ui/AllOrder/AO_footerGreyBlock'
 import { AllOrder } from '@/widgets/AllOrder'
 import { Footer } from '@/widgets/Footer'
