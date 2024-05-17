@@ -50,7 +50,17 @@ export const AllOrder: React.FC = () => {
   ];
   
   const {isViewed, hide, show} = hideViewed()
-  const allChecked = Object.values(isViewed).every(val => val === true);
+
+
+  const [orderComplited, setOrderComplited] = useState(false)
+
+  const changeOrderTheme = () => {
+    setOrderComplited(!orderComplited)
+  }
+
+  const hideComplitedOrders = (e: any) => {
+    setOrderComplited(e.target.checked)
+  }
 
   return (
     <>
@@ -113,19 +123,21 @@ export const AllOrder: React.FC = () => {
             <div>
               <div className={styles.viewedCheck}>
                 Скрыть просмотренные{" "}
-                <input type="checkbox" checked={allChecked} onChange={e => {
-                    if (e.target.checked) {
-                        orders.forEach(item => show(item.id));
-                    }else {
-                        orders.forEach(item => hide(item.id));
-                    }
-                }} 
+                <input 
+                type="checkbox" checked={orderComplited} 
+                onChange={hideComplitedOrders} 
                 className={styles.viewedCheck__hide_viewed}
                 />
               </div>
               <div className={styles.completedCheck}>
                 Скрыть завершенные{" "}
-                <input type="checkbox" className={styles.check}/>
+                <input type="checkbox" className={styles.check}  onChange={e => {
+                  if(e.target.checked){
+                    orders.forEach(item => show(item.id))
+                  } else {
+                    orders.forEach(item => hide(item.id))
+                  }
+                }}/>
               </div>
             </div>
           </div>
@@ -142,16 +154,25 @@ export const AllOrder: React.FC = () => {
             </div>
             {orders.map((item) => (
               !isViewed[item.id] && (
-                <div key={item.id} className={styles.orders_frame}>
-                  <div  className={styles.orders_frame__order_number}>
+                <div key={item.id} className={orderComplited ? styles.completed_orders_frame : styles.orders_frame} >
+                  <div className={styles.orders_frame__order_number}>
                     <span>Заказ № {item.order_number}</span>
                     <span>2 апреля 2024, 13:09</span>
                   </div>
-                  <h1 className={styles.orders_frame__order_title}>{item.order_title}</h1>
-                  <span className={styles.orders_frame__order_description}>{item.order_text}</span>
+                  <h1 className={orderComplited ? styles.completed_orders_frame__order_title : styles.orders_frame__order_title}
+                  >
+                    {item.order_title}
+                  </h1>
+                  <span className={orderComplited ? styles.completed_orders_frame__order_description : styles.orders_frame__order_description}
+                  >
+                    {item.order_text}
+                  </span>
                   <div className={styles.orders_frame__order_place}>
-                    <p>Поставка в Бишкек</p>
-                    <button className={styles.orders_frame__eye} onClick={() => show(item.id)} />
+                    <p className={orderComplited ? styles.completed_orders_frame__order_city : styles.orders_frame__order_city }
+                    >
+                      Поставка в Бишкек
+                    </p>
+                    <button className={orderComplited ? styles.completed_orders_frame__eye : styles.orders_frame__eye} onClick={changeOrderTheme} />
                   </div>
                 </div>
               )

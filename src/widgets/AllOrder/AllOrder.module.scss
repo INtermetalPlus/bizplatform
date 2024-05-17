@@ -160,6 +160,7 @@
   height: auto;
   padding: 20px;
   margin-bottom: 20px;
+  border-radius: 4px;
   &__order_number {
     display: flex;
     justify-content: space-between;
@@ -191,8 +192,9 @@
     margin-top: 34px;
     position: relative;
   }
-  &__order_place > p {
+  &__order_city {
     margin: 0;
+    color: rgb(11, 22, 35) !important;
   }
   &__eye {
     background-image: url(../../shared/assets/icons/eye-icon.png);
@@ -205,9 +207,69 @@
     top: 0;
     cursor: pointer;
     border: none;
-    transition: 0.3s;
+    transition: 0.2s;
     &:hover {
       background-image: url(../../shared/assets/icons/completed-icon.png);
     }
+  }
+}
+
+
+// completed order frame
+.completed_orders_frame {
+  border-radius: 4px;
+  background: rgb(237, 237, 237);
+  max-width: 1195px;
+  height: auto;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  &__order_number {
+    display: flex;
+    justify-content: space-between;
+    color: rgb(160, 160, 160);
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+  }
+  &__order_title {
+    color: rgb(160, 160, 160);
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    margin: 0;
+    margin: 30px 0 10px 0;
+  }
+  &__order_description {
+    max-width: 1056px;
+    width: 100%;
+    color: rgb(160, 160, 160);
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+  }
+  &__order_place {
+    display: flex;
+    color: rgb(11, 22, 35) !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    margin: 0;
+    margin-top: 34px;
+    position: relative;
+  }
+  &__order_city  {
+    margin: 0;
+    color: rgb(160, 160, 160);
+  }
+  &__eye {
+    background-image: url(../../shared/assets/icons/completed-icon.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 24.61px;
+    height: 17.5px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s;
   }
 }
