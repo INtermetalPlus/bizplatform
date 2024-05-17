@@ -1,6 +1,7 @@
 html, body {
     margin: 0;
     padding: 0;
+    scrollbar-color: #3971FF #F7F7F7;
 }
 
 @font-face {
@@ -10,6 +11,10 @@ html, body {
 
 * {
     font-family: "Inter";
+    -webkit-user-select: none; /* Для браузеров, основанных на WebKit (Chrome, Safari) */
+	-moz-user-select: none; /* Для браузеров, основанных на Gecko (Firefox) */
+	-ms-user-select: none; /* Для браузеров Internet Explorer/Edge */
+	user-select: none; /* Стандартное свойство */
 }
 
 
@@ -20,4 +25,27 @@ html, body {
     height: auto;
     /* background: rgba(64, 255, 0, 0.50); */
     margin: auto;
+}
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+    input[type=number] {
+        color: rgb(173, 173, 173);
+        font-family: 'Inter', sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+input {
+    outline: none !important;
+    cursor: pointer;
 }

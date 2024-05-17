@@ -4,6 +4,8 @@ import styles from "./AddProductModal.module.scss";
 import { Select } from "@/shared/ui/select";
 import { BlueButton } from "@/shared/ui/blueButton";
 import useStore from "@/pages/api/addProduct/store";
+import { useSession } from 'next-auth/react';
+
 
 interface AddProductModalProps {
   onClose: () => void;
@@ -19,6 +21,7 @@ export const AddProductModal: React.FC<AddProductModalProps> = ({
   const [currency, setCurrency] = useState(1);
   const [existance, setExistance] = useState(true);
   const [categories, setCategories] = useState([1]);
+  const { data: session } = useSession();
 
   const handleOutsideClick = (event: React.MouseEvent) => {
     if (event.currentTarget === event.target) {
@@ -42,7 +45,8 @@ export const AddProductModal: React.FC<AddProductModalProps> = ({
       categories: categories,
     };
 
-    addProduct(product);
+   if (session)
+    addProduct(product, session.user.access);
   };
 
   return (

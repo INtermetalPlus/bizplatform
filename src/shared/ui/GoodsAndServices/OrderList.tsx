@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect } from "react";
-import GAS_orderStore from "@/entities/GAS_orderStore/GAS_orderStore";
-import { StatickData } from "./GAS_statickData";
+import { GAS_orderStore } from "@/entities/GAS_orderStore/GAS_orderStore";
+import { GAS_statickData } from "./GAS_statickData";
 
 
 export const OrderList: React.FC = () => {
@@ -25,7 +25,7 @@ export const OrderList: React.FC = () => {
                     </div>
                 ))} 
             </div> */}
-            <StatickData/>
+            <GAS_statickData />
         </>
     )
 }

@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.37);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,8 +12,9 @@
 }
 
 .main {
-  background-color: #ffff;
-  width: 460px;
+  background: #FBFBFB;
+  max-width: 470px;
+  width: 100%;
   height: 582px;
   padding: 20px 30px;
   display: flex;
@@ -23,17 +24,32 @@
     color: #000 !important;
     font-size: 24px;
     font-weight: 500px;
+    margin: 0;
+    margin-bottom: 20px;
   }
 }
-.krestik {
+.closeModal__icon {
   position: relative;
   top: -287px;
-  left: 509px;
+  left: 518px;
+  cursor: pointer;
 }
 
-.select {
+.optionList {
   height: 69px;
-}
-.divSelect {
   font-size: 22px;
+}
+
+.divSelect {
+  font-size: 24px;
+}
+
+
+.optionList__label_main {
+  background: rgb(251, 251, 251) !important;
+  padding: 20px 10px !important;
+  box-shadow: none !important;
+  &:hover {
+    background: rgba(57, 113, 255, 0.247) !important;
+  }
 }

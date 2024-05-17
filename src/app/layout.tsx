@@ -9,7 +9,8 @@ import {Contact} from "@/widgets/Contact/Contact";
 import Card from "@/widgets/Card/Card";
 import {AboutCompany} from "@/widgets/aboutCompany/AboutCompany";
 import ProtectedRoute from "@/features/Login/ProtectedRoute";
-
+import { BottomBlock } from "@/shared/ui/layoutBottomBlock/BottomBlock";
+import Provider from "./Provider";
 const inter = Inter({ weight: ["400", "700","300","500"], subsets: ["latin","cyrillic"], variable: "--font-inter" });
 
 const sfPro = localFont({
@@ -51,13 +52,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Provider>
       <body className={`${inter.variable} ${sfPro.variable} ${styles.body}`}>
         <Navigation />
         {/* <ProtectedRoute> */}
         {children}
         {/* </ProtectedRoute> */}
         <Footer/>
+        <BottomBlock />
       </body>
+      </Provider>
     </html>
   );
 }

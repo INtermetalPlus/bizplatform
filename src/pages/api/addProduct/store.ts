@@ -3,19 +3,19 @@ import create from 'zustand';
 type State = {
   product: any;
   setProduct: (product: any) => void;
-  addProduct: (product: any) => Promise<void>;
+  addProduct: (product: any, sessionToken: string) => Promise<void>;
 };
 
 const useStore = create<State>((set) => ({
   product: {},
   setProduct: (product) => set({ product }),
-  addProduct: async (product) => {
+  addProduct: async (product, sessionToken) => {
     try {
       const response = await fetch("http://167.172.161.102:82/api/v1/products/", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `JWT ${localStorage.getItem("access")}`
+          'Authorization': `JWT ${sessionToken}`
         },
         body: JSON.stringify(product)
       });

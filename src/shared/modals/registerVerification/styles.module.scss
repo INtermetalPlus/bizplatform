@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+$IBPBlue: #3971ff;
+
+
+.modalWindow__background {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    background: linear-gradient(-45deg,rgba(0, 0, 0, 0.35), rgb(57, 113, 255, 0.35), #4400ff52);
+    background-size: 400% 400%;
+    // animation: modalBG 10s ease-in-out infinite;
+}
+
+@keyframes modalBG {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50;
+    }
+}
+
+
+
+
+.newPasswordModalBlock {
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.35);
+	backdrop-filter: blur(5px);
+
+	.container {
+        position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background-color: white;
+		width: 578px;
+		height: 507px;
+		border-radius: 2px;
+
+		.changePassword {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			h2 {
+				font-family: 'Montserrat';
+				font-size: 28px;
+				font-weight: 600;
+				line-height: 34.13px;
+				text-align: left;
+				padding-top: 24px;
+        margin: 0;
+			}
+
+			.closeIcon {
+                position: absolute;
+                top:20px;
+                right: 20px;
+				width: 15px;
+				height: 15px;
+				gap: 0px;
+				border: 2px;
+				position: absolute;
+				cursor: pointer;
+			}
+
+			.register {
+				display: flex;
+				flex-direction: column;
+				padding-left: 50px;
+				padding-bottom: 10px;
+
+				p {
+					font-family: 'Montserrat';
+					font-size: 24px;
+					font-weight: 600;
+					line-height: 29.26px;
+					text-align: left;
+					color: $IBPBlue;
+          margin-top: 30px;
+          margin-bottom: 40px;
+				}
+
+				span {
+					font-family: 'Montserrat';
+					font-size: 24px;
+					font-weight: 600;
+					line-height: 29.26px;
+					text-align: left;
+					color: black;
+				}
+			}
+		}
+  
+    .form {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+
+      input {
+        width: 470px;
+        height: 70px;
+        gap: 0px;
+        margin-bottom: 73px;
+        border-radius: 2px;
+        border: 1.5px solid #9C9C9C;
+        background-color: rgba(241, 241, 241, 1);
+
+        &::placeholder {
+          font-family: 'Montserrat';
+          font-size: 20px;
+          font-weight: 600;
+          line-height: 24.38px;
+          text-align: left;
+          color: rgba(93, 93, 93, 1);
+          padding: 23px 395px 23px 0px;
+          text-indent: 16px;
+        }
+      }
+
+      .warningInput {
+        width: 470px;
+        height: 70px;
+        gap: 0px;
+        margin-bottom: 73px;
+        border-radius: 2px;
+        border: 1.5px solid red;
+        background-color: rgba(241, 241, 241, 1);
+
+        &::placeholder {
+          font-family: 'Montserrat';
+          font-size: 20px;
+          font-weight: 600;
+          line-height: 24.38px;
+          text-align: left;
+          color: rgba(93, 93, 93, 1);
+          padding: 23px 395px 23px 0px;
+          text-indent: 16px;
+        }
+
+        &:focus {
+          outline-color: red;
+        }
+      }
+
+      .warningIcon {
+        display: flex;
+        position: absolute;
+        left: 1160px;
+        top: 422px;
+      }
+    }
+
+    .loginBtn {
+        cursor:pointer;
+      width: 470px;
+      height: 56px;
+      border-radius: 2px;
+      background-color: $IBPBlue;
+      border: none;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Montserrat';
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 29.26px;
+      text-align: left;
+      color: white;
+    }
+	}
+}

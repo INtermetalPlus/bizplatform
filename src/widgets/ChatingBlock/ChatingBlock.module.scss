@@ -1,8 +1,18 @@
 .chatingBlock {
     display: flex;
     flex-direction: column;
-    max-width: 1080px;
+    max-width: 1040px;
     width: 100%;
     background: rgb(247, 246, 246);
     overflow: hidden;
 }
+
+.mainChat {
+    display: flex;
+    flex-direction: column;
+    overflow-x: scroll;
+    max-height: 603px;
+   overflow-x: hidden;
+ 
+}
+
