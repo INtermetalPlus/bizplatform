@@ -27,8 +27,6 @@ export const ModalWindowAuthori: React.FC = () => {
             localStorage.setItem('access', response.data.access);
             localStorage.setItem('refresh', response.data.refresh);
 
-        } catch (error) {
-            // Обработка успешной авторизации здесь
         } catch (error: any) {
             console.error("Authorization error:", error.response?.data);
             // Обработка ошибки авторизации здесь

@@ -8,6 +8,7 @@ import SearchOrAdd from "@/widgets/SearchOrAdd/SearchOrAdd";
 import { CommentBlock } from "@/widgets/CommentBlock";
 import { Comments } from "@/widgets/Comments";
 import { TradeOperations } from "@/widgets/TradeOperations/TradeOperations";
+import { SearchProduct } from "@/widgets/SearchProduct";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <PlatformWork />
       <SearchOrAdd />
       <TradeOperations />
+      <SearchProduct/>
       <Company />
       <Comments />
     </main>
