@@ -44,7 +44,7 @@ export const Provider: React.FC<AddProviderProps> = ({ onClose }) => {
                             <input
                                 type="text"
                                 name="name"
-                                style={{ width: "", height: "69px" }}
+                                style={{ width: "1150px", height: "69px" }}
                                 placeholder="Наименование товара или услуги"
                             />
                         </label>
@@ -52,7 +52,7 @@ export const Provider: React.FC<AddProviderProps> = ({ onClose }) => {
                             Описание товара
                             <textarea
                                 name="description"
-                                style={{ width: "", height: "200px" }}
+                                style={{ width: "1150px", height: "200px" }}
                                 placeholder="У этого товара..."
                             />
                         </label>
@@ -69,7 +69,7 @@ export const Provider: React.FC<AddProviderProps> = ({ onClose }) => {
                             </label>
                         </div>
                         <div style={{ display: "flex", gap: "12px" }}>
-                            <label>
+                                <div className={styles.blog_1}>
                                 Поставщики из
                                 <button className={styles.regions} onClick={open}>
                                     <span>Выбрать регион</span>
@@ -78,8 +78,9 @@ export const Provider: React.FC<AddProviderProps> = ({ onClose }) => {
                                 {isOpen && (
                                     <IndicateRegion onClose={close} />
                                 )}
-                            </label>
-                            <label>
+                                </div>
+                            
+                                <div className={styles.blog_1}>
                                 Поставка в
                                 <button className={styles.regions} onClick={open}>
                                     <span>Выбрать регион</span>
@@ -88,7 +89,8 @@ export const Provider: React.FC<AddProviderProps> = ({ onClose }) => {
                                 {isOpen && (
                                     <IndicateRegion onClose={close} />
                                 )}
-                            </label>
+                                </div>
+                            
                         </div>
                         <div style={{ display: "flex", gap: "12px" }}>
                             <label>
@@ -121,5 +123,6 @@ export const Provider: React.FC<AddProviderProps> = ({ onClose }) => {
                 </div>
             </div>
         </div>
+        
     );
 }
