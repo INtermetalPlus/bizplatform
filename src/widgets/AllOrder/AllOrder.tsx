@@ -39,14 +39,14 @@ export const AllOrder: React.FC = () => {
 
 
   const options = [
-    { id: 0, value: 0, label: 'Электроника' },
-    {  id: 1, value: 1, label: 'Строительство и Ремонт' },
-    {  id: 2, value: 2, label: 'Недвижимость' },
-    {  id: 3, value: 3, label: 'Строительство' },
-    {  id: 4, value: 4, label: 'Ремонт' },
-    {  id: 5, value: 5, label: 'Строительные Материалы' },
-    {  id: 6, value: 6, label: 'Дизайн и Декор' },
-    {  id: 7, value: 7, label: 'Инженерные Системы' },
+    {value: 0, label: 'Электроника' },
+    {value: 1, label: 'Строительство и Ремонт' },
+    {value: 2, label: 'Недвижимость' },
+    {value: 3, label: 'Строительство' },
+    {value: 4, label: 'Ремонт' },
+    {value: 5, label: 'Строительные Материалы' },
+    {value: 6, label: 'Дизайн и Декор' },
+    {value: 7, label: 'Инженерные Системы' },
   ]
   
   const {isViewed, hide, show} = hideViewed()
