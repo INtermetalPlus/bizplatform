@@ -47,7 +47,7 @@ export const AllOrder: React.FC = () => {
     {  id: 5, value: 5, label: 'Строительные Материалы' },
     {  id: 6, value: 6, label: 'Дизайн и Декор' },
     {  id: 7, value: 7, label: 'Инженерные Системы' },
-  ];
+  ]
   
   const {isViewed, hide, show} = hideViewed()
 
