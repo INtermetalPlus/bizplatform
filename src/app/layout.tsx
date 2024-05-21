@@ -11,6 +11,7 @@ import {AboutCompany} from "@/widgets/aboutCompany/AboutCompany";
 import ProtectedRoute from "@/features/Login/ProtectedRoute";
 import { BottomBlock } from "@/shared/ui/layoutBottomBlock/BottomBlock";
 import { Provider } from "@/widgets/ProviderModel/Provider";
+import { TariffApplication } from "@/widgets/TariffApplication/TariffApplication";
 const inter = Inter({ weight: ["400", "700","300","500"], subsets: ["latin","cyrillic"], variable: "--font-inter" });
 
 const sfPro = localFont({
@@ -60,6 +61,7 @@ export default function RootLayout({
         <Footer/>
         <BottomBlock />
         {/* <Provider/> */}
+        {/* <TariffApplication/> */}
       </body>
     </html>
   );
