@@ -1,9 +1,19 @@
 .footer {
-    color: #9f1515;
+    max-width: 1920px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    margin: auto;
+    border-top: 1px solid rgb(217, 217, 217);
+}
+
+.container {
+    margin: auto;
 }
 
 .footer_logo{
     margin: auto;
+    margin-right: 177px;
 }
 
 .footer_logo + div {
@@ -14,6 +24,7 @@
 .footer_blog{
     padding-top: 40px;
     display: flex;
+    background-color: #FFFFFF;
    
 }
 .footer_info{
@@ -32,8 +43,7 @@
     
 }
 
-.topRow,
-.bottomRow {
+.topRow, .bottomRow {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;

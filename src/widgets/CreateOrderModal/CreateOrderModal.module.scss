@@ -19,16 +19,29 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     gap: 20px;
-    h2 {
+    &__header {
+        color: rgb(11, 22, 35);
+        font-family: 'Inter', sans-serif;
         font-size: 48px;
+        font-weight: 700;
+        margin: 0;
+        margin-bottom: 20px;
     }
-    span {
+    &__description {
+        color: rgb(11, 22, 35);
+        font-family: 'Inter', sans-serif;
         font-size: 20px;
+        font-weight: 400;
+        max-width: 540px;
+        width: 100%;
+        margin-bottom: 27.5px;
     }
 }
 .krestik {
     position: relative;
-    top: -143px;
-    left: 841px;
+    top: -164px;
+    left: 836px;
+    cursor: pointer;
 }

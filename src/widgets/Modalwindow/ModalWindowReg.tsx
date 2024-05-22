@@ -16,7 +16,7 @@ export const ModalWindowReg: React.FC<ModalWindowRegProps> = ({ closeModalWindow
     }
 
     return (
-        <div className={styles.modalWindow__background } onClick={closeModalWindow}>
+        <div className={styles.modalWindow__background} onClick={closeModalWindow}>
             <div className={styles.modalWindow} onClick={notCLosed}>
                 <div className={styles.closeModalWindow} onClick={closeModalWindow}>
                     <Image

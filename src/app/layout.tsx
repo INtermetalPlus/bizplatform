@@ -4,22 +4,7 @@ import { Inter } from "next/font/google";
 import styles from "./globals.module.scss";
 import { Footer } from "@/widgets/Footer";
 import  { Navigation } from "../widgets/Header/navigation"
-import  SearchOrAdd  from "../widgets/SearchOrAdd/SearchOrAdd"
-import { PlatformWork } from "@/widgets/PlatformWork";
-import { CreateOrderModal } from "@/widgets/CreateOrderModal";
-import NewPassword from "@/shared/modals/newPassword/NewPassword";
-import VerificationCode from "@/shared/modals/newPassword(code)/VerificationCode";
-import LogIn from "@/shared/modals/logIn/LogIn";
-import ProductSlider from "@/widgets/ProductSlider/ProductSlider";
-import { Company } from "@/widgets/Company/Company";
-import {Menu} from "@/widgets/Menu/Menu";
-import {Contact} from "@/widgets/Contact/Contact";
-import Card from "@/widgets/Card/Card";
-import {AboutCompany} from "@/widgets/aboutCompany/AboutCompany";
-import ProtectedRoute from "@/features/Login/ProtectedRoute";
-import { AddProductModal } from "@/widgets/AllOrder/AddProductModal";
-import { GoodsAndServices } from "@/pages/about/GoodsAndServices/GoodsAndServices";
-
+import { BottomBlock } from "@/shared/ui/layoutBottomBlock/BottomBlock";
 const inter = Inter({ weight: ["400", "700","300","500"], subsets: ["latin","cyrillic"], variable: "--font-inter" });
 
 const sfPro = localFont({
@@ -70,7 +55,6 @@ export default function RootLayout({
         {/* <LogIn /> */}
         {/* <ProductSlider /> */}
         {/* <AddProductModal /> */}
-        <GoodsAndServices />
         {/* {children} */}
         {/* {children} */}
         {/* <Comments /> */}
@@ -90,6 +74,7 @@ export default function RootLayout({
         {/* {children} */}
         {/* </ProtectedRoute> */}
         <Footer/>
+        <BottomBlock />
       </body>
     </html>
   );
