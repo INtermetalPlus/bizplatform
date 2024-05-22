@@ -6,6 +6,7 @@ import { Footer } from "@/widgets/Footer";
 import  { Navigation } from "../widgets/Header/navigation"
 import { BottomBlock } from "@/shared/ui/layoutBottomBlock/BottomBlock";
 import Provider from "./Provider";
+
 const inter = Inter({ weight: ["400", "700","300","500"], subsets: ["latin","cyrillic"], variable: "--font-inter" });
 
 const sfPro = localFont({
@@ -53,6 +54,8 @@ export default function RootLayout({
           {children}
         <Footer/>
         <BottomBlock />
+        {/* <Provider/> */}
+        {/* <TariffApplication/> */}
       </body>
       </Provider>
     </html>
