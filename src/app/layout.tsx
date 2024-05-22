@@ -48,31 +48,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} ${sfPro.variable} ${styles.body}`}>
         <Navigation />
-        {/* <PlatformWork /> */}
-        {/* <SearchOrAdd /> */}
-        {/* <NewPassword /> */}
-        {/* <VerificationCode /> */}
-        {/* <LogIn /> */}
-        {/* <ProductSlider /> */}
-        {/* <AddProductModal /> */}
-        {/* {children} */}
-        {/* {children} */}
-        {/* <Comments /> */}
-        {/* <OfferCustomer/> */}
-        {/* <SimilarOrders/> */}
-        {/* <Company /> */}
-
-        {/* <AllOrder/> */}
-        
-        {/* <SearchProduct /> */}
-        {/* <Footer/> */}
-        {/* <ProtectedRoute> */}
-        {/* {children} */}
-        {/* </ProtectedRoute> */}
-        {/* <Footer/> */}
-        {/* <ProtectedRoute> */}
-        {/* {children} */}
-        {/* </ProtectedRoute> */}
+          {children}
         <Footer/>
         <BottomBlock />
       </body>
