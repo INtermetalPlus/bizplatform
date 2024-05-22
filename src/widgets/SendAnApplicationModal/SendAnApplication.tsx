@@ -3,7 +3,6 @@ import styles from "./SendAnApplication.module.scss";
 import Image from "next/image";
 import closeModalIcon from '../../shared/assets/home/header/icons/modalWIndow-close--icon.png';
 import { sendApplication } from "../../features/SendAnApplication/api/api";
-import { useApplicationStore } from "../../features/SendAnApplication/applicationStore";
 
 interface ModalWindowRegProps {
     closeModalWindow: () => void;
@@ -16,7 +15,7 @@ export const SendAnApplication: React.FC<ModalWindowRegProps> = ({ closeModalWin
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
     const [success, setSuccess] = useState(false);
-    const [tariff, setTariff] = useState<number | null>(null); // Add a state for the tariff
+    const [tariff, setTariff] = useState<number | null>(null); 
 
     const validatePhoneNumber = (phone: string) => {
         const phoneRegex = /^\+996\d{9}$/;
@@ -85,7 +84,10 @@ export const SendAnApplication: React.FC<ModalWindowRegProps> = ({ closeModalWin
                                         <input
                                             type="text"
                                             value={phoneNumber}
-                                            onChange={(e) => setPhoneNumber(e.target.value)}
+                                            onChange={(e) => {
+                                                setPhoneNumber(e.target.value);
+                                                setError(null);
+                                            }}
                                             style={{ width: "385px", height: "64px" }}
                                             placeholder="+996"
                                         />
@@ -97,7 +99,10 @@ export const SendAnApplication: React.FC<ModalWindowRegProps> = ({ closeModalWin
                                         <input
                                             type="text"
                                             value={name}
-                                            onChange={(e) => setName(e.target.value)}
+                                            onChange={(e) => {
+                                                setName(e.target.value);
+                                                setError(null);
+                                            }}
                                             style={{ width: "385px", height: "64px" }}
                                             placeholder="Мое имя"
                                         />
@@ -115,7 +120,10 @@ export const SendAnApplication: React.FC<ModalWindowRegProps> = ({ closeModalWin
                             <input
                                 type="text"
                                 value={comment}
-                                onChange={(e) => setComment(e.target.value)}
+                                onChange={(e) => {
+                                    setComment(e.target.value);
+                                    setError(null);
+                                }}
                                 style={{ width: "790px", height: "120px" }}
                                 placeholder="Мой комментарий..."
                             />
@@ -124,13 +132,16 @@ export const SendAnApplication: React.FC<ModalWindowRegProps> = ({ closeModalWin
                             <h2 className={styles.Blog_form_block_title_text}>Выберите тариф</h2>
                             <select
                                 value={tariff ?? ''}
-                                onChange={(e) => setTariff(Number(e.target.value))}
+                                onChange={(e) => {
+                                    setTariff(Number(e.target.value));
+                                    setError(null);
+                                }}
                                 style={{ width: "385px", height: "64px" }}
                             >
                                 <option value="" disabled>Выберите тариф</option>
                                 <option value="1">Тариф 1</option>
                                 <option value="2">Тариф 2</option>
-                                {/* Add other tariff options as needed */}
+                                
                             </select>
                         </div>
                         <button type="submit" className={styles.registerForm__submit} disabled={isLoading}>
