@@ -7,7 +7,7 @@ import { PlatformWork } from "@/widgets/PlatformWork";
 import SearchOrAdd from "@/widgets/SearchOrAdd/SearchOrAdd";
 import { Comments } from "@/widgets/Comments";
 import { TradeOperations } from "@/widgets/TradeOperations/TradeOperations";
-import { NumberText } from "@/widgets/NamberText/NumberText";
+import { SearchProduct } from "@/widgets/SearchProduct";
 
 export default function Home() {
   return (
@@ -15,7 +15,7 @@ export default function Home() {
       <PlatformWork />
       <SearchOrAdd />
       <TradeOperations />
-      <NumberText />
+      <SearchProduct/>
       <Company />
       <Comments />
     </main>

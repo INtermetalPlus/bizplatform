@@ -5,6 +5,7 @@ import styles from "./globals.module.scss";
 import { Footer } from "@/widgets/Footer";
 import  { Navigation } from "../widgets/Header/navigation"
 import { BottomBlock } from "@/shared/ui/layoutBottomBlock/BottomBlock";
+import Provider from "./Provider";
 const inter = Inter({ weight: ["400", "700","300","500"], subsets: ["latin","cyrillic"], variable: "--font-inter" });
 
 const sfPro = localFont({
@@ -46,12 +47,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Provider>
       <body className={`${inter.variable} ${sfPro.variable} ${styles.body}`}>
         <Navigation />
           {children}
         <Footer/>
         <BottomBlock />
       </body>
+      </Provider>
     </html>
   );
 }

@@ -1,32 +1,19 @@
-import React, { useState } from "react";
+import React, { FormEventHandler, useState } from "react";
 import styles from './ModalWindowAuthori.module.scss';
-import axios from "axios";
-
-interface AuthorizationData {
-    email: string;
-    password: string;
-}
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/router";
 
 export const ModalWindowAuthori: React.FC = () => {
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
 
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        try {
-            const response = await axios.post<AuthorizationData>(
-                "http://167.172.161.102:82/api/v1/authorization/",
-                {
-                    email,
-                    password
-                }
-            );
-            console.log("Authorization successful:", response.data);
-            // Обработка успешной авторизации здесь
-        } catch (error: any) {
-            console.error("Authorization error:", error.response?.data);
-            // Обработка ошибки авторизации здесь
-        }
+    const handleSubmit: FormEventHandler<HTMLFormElement> = async (event) => {
+        event.preventDefault();
+        await signIn('credentials', {
+            email: email,
+            password: password,
+            // callbackUrl: `${window.location.origin}/` // замените на ваш URL обратного вызова
+        });
     };
 
     return (

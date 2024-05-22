@@ -1,9 +1,11 @@
-'use client'
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import styles from "./AddProductModal.module.scss";
 import { Select } from "@/shared/ui/select";
 import { BlueButton } from "@/shared/ui/blueButton";
-import useProductStore from "@/shared/ui/GoodsAndServices/store";
+import useStore from "@/pages/api/addProduct/store";
+import { useSession } from 'next-auth/react';
+
 
 interface AddProductModalProps {
   onClose: () => void;
@@ -14,27 +16,6 @@ export const AddProductModal: React.FC<AddProductModalProps> = ({ onClose }) => 
     if (event.currentTarget === event.target) {
       onClose();
     }
-  };
-
-  const addProductAsync = useProductStore(state => state.addProductAsync)
-
-  const handleClick = async () => {
-    const newProduct = {
-			id: '3fa85f64-5717-4562-b3fc-2c963f66afa6',
-			company: 1,
-			order_number: 2147483647,
-			phone_number: '123456789',
-			email: 'user@example.com',
-			order_title: 'Iphone 13',
-			order_text: 'Iphone 13 128gb',
-			price: 1000,
-			category: 0,
-			countries: [0],
-			regions: [0],
-			cities: [0],
-			delivery_address: [0],
-		}
-    await addProductAsync(newProduct);
   };
 
   return (
@@ -109,14 +90,11 @@ export const AddProductModal: React.FC<AddProductModalProps> = ({ onClose }) => 
             <div className={styles.checkbox}><input type="checkbox" name="Под заказ" className={styles.checkbox_round}/>Под заказ</div>
           </label>
           <div style={{marginTop: '20px'}}>
-
           <BlueButton
-            onClick={handleClick}
             type="primaryButton"
             width="385px"
             text="Добавить товар"
           />
-
           </div>
         </div>
       </div>
