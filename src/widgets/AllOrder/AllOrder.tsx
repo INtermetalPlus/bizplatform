@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import styles from "./AllOrder.module.scss";
 // another styles
 import '../../app/globalStyle.css'
@@ -11,14 +11,12 @@ import { Order } from "@/entities/order";
 import Image from "next/image";
 import Plus from "../../shared/assets/icons/plus.svg";
 import arrowDown from "../../shared/assets/icons/arrow_forward_ios (1).svg";
-import { CreateOrderModal } from "../CreateOrderModal";
 import { Select } from "antd";
 import SelectIcon from "../../shared/assets/icons/arrow_forward_ios (1).svg";
 import { IndicateRegion } from "../IndicateRegion";
 import { AO_header } from "@/shared/ui/AllOrder/AO_header";
 import { AO_headerInfo } from "@/shared/ui/AllOrder/AO_headerInfo";
-import { closeApplicationModal, closeModal } from "@/features/lib/helpers/CloseHook";
-import { AddProductModal } from "../AddProductModal";
+import { AllOrder_mainModal, closeApplicationModal, closeModal } from "@/features/lib/helpers/CloseHook";
 import { Provider } from "../ProviderModel/Provider";
 
 
@@ -27,12 +25,7 @@ const { Option } = Select;
 
 export const AllOrder: React.FC = () => {
   const {isOpen, open} = closeModal()
-  const {isOpenApplication, openApplication, closeApplication} = closeApplicationModal(state => ({
-    isOpenApplication: state.isOpen,
-    openApplication: state.open,
-    closeApplication: state.close
-  }))
-
+  const { isMainModal, openMainModal} = AllOrder_mainModal()
 
   const orders = [
     {
@@ -68,14 +61,14 @@ export const AllOrder: React.FC = () => {
   ];
 
   const options = [
-    { id: 0, value: 0, label: 'Электроника' },
-    {  id: 1, value: 1, label: 'Строительство и Ремонт' },
-    {  id: 2, value: 2, label: 'Недвижимость' },
-    {  id: 3, value: 3, label: 'Строительство' },
-    {  id: 4, value: 4, label: 'Ремонт' },
-    {  id: 5, value: 5, label: 'Строительные Материалы' },
-    {  id: 6, value: 6, label: 'Дизайн и Декор' },
-    {  id: 7, value: 7, label: 'Инженерные Системы' },
+    {value: 0, label: 'Электроника' },
+    {value: 1, label: 'Строительство и Ремонт' },
+    {value: 2, label: 'Недвижимость' },
+    {value: 3, label: 'Строительство' },
+    {value: 4, label: 'Ремонт' },
+    {value: 5, label: 'Строительные Материалы' },
+    {value: 6, label: 'Дизайн и Декор' },
+    {value: 7, label: 'Инженерные Системы' },
   ];
   
   return (
@@ -153,10 +146,10 @@ export const AllOrder: React.FC = () => {
             type="primaryButton"
             width="385px"
             text="Создать заказ"
-            onClick={openApplication}
+            onClick={openMainModal}
             />
-            {isOpenApplication && <Provider onClose={closeApplication} />}
           </div>
+          <Provider/>
           {orders.map((order, index) => (
             <Order
             key={index}

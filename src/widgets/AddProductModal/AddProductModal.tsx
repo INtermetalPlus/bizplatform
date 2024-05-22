@@ -1,10 +1,8 @@
-"use client";
-import React, { useState } from "react";
+'use client'
+import React from "react";
 import styles from "./AddProductModal.module.scss";
 import { Select } from "@/shared/ui/select";
 import { BlueButton } from "@/shared/ui/blueButton";
-import useStore from "@/pages/api/addProduct/store";
-import { useSession } from 'next-auth/react';
 
 
 interface AddProductModalProps {

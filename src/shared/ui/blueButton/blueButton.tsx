@@ -4,7 +4,7 @@ interface ButtonProps {
   width?: string;
   text: string;
   type: 'primaryButton' | 'secondaryButton';
-  onClick?: (event: React.FormEvent) => void; 
+  onClick?: () => void; 
 }
 
 export const BlueButton = ({ width, text, type, onClick }: ButtonProps): JSX.Element => {
@@ -20,4 +20,3 @@ export const BlueButton = ({ width, text, type, onClick }: ButtonProps): JSX.Ele
     </button>
   )
 }
-
