@@ -5,7 +5,7 @@ import { BlueButton } from "@/shared/ui/blueButton";
 import { Select } from "@/shared/ui/select";
 import { SearchField } from "@/features/searchField";
 import { SelectButton } from "@/shared/ui/selectButton";
-import { AddProductModal } from "../AddProductModal";
+import { AddProductModal } from "../AllOrder/AddProductModal/AddProductModal";
 interface SearchFieldProps {
   onSearch?: (term: string) => void;
 }
