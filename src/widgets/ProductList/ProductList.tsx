@@ -2,31 +2,17 @@
 import React, { useEffect, useState } from "react";
 import styles from './ProductList.module.scss'
 import { SearchField } from "@/features/searchField";
-import { BlueButton } from "@/shared/ui/blueButton";
-import { Order } from "@/entities/order";
 import Image from "next/image";
-import Plus from "../AllOrder/plus.svg";
 import Strelka from "../../shared/assets/icons/arrow_forward_ios (1).svg";
 import { CreateOrderModal } from "../CreateOrderModal";
 import { Select } from "antd";
 import SelectIcon from "../../shared/assets/icons/Frame 220.png";
-import { IndicateRegion } from "../IndicateRegion";
 import { orderListDataHook } from "@/features/storage/GAS_listOrders/GAS_orders";
 
 const { Option } = Select;
 
-export const ProductList = () => {
-  
-  const [isRegionModalOpen, setIsRegionModalOpen] = useState(false);
+export const ProductList: React.FC = () => {
   const [isOrderModalOpen, setIsOrderModalOpen] = useState(false);
-  
-  const handleOpenRegionModal = () => {
-    setIsRegionModalOpen(true);
-  };
-  
-  const handleCloseRegionModal = () => {
-    setIsRegionModalOpen(false);
-  };
   
   const handleOpenOrderModal = () => {
     setIsOrderModalOpen(true);
@@ -37,8 +23,8 @@ export const ProductList = () => {
   };
   
 
- 
 // в value указывается число! Чтобы потом можно было передать список (options) на сервер
+  const optionsPlacegolder = {value: 0, label: "Товары"}
   const options = [
     { value: 1, label: 'Электроника' },
     { value: 2, label: 'Строительство и Ремонт' },
@@ -66,19 +52,19 @@ const {orders, fetchOrder} = orderListDataHook()
               <Select
                 suffixIcon={null}
                 className={styles.select}
-                defaultValue={1}
+                defaultValue={optionsPlacegolder}
                 optionLabelProp="label"
                 variant="borderless"
               >
               {options.map((option) => (
-                <Option key={option.value} optionFontSize={22} value={option.value} label={option.value}>
+                <Option key={option.label} optionFontSize={22}>
                   <div className={styles.divSelect}>
                     <Image src={SelectIcon} alt="eye" width={48} height={48} />
                     {option.label.split(' ').map((word, index, array) => (
-                          <div key={index}>
-                            {word}
-                            {index < array.length - 1 && <br />}
-                          </div>
+                      <div key={index}>
+                        {word}
+                        {index < array.length - 1 && <br />}
+                      </div>
                     ))}
                   </div>
                 </Option>
