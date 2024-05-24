@@ -19,3 +19,16 @@ export const closeApplicationModal = create<initialState>((set) => ({
     close: () => set({isOpen: false}),
     open: () => set({isOpen: true})
 }))
+
+
+interface InitialState_Modal {
+    isMainModal: boolean,
+    closeMainModal: () => void,
+    openMainModal: () => void,
+}
+
+export const AllOrder_mainModal = create<InitialState_Modal>((set) => ({
+    isMainModal: false,
+    closeMainModal: () => set({isMainModal: false}),
+    openMainModal: () => set({isMainModal: true})
+}))
