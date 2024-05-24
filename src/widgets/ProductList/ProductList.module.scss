@@ -13,19 +13,47 @@
       color: #a0a0a0;
       font-size: 24px;
     }
+    margin: auto;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    background: #b3ff39;
+    justify-content: space-between;
   }
   
+
   .secondBlock {
     display: flex;
     gap: 20px;
+    padding: 0 !important;
+    margin: 0 !important;
   }
+
+
   .categories {
+    display: block;
     width: 385px;
   }
+
+
   .searchField {
     display: flex;
     justify-content: space-between;
     width: 1215px;
+    background: #000;
+    gap: 20px;
+    &__btn {
+      white-space: nowrap;
+      width: 385px;
+      height: 69px;
+      outline: none;
+      border: none;
+      border-radius: 2px;
+      padding: 20px 10px 20px 10px;
+      background: rgb(57, 113, 255);
+      color: rgb(255, 255, 255);
+      font-family: 'Inter', sans-serif;
+      font-size: 24px;
+    }
   }
   
   .categories {
@@ -33,6 +61,8 @@
     flex-direction: column;
     gap: 22px;
   }
+
+  
   .categories,
   .select,
   .regions,
@@ -40,11 +70,15 @@
   .ant-select-selection-item {
     font-size: 22px;
   }
+
+  
   .divSelect {
     display: flex;
     align-items: center;
     gap: 10px;
   }
+
+
   .icon {
       position: relative;
       top: -45px;
@@ -52,10 +86,12 @@
   
   }
   
+
   .selectDiv {
       height: 69px;
   }
   
+
   .select {
     font-size: 32em !important;
     width: 385px;
@@ -64,6 +100,8 @@
     height: 67px;
     border: none !important;
   }
+
+
   .regions {
     height: 70px;
     border: 1px solid #e1e1e1;
@@ -88,16 +126,22 @@
       font-size: 20px;
     }
   }
+
+
   .price {
     display: flex;
     flex-direction: column;
     gap: 10px;
   }
+
+
   .viewedCheck,
   .completedCheck,
   .price {
     padding-left: 6px;
   }
+
+
   .viewedCheck,
   .completedCheck {
     margin-top: 10px;
@@ -107,17 +151,18 @@
     align-items: center;
     background: none;
   }
+
+
   .check {
     width: 28px;
     height: 28px;
   }
-  
+
+
   .viewedCheck, .completedCheck {
       border-bottom: 1px solid #e1e1e1;
   }
-  .viewedCheck {
-      
-  }
+
 
   .title{
     font-size: 24px;
@@ -126,10 +171,13 @@
     margin-top: 26px;
     margin-bottom: 20px;
   }
+
+
   .orderRow {
     display: flex;
     gap:20px;
   }
+
 
   .orderList_blog{
     width: 563px;
@@ -137,17 +185,21 @@
     background-color: #E4E4E4;
     margin-top: 50px;
   }
+
+
   .orderList_blog_title{
     margin-bottom: 35px;
     display: flex;
     justify-content: space-between;
   }
 
+
   .orderList{
     max-width: 563px;
 
   }
 
+  
   .orderList_blog_title_text span{
     font-size: 28px;
     font-weight: 500;
@@ -178,9 +230,31 @@
   .orders{
     max-width: 562px;
   }
+
+
   .blog_card{
     display: flex;
   }
 
-  
-  
+  // order frame
+  .order_frame {
+    display: flex;
+    flex-direction: column;
+    max-width: 585px;
+    width: 100%;
+    height: auto;
+    padding: 12px;
+    border-radius: 2px;
+    background: rgb(243, 246, 255);
+    &__btn {
+      max-width: 553px;
+      width: 100%;
+      height: 69px;
+      align-items: center;
+      border-radius: 2px;
+      background: rgb(57, 113, 255);
+        color: rgb(255, 255, 255);
+        font-family: 'Inter', sans-serif;
+        font-size: 24px;
+    }
+  }
