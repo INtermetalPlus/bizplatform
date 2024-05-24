@@ -1,40 +1,28 @@
-import { NextResponse, NextRequest } from 'next/server';
-import { verifyToken, refreshToken as refresh } from '@/features/Login/api/utils/auth'; // Utility functions to verify and refresh tokens
+import { NextRequest, NextResponse } from 'next/server';
+import { getToken } from 'next-auth/jwt';
 
 export async function middleware(req:NextRequest) {
-  const accessToken = req.cookies.get('accessToken');
-  const refreshToken = req.cookies.get('refreshToken');
+  // Define paths that require authentication
+  const protectedPaths = ['/chat', '/orders', '/profile'];
+  
+  // Check if the request path is one of the protected paths
+  const requiresAuth = protectedPaths.some((path) => req.nextUrl.pathname.startsWith(path));
 
-  if (!accessToken) {
-    return NextResponse.redirect('/'); // Redirect to login if no access token
-  }
+  if (requiresAuth) {
+    // Get the token from the request
+    const token = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
 
-  try {
-    await verifyToken(accessToken);
-  } catch (error:any) {
-    if (error.name === 'TokenExpiredError') {
-      try {
-        if(refreshToken) {
-          const newTokens = await refresh(refreshToken);
-          const response = NextResponse.next();
-          response.cookies.set('accessToken', newTokens.accessToken, { httpOnly: true, path: '/', maxAge: 3600 });
-          response.cookies.set('refreshToken', newTokens.refreshToken, { httpOnly: true, path: '/', maxAge: 2592000 });
-          return response;
-        }
-    
-      } catch (refreshError) {
-        return NextResponse.redirect('/');
-      }
-    } else {
-
-      return NextResponse.redirect('/');
+    if (!token) {
+      // If there is no token, redirect to the login page
+      return NextResponse.redirect(new URL('/', req.url));
     }
   }
-  
+
+  // Allow the request to proceed
   return NextResponse.next();
 }
 
+// Specify paths where the middleware should run
 export const config = {
-  matcher: ['/api/v1/:path*'],
+  matcher: ['/chat', '/orders', '/profile'],
 };
-

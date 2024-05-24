@@ -11,6 +11,7 @@ import { ModalWindowReg } from "../../Modalwindow/ModalWindowReg";
 import {AuthorizationModal} from '../../AuthorizationModal/AuthorizationModal'
 import Link from "next/link";
 import RegisterVerification from "@/shared/modals/registerVerification/RegisterVerification";
+import { useSession } from "next-auth/react";
 
 const Select = ({ text, options }: { text: string; options: string[] }) => {
   const [hover, setHover] = useState(false);
@@ -32,7 +33,7 @@ const Select = ({ text, options }: { text: string; options: string[] }) => {
   );
 };
 export const Navigation:React.FC = () => {
- 
+ const session = useSession()
  const { isAuthenticated, setLoginModalOpen, setAuthModalOpen, loginModalOpen, authModalOpen,
   registerVerification, setRegisterVerification
   } = useAuthStore()
@@ -111,7 +112,7 @@ export const Navigation:React.FC = () => {
 
 
           <div className={styles.auth}>
-            {!isAuthenticated ? (
+            {!session?.data?.user ? (
                <span>
                <button className={styles.register} onClick={openAuthWindow}>Регистрация</button>
                <button className={styles.login} onClick={openLoginWindow}>Вход</button>
