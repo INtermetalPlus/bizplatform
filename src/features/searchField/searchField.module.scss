@@ -1,16 +1,16 @@
 .searchForm {
     position: relative;
-    max-width: 790px;
-    width: 100%;
+    display: flex;
+    gap: 20px;
   }
   
   .searchInput {
     color: rgb(181, 181, 181);
+    width: 790px;
     height: 63px;
-    width: 100%;
     border: 2px solid #3971FF ;
     font-size: 24px;
-    padding-left: 20px
+    padding-left: 20px;
   }
 
   .searchInput::placeholder {
@@ -22,3 +22,4 @@
     top: 20px;
     left: 760px;
   }
+
