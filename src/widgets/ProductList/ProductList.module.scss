@@ -37,7 +37,8 @@
   .searchField {
     display: flex;
     justify-content: space-between;
-    width: 1215px;
+    max-width: 1243px;
+    width: 100%;
     gap: 20px;
     &__btn {
       white-space: nowrap;
@@ -51,7 +52,9 @@
       color: rgb(255, 255, 255);
       font-family: 'Inter', sans-serif;
       font-size: 24px;
+      cursor: pointer;
     }
+    margin-bottom: 60px;
   }
   
   .categories {
@@ -77,26 +80,18 @@
   }
 
 
-  .icon {
-      position: relative;
-      top: -45px;
-      left: 353px;
-  
-  }
-  
-
   .selectDiv {
       height: 69px;
   }
   
 
   .select {
-    font-size: 32em !important;
-    width: 385px;
+    font-size: 24px;
+    max-width: 385px;
+    width: 100%;
     appearance: none;
-    color:  #3971ff !important; 
     height: 67px;
-    border: none !important;
+    margin-bottom: 52px !important;
   }
 
 
@@ -148,12 +143,6 @@
     justify-content: space-between;
     align-items: center;
     background: none;
-  }
-
-
-  .check {
-    width: 28px;
-    height: 28px;
   }
 
 
@@ -234,6 +223,21 @@
     display: flex;
   }
 
+// orders
+.orders {
+  display: flex;
+  flex-direction: column;
+  max-width: 1243px;
+  width: 100%;
+  height: auto;
+  &__frame_block {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+}
+
   // order frame
   .order_frame {
     display: flex;
@@ -244,15 +248,82 @@
     padding: 12px;
     border-radius: 2px;
     background: rgb(243, 246, 255);
-    &__btn {
+    align-items: center;
+    &__order_img {
+      position: relative;
+      max-width: 550px;
+      width: 100%;
+      height: 400px;
+      border-radius: 2px;
+      background: rgb(228, 228, 228);
+      margin-bottom: 20px;
+    }
+    &__cross {
+      position: absolute;
+      left: 509.5px;
+      top: 16px;
+      cursor: pointer !important;
+    }
+    &__title {
+      margin: 0;
+      margin-right: auto;
+      margin-left: 18px;
+      margin-bottom: 25px;
+      color: rgb(11, 22, 35);
+      font-family: 'Inter', sans-serif;
+      font-size: 28px;
+    }
+    &__price {
+      margin: 0;
+      margin-right: auto;
+      margin-left: 18px;
+      margin-bottom: 25px;
+      color: rgb(11, 22, 35) !important;
+      font-family: 'Inter', sans-serif;
+      font-size: 28px !important;
+    }
+    &__description {
+      margin: 0;
+      margin-right: auto;
+      margin-left: 18px;
+      margin-bottom: 16px;
+      color: rgb(11, 22, 35);
+      font-family: 'Inter', sans-serif;
+      font-size: 24px;
+      font-weight: 400;
+    }
+    &__regions {
+      margin: 0;
+      margin-right: auto;
+      margin-left: 18px;
+      margin-bottom: 16px;
+      font-family: 'Inter', sans-serif;
+      font-size: 24px;
+    }
+    &__contact {
+      margin: 0;
+      margin-right: auto;
+      margin-left: 18px;
+      margin-bottom: 20px;
+      font-family: 'Inter', sans-serif;
+      font-size: 24px;
+    }
+    &__frame_btn {
       max-width: 553px;
       width: 100%;
       height: 69px;
       align-items: center;
       border-radius: 2px;
       background: rgb(57, 113, 255);
+      cursor: pointer;
+      outline: none;
+      border: none;
+      margin-top: auto;
         color: rgb(255, 255, 255);
         font-family: 'Inter', sans-serif;
         font-size: 24px;
     }
   }
+
+
+
