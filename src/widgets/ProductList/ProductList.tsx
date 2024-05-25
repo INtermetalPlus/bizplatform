@@ -146,8 +146,8 @@ const {orders, fetchOrder} = orderListDataHook()
             </div>
             <div className={styles.orders}>
               <div className={styles.orders__frame_block}>
-              {isFrame && 
-                (orders.map((item) => (
+              {orders.map((item) => (
+                isFrame[item.id] !== false && (
                   <div key={item.id} className={styles.order_frame}>
                     <div className={styles.order_frame__order_img}>
                       <Image
@@ -156,7 +156,7 @@ const {orders, fetchOrder} = orderListDataHook()
                       height={24}
                       alt="closing order frame"
                       className={styles.order_frame__cross}
-                      onClick={closeFrame}
+                      onClick={() => closeFrame(item.id)}
                       />
                     </div>
                     <h1 className={styles.order_frame__title}>{item.order_title}</h1>
@@ -165,13 +165,13 @@ const {orders, fetchOrder} = orderListDataHook()
                     <span className={styles.order_frame__regions}>
                       Место отправки: <b>{item.regions}</b>
                     </span>
-                    <span  className={styles.order_frame__contact}>
+                    <span className={styles.order_frame__contact}>
                       Контакты: <b>{item.phone_number}</b>
                     </span>
                     <button type="submit" className={styles.order_frame__frame_btn}>Написать поставщику</button>
                   </div>
-                )))
-              }
+                )
+              ))}
               </div>
             </div>
           </div>
@@ -179,5 +179,4 @@ const {orders, fetchOrder} = orderListDataHook()
       </div>
     </>
   );
-};
-
+}
