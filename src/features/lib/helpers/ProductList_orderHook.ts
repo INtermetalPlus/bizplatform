@@ -2,14 +2,18 @@ import { create } from "zustand";
 
 
 interface InitialFrameState {
-    isFrame: boolean,
-    closeFrame: () => void,
-    openFrame: () => void,
+    isFrame: {[key: string]: boolean},
+    closeFrame: (id: any) => void,
+    openFrame: (id: any) => void,
 }
 
 
 export const useOrderFrames = create<InitialFrameState>((set) => ({
-    isFrame: true,
-    closeFrame: () => set({isFrame: false}),
-    openFrame: () => set({isFrame: true})
+    isFrame: {},
+    closeFrame: (id) => set((state) => ({
+        isFrame: {...state.isFrame, [id]: false}
+    })),
+    openFrame: (id) => set((state) => ({
+        isFrame: {...state.isFrame, [id]: true}
+    }))
 }))
