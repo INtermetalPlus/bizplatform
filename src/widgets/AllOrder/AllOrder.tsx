@@ -19,7 +19,6 @@ import { AO_header } from "@/shared/ui/AllOrder/AO_header";
 import { AO_headerInfo } from "@/shared/ui/AllOrder/AO_headerInfo";
 import { closeApplicationModal, closeModal } from "@/features/lib/helpers/CloseHook";
 import { AddProductModal } from "../AddProductModal";
-import { Provider } from "../ProviderModel/Provider";
 
 
 const { Option } = Select;
@@ -155,7 +154,7 @@ export const AllOrder: React.FC = () => {
             text="Создать заказ"
             onClick={openApplication}
             />
-            {isOpenApplication && <Provider onClose={closeApplication} />}
+            {isOpenApplication && <AddProductModal onClose={closeApplication} />}
           </div>
           {orders.map((order, index) => (
             <Order
