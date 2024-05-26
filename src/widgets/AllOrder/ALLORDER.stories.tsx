@@ -3,7 +3,7 @@ import { AllOrder } from './AllOrder'
 
 
 const meta: Meta<typeof AllOrder> = {
-    title: '08.05.2024 - AllOrder',
+    title: 'AllOrder component',
     component: AllOrder
 }
 export default meta

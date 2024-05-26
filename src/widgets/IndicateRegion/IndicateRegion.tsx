@@ -5,7 +5,7 @@ import './IR_styles.css'
 import Image from "next/image";
 import cross from "../../shared/assets/icons/x-close.png";
 import { IR_btn } from "@/shared/ui/IndicateRegion/IR_btn";
-import { closeModal } from "@/features/lib/helpers/CloseHook";
+import { closeModal } from "@/features/lib/helpers/CustomHook";
 import { Select } from "antd";
 
 

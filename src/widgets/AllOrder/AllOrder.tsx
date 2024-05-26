@@ -16,8 +16,9 @@ import SelectIcon from "../../shared/assets/icons/Frame 220.png";
 import { IndicateRegion } from "../IndicateRegion";
 import { AO_header } from "@/shared/ui/AllOrder/AO_header";
 import { AO_headerInfo } from "@/shared/ui/AllOrder/AO_headerInfo";
-import { closeApplicationModal, closeModal, hideViewed } from "@/features/lib/helpers/CloseHook";
+import { AO_mainModal, closeApplicationModal, closeModal, hideViewed } from "@/features/lib/helpers/CustomHook";
 import { useOrders } from "@/features/lib/storage/OrderStore";
+import { Provider } from "../AO_ProviderModal/Provider";
 
 
 const { Option } = Select;
@@ -26,11 +27,12 @@ const { Option } = Select;
 export const AllOrder: React.FC = () => {
   const {orders, fetchOrders} = useOrders()
   const {isOpen, open} = closeModal()
-  const {isOpenApplication, openApplication, closeApplication} = closeApplicationModal(state => ({
-    isOpenApplication: state.isOpen,
-    openApplication: state.open,
-    closeApplication: state.close
-  }))
+  // const {isOpenApplication, openApplication, closeApplication} = closeApplicationModal(state => ({
+  //   isOpenApplication: state.isOpen,
+  //   openApplication: state.open,
+  //   closeApplication: state.close
+  // }))
+  const {openMainModal} = AO_mainModal()
 
   
   useEffect(() => {
@@ -148,9 +150,10 @@ export const AllOrder: React.FC = () => {
               type="primaryButton"
               width="385px"
               text="Создать заказ"
-              onClick={openApplication}
+              onClick={openMainModal}
               />
-              {isOpenApplication && <CreateOrderModal onClose={closeApplication} />}
+              <Provider/>
+              {/* {isOpenApplication && <CreateOrderModal onClose={closeApplication} />} */}
             </div>
             {orders.map((item) => (
               !isViewed[item.id] && (
@@ -159,17 +162,14 @@ export const AllOrder: React.FC = () => {
                     <span>Заказ № {item.order_number}</span>
                     <span>2 апреля 2024, 13:09</span>
                   </div>
-                  <h1 className={orderComplited ? styles.completed_orders_frame__order_title : styles.orders_frame__order_title}
-                  >
+                  <h1 className={orderComplited ? styles.completed_orders_frame__order_title : styles.orders_frame__order_title}>
                     {item.order_title}
                   </h1>
-                  <span className={orderComplited ? styles.completed_orders_frame__order_description : styles.orders_frame__order_description}
-                  >
+                  <span className={orderComplited ? styles.completed_orders_frame__order_description : styles.orders_frame__order_description}>
                     {item.order_text}
                   </span>
                   <div className={styles.orders_frame__order_place}>
-                    <p className={orderComplited ? styles.completed_orders_frame__order_city : styles.orders_frame__order_city }
-                    >
+                    <p className={orderComplited ? styles.completed_orders_frame__order_city : styles.orders_frame__order_city }>
                       Поставка в Бишкек
                     </p>
                     <button className={orderComplited ? styles.completed_orders_frame__eye : styles.orders_frame__eye} onClick={changeOrderTheme} />
