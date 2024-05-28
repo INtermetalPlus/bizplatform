@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useCallback } from "react";
 import '../../app/globalStyle.css'
 import './antdSelector_ui.scss'
 import styles from './ProductList.module.scss'
@@ -11,6 +11,7 @@ import { Select } from "antd";
 import SelectIcon from "../../shared/assets/icons/Frame 220.png";
 import { orderListDataHook } from "@/features/storage/GAS_listOrders/GAS_orders";
 import { useOrderFrames } from "@/features/lib/helpers/ProductList_orderHook";
+import debounce from 'lodash/debounce';
 
 const { Option } = Select;
 
@@ -40,13 +41,77 @@ export const ProductList: React.FC = () => {
   ];
   
 
-const {isFrame, closeFrame} = useOrderFrames()
-const {orders, fetchOrder} = orderListDataHook()
+  const { isFrame, closeFrame } = useOrderFrames();
+  const { orders, fetchOrder, filters, setFilters } = orderListDataHook();
 
   useEffect(() => {
-    fetchOrder()
-  }, [fetchOrder])
-  
+    fetchOrder(filters);
+  }, [filters, fetchOrder]);
+
+  const handleCategoryChange = (values) => {
+    setFilters({ ...filters, categories: values });
+  };
+
+  const handleAvailabilityChange = (e) => {
+    setFilters({ ...filters, availability: e.target.checked });
+  };
+
+  const handleOrderChange = (e) => {
+    setFilters({ ...filters, order: e.target.checked });
+  };
+
+  const handleCashChange = (e) => {
+    setFilters({ ...filters, cash: e.target.checked });
+  };
+
+  const handleCashlessChange = (e) => {
+    setFilters({ ...filters, cashless: e.target.checked });
+  };
+
+  const handlePickupChange = (e) => {
+    setFilters({ ...filters, pickup: e.target.checked });
+  };
+
+  const handleCourierChange = (e) => {
+    setFilters({ ...filters, courier: e.target.checked });
+  };
+
+  const debouncedSearch = useCallback(
+    debounce((query) => {
+      setFilters({ ...filters, search: query });
+    }, 300),
+    [filters]
+  );
+
+  const handleSearch = (query) => {
+    setSearchQuery(query);
+    debouncedSearch(query);
+  };
+
+  const debouncedPriceGteChange = useCallback(
+    debounce((value) => {
+      setFilters({ ...filters, priceGte: value ? parseFloat(value) : null });
+    }, 300),
+    [filters]
+  );
+
+  const debouncedPriceLteChange = useCallback(
+    debounce((value) => {
+      setFilters({ ...filters, priceLte: value ? parseFloat(value) : null });
+    }, 300),
+    [filters]
+  );
+
+  const handlePriceGteInputChange = (e) => {
+    const value = e.target.value;
+    debouncedPriceGteChange(value);
+  };
+
+  const handlePriceLteInputChange = (e) => {
+    const value = e.target.value;
+    debouncedPriceLteChange(value);
+  };
+
   return (
     <>
       <div className={styles.main}>
@@ -76,38 +141,38 @@ const {orders, fetchOrder} = orderListDataHook()
               <div className={styles.title}>Наличие</div>
               <div className={styles.viewedCheck}>
                 В наличии{" "}
-                <input type="checkbox" className={styles.check} />
+                <input type="checkbox" className={styles.check} onChange={handleAvailabilityChange} />
               </div>
               <div className={styles.completedCheck}>
                 Под заказ{" "}
-                <input type="checkbox" className={styles.check} />
+                <input type="checkbox" className={styles.check} onChange={handleOrderChange} />
               </div>
               </div>
               <div className={styles.BlogCheck}>
               <div className={styles.title}>Оплата</div>
               <div className={styles.viewedCheck}>
                 Наличными{" "}
-                <input type="checkbox" className={styles.check} />
+                <input type="checkbox" className={styles.check} onChange={handleCashChange} />
               </div>
               </div>
               <div className={styles.completedCheck}>
                   Безналичный расчет
-                <input type="checkbox" className={styles.check} />
+                  <input type="checkbox" className={styles.check} onChange={handleCashlessChange} />
               </div>
               <div className={styles.BlogCheck}>
               <div className={styles.title}>Доставка</div>
               <div className={styles.viewedCheck}>
                   Самовывоз{" "}
-                <input type="checkbox" className={styles.check} />
+                  <input type="checkbox" className={styles.check} onChange={handlePickupChange} />
               </div>
               <div className={styles.completedCheck}>
                   Почта/Курьер{" "}
-                <input type="checkbox" className={styles.check} />
+                  <input type="checkbox" className={styles.check} onChange={handleCourierChange} />
               </div>
               <div className={styles.price}>
               <span>Цена</span>
               <div className={styles.inputPrice}>
-                <input type="text" placeholder="0 сом" />
+              <input type="text" placeholder="0 сом" onChange={handlePriceGteInputChange} />
                 <div>
                   <svg
                   width="8"
@@ -119,7 +184,7 @@ const {orders, fetchOrder} = orderListDataHook()
                     <rect width="8" height="2" fill="#D9D9D9" />
                   </svg>
                 </div>
-                <input type="text" placeholder="0 сом" />
+                <input type="text" placeholder="0 сом" onChange={handlePriceLteInputChange} />
               </div>
             </div>
             <div className={styles.see_also}>
