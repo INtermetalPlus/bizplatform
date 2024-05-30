@@ -1,9 +1,10 @@
+// SearchField.tsx
 "use client";
 import React, { FC, useState, ChangeEvent, FormEvent } from "react";
 import styles from "./searchField.module.scss";
 
 interface SearchFieldProps {
-  onSearch?: (term: string) => void;
+  onSearch: (term: string) => void;
 }
 
 export const SearchField: FC<SearchFieldProps> = ({ onSearch }) => {
@@ -15,7 +16,7 @@ export const SearchField: FC<SearchFieldProps> = ({ onSearch }) => {
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
-    onSearch?.(searchTerm);
+    onSearch(searchTerm);
   };
 
   return (
