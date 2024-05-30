@@ -1,5 +1,5 @@
 'use client'
-import React from "react";
+import React, { useEffect } from "react";
 import { applicationModal } from "@/features/lib/helpers/CustomHook";
 import Image from "next/image";
 import cross from '../../../shared/assets/icons/x-close.png'
@@ -15,6 +15,16 @@ export const SendingApplicationModal: React.FC = () => {
             close_SAM_modal();
         }
     };
+
+    useEffect(() => {
+        if(SAM_modal){
+            document.body.style.overflow = 'hidden'
+        }else {
+            document.body.style.overflowY = 'visible'
+            document.body.style.overflowX = 'hidden'
+        }
+    }, [SAM_modal])
+
 
     return (
         <>

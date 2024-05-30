@@ -5,12 +5,14 @@
   }
   
   .searchInput {
+    position: relative;
     color: rgb(181, 181, 181);
     height: 63px;
     width: 100%;
     border: 2px solid #3971FF ;
     font-size: 24px;
-    padding-left: 20px
+    padding-left: 20px;
+    cursor: text;
   }
 
   .searchInput::placeholder {
@@ -19,6 +21,7 @@
 
   .searchIcon {
     position: absolute;
-    top: 20px;
-    left: 760px;
+    top: 23.5px;
+    right: 0;
+    cursor: pointer;
   }

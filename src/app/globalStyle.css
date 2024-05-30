@@ -35,3 +35,7 @@ input {
     cursor: pointer;
 }
 
+
+.ant-select-selection-item {
+    font-size: 24px;
+}

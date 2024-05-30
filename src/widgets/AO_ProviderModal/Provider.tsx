@@ -1,12 +1,13 @@
 'use client'
-// import '../../app/globalStyle.css'
+import '../../app/globalStyle.css'
 import styles from "./Provider.module.scss";
 import './Provider_ui.scss'
 import './suply_unit__ui.scss'
 import React, { useEffect } from "react";
 import { AO_mainModal, applicationModal } from "@/features/lib/helpers/CustomHook";
 import Select from 'react-select'
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm, SubmitHandler, Controller } from "react-hook-form";
+import { IMaskInput } from 'react-imask';
 import { AO_ShippingFormState } from '@/features/lib/storage/AllOrderStore/AO_ShippingformState';
 import { AO_findProvider } from "@/shared/ui/AllOrder/AO_mainModalBtn";
 import Image from "next/image";
@@ -23,7 +24,7 @@ export const Provider: React.FC = () => {
             closeMainModal();
         }
     };
-
+ 
 
     useEffect(() => {
         if(isMainModal){
@@ -46,6 +47,7 @@ export const Provider: React.FC = () => {
     const regions = {value: 0, label: "Выбрать регионы"}
     const regionsOption = [
         {value: 1, label: "Чуйская область"},
+        {value: 2, label: "Московская область"}
     ]
 
 
@@ -69,8 +71,7 @@ export const Provider: React.FC = () => {
     ]
 
 
-    const {open_SAM_modal} = applicationModal()
-    const {register, handleSubmit, setValue,} = useForm<AO_ShippingFormState>()
+    const {register, handleSubmit, setValue, control} = useForm<AO_ShippingFormState>()
     const onSubmit: SubmitHandler<AO_ShippingFormState> = (data) => {
     //активацияя запроса
     fetchOrder(data)
@@ -78,10 +79,9 @@ export const Provider: React.FC = () => {
     closeMainModal()
     open_SAM_modal()
     }
-
-    // formatted phone number
-    // а его тут нет...
-
+    
+    
+    const {open_SAM_modal} = applicationModal()
     const {fetchOrder} = AO_mainModalStore()
 
     return (
@@ -166,25 +166,26 @@ export const Provider: React.FC = () => {
                             <div className={styles.contacts}>
                                 <div className={styles.contacts__container}>
                                     <h4 className={styles.main__categories_header}>Номер телефона</h4>
-                                    <input
-                                    type="text" 
-                                    placeholder="+996"
-                                    {...register('phone_number', {
-                                        required: 'Поле обязательно для заполнения',
-                                        // pattern: {
-                                        //     value: /^\+996\(\d{3}\)\d{3}-\d{3}$/,
-                                        //     message: 'Формат номера неверный',
-                                        // },
-                                        maxLength: {
-                                            value: 16,
-                                            message: 'Телефон должен быть из 9 цифр'
-                                        }
-                                    })}
-                                    onChange={(e) => setValue('phone_number', e.target.value)}
-                                    className={styles.contacts_frame__phone}
+                                    <Controller
+                                        {...register('phone_number')}
+                                        control={control}
+                                        render={({ field }) => (
+                                        <IMaskInput
+                                            {...field}
+                                            // mask="+{996} (000) 000-000"
+                                            mask="+{996}000000000"
+                                            definitions={{
+                                            '0': /\d/,
+                                            }}
+                                            lazy={false}
+                                            type="text"
+                                            onAccept={(value) => field.onChange(value)}
+                                            className={styles.contacts_frame__phone}
+                                        />
+                                        )}
                                     />
                                 </div>
-                                <div className={styles.contactse__container}>
+                                <div className={styles.contacts__container}>
                                     <h4 className={styles.main__categories_header}>Электронная почта</h4>
                                     <input
                                     type="email"

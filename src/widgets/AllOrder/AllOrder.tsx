@@ -27,14 +27,11 @@ const { Option } = Select;
 export const AllOrder: React.FC = () => {
   const {orders, fetchOrders} = useOrders()
   const {isOpen, open} = closeModal()
-  // const {isOpenApplication, openApplication, closeApplication} = closeApplicationModal(state => ({
-  //   isOpenApplication: state.isOpen,
-  //   openApplication: state.open,
-  //   closeApplication: state.close
-  // }))
   const {openMainModal} = AO_mainModal()
+  const {isViewed, hide, show} = hideViewed()
+  const [orderComplited, setOrderComplited] = useState(false)
 
-  
+
   useEffect(() => {
     fetchOrders()
   }, [fetchOrders])
@@ -46,15 +43,11 @@ export const AllOrder: React.FC = () => {
     {value: 2, label: 'Недвижимость' },
     {value: 3, label: 'Строительство' },
     {value: 4, label: 'Ремонт' },
-    {value: 5, label: 'Строительные Материалы' },
+    {value: 5, label: 'Стройматериалы' },
     {value: 6, label: 'Дизайн и Декор' },
     {value: 7, label: 'Инженерные Системы' },
   ]
   
-  const {isViewed, hide, show} = hideViewed()
-
-
-  const [orderComplited, setOrderComplited] = useState(false)
 
   const changeOrderTheme = () => {
     setOrderComplited(!orderComplited)
@@ -72,74 +65,76 @@ export const AllOrder: React.FC = () => {
         <div className={styles.secondBlock}>
           <div className={styles.categories}>
             <div className={styles.selectDiv}>
-              <Select
-              suffixIcon={null}
-              className={styles.select}
-              defaultValue="Категории"
-              variant="borderless"
-              >
-              {options.map((options) => (
-                <Option key={options.value} optionFontSize={22} value={options.value} label={options.label}>
-                  <div className={styles.divSelect}>
-                    <Image src={SelectIcon} alt="eye" width={48} height={48} className={styles.divSelect__arrow}/>
-                    {options.label.split(' ').map((word, index, array) => (
-                      <div key={index}>
-                        {word}
-                        {index < array.length - 1 && ' '}
-                      </div>
-                    ))}
-                  </div>
-                </Option>
-              ))}
-              </Select>
-              <div className={styles.icon}>
+            {" "}
+              <div className={styles.select_categories_block}>
+                <Select
+                suffixIcon={null}
+                className={styles.categories_select}
+                defaultValue="Категории"
+                variant="borderless"
+                >
+                {options.map((options) => (
+                  <Option key={options.value} optionFontSize={22} value={options.value} label={options.label}>
+                    <div className={styles.divSelect}>
+                      <Image src={SelectIcon} alt="eye" width={48} height={48} className={styles.divSelect__arrow}/>
+                      {options.label.split(' ').map((word, index, array) => (
+                        <div key={index}>
+                          {word}
+                          {index < array.length - 1 && ' '}
+                        </div>
+                      ))}
+                    </div>
+                  </Option>
+                ))}
+                </Select>
                 {" "}
-                <Image src={arrowDown} alt="close" width={20} height={20} className={styles.select__arrow}/>
+                  <Image src={arrowDown} alt="down arrow" width={20} height={20} className={styles.categories_select__arrow}/>
               </div>
             </div>
             <button className={styles.regions} onClick={open}>
-              <span>Регионы</span>{" "}
+              <span>Регионы</span>
               <Image src={Plus} alt="plus" width={30} height={30} />
             </button>
+            {" "}
             {isOpen && (
               <IndicateRegion onClose={close}/>
             )}
+            {" "}
             <div className={styles.price}>
               <span>Цена</span>
               <div className={styles.inputPrice}>
                 <input type="text" placeholder="0 сом" />
-                <div>
-                  <svg
-                  width="8"
-                  height="2"
-                  viewBox="0 0 8 2"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect width="8" height="2" fill="#D9D9D9" />
-                  </svg>
-                </div>
+                <div className={styles.inputPrice__line}></div>
                 <input type="text" placeholder="0 сом" />
               </div>
             </div>
             <div>
               <div className={styles.viewedCheck}>
-                Скрыть просмотренные{" "}
-                <input 
-                type="checkbox" checked={orderComplited} 
+                <span>Скрыть просмотренные</span>
+                <input
+                id="checkbox_1"
+                type="checkbox"
+                checked={orderComplited} 
                 onChange={hideComplitedOrders} 
                 className={styles.viewedCheck__hide_viewed}
                 />
+                <label htmlFor="checkbox_1" className={styles.completedCheck_label__2}></label>
               </div>
               <div className={styles.completedCheck}>
-                Скрыть завершенные{" "}
-                <input type="checkbox" className={styles.check}  onChange={e => {
+                <span>Скрыть завершенные</span>
+                <input
+                id="checkbox_2"
+                type="checkbox"
+                className={styles.check} 
+                onChange={e => {
                   if(e.target.checked){
                     orders.forEach(item => show(item.id))
                   } else {
                     orders.forEach(item => hide(item.id))
                   }
-                }}/>
+                }}
+                />
+                <label htmlFor="checkbox_2" className={styles.completedCheck_label}></label>
               </div>
             </div>
           </div>
@@ -152,8 +147,7 @@ export const AllOrder: React.FC = () => {
               text="Создать заказ"
               onClick={openMainModal}
               />
-              <Provider/>
-              {/* {isOpenApplication && <CreateOrderModal onClose={closeApplication} />} */}
+              <Provider />
             </div>
             {orders.map((item) => (
               !isViewed[item.id] && (
