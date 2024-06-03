@@ -16,6 +16,8 @@ const { Option } = Select;
 
 export const ProductList: React.FC = () => {
   const [isOrderModalOpen, setIsOrderModalOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
+  
   
   const handleOpenOrderModal = () => {
     setIsOrderModalOpen(true);
@@ -46,6 +48,17 @@ const {products, fetchOrder} = Products()
   useEffect(() => {
     fetchOrder()
   }, [fetchOrder])
+
+  const handleSearch = (term: string) => {
+    setSearchTerm(term);
+  };
+
+  const filteredProducts = products.filter(product =>
+    product.product_name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+  
+ 
+
   
   return (
     <>
@@ -134,7 +147,7 @@ const {products, fetchOrder} = Products()
           </div>
           <div className={styles.orders}>
             <div className={styles.searchField}>
-              <SearchField />
+              <SearchField onSearch={handleSearch} />
               <button
               type="submit"
               className={styles.searchField__btn}
@@ -146,7 +159,7 @@ const {products, fetchOrder} = Products()
             </div>
             <div className={styles.orders}>
               <div className={styles.orders__frame_block}>
-              {products.map((item) => (
+              {filteredProducts.map((item) => (
                 isFrame[item.id] !== false && (
                   <div key={item.id} className={styles.order_frame}>
                     <div className={styles.order_frame__order_img}>
