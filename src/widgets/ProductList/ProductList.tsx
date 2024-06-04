@@ -19,6 +19,7 @@ export const ProductList: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState("");
   
   
+  
   const handleOpenOrderModal = () => {
     setIsOrderModalOpen(true);
   };
@@ -43,20 +44,30 @@ export const ProductList: React.FC = () => {
   
 
 const {isFrame, closeFrame} = useOrderFrames()
-const {products, fetchOrder} = Products()
+const {products, fetchOrder, filters, setFilters} = Products()
 
-  useEffect(() => {
-    fetchOrder()
-  }, [fetchOrder])
+useEffect(() => {
+  fetchOrder()
+}, [filters, fetchOrder, searchTerm])
+
 
   const handleSearch = (term: string) => {
     setSearchTerm(term);
   };
 
+  const handlePriceGteChange = (e) => {
+    setFilters({ ...filters, priceGte: e.target.value ? parseFloat(e.target.value) : null });
+  };
+
+  const handlePriceLteChange = (e) => {
+    setFilters({ ...filters, priceLte: e.target.value ? parseFloat(e.target.value) : null });
+  };
+
+
+  
   const filteredProducts = products.filter(product =>
     product.product_name.toLowerCase().includes(searchTerm.toLowerCase())
   );
-  
  
 
   
@@ -120,7 +131,7 @@ const {products, fetchOrder} = Products()
               <div className={styles.price}>
               <span>Цена</span>
               <div className={styles.inputPrice}>
-                <input type="text" placeholder="0 сом" />
+              <input type="text" placeholder="0 сом" onChange={handlePriceGteChange} />
                 <div>
                   <svg
                   width="8"
@@ -132,7 +143,7 @@ const {products, fetchOrder} = Products()
                     <rect width="8" height="2" fill="#D9D9D9" />
                   </svg>
                 </div>
-                <input type="text" placeholder="0 сом" />
+                <input type="text" placeholder="0 сом" onChange={handlePriceLteChange} />
               </div>
             </div>
             <div className={styles.see_also}>
