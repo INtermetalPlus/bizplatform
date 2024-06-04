@@ -22,6 +22,7 @@ import { GoodsAndServices } from "@/pages/about/GoodsAndServices/GoodsAndService
 import WriteToTheSupplierModal from "@/widgets/ProductSlider/WriteToTheSupplierModal/WriteToTheSupplierModal";
 import CompanyPage from "@/pages/CompanyPage/CompanyPage";
 
+import { BottomBlock } from "@/shared/ui/layoutBottomBlock/BottomBlock";
 const inter = Inter({ weight: ["400", "700","300","500"], subsets: ["latin","cyrillic"], variable: "--font-inter" });
 
 const sfPro = localFont({
@@ -95,6 +96,9 @@ export default function RootLayout({
         {/* {children} */}
         {/* </ProtectedRoute> */}
         <Footer/>
+          {children}
+        <Footer/>
+        <BottomBlock />
       </body>
     </html>
   );
