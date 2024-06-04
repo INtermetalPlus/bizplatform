@@ -2,6 +2,8 @@
 import React, { useState } from 'react'
 import styles from './style.module.scss'
 import { motion, AnimatePresence, wrap } from 'framer-motion'
+import useModalStore from '@/widgets/ProductSlider/WriteToTheSupplierModal/store'
+import  WriteToTheSupplierModal from '@/widgets/ProductSlider/WriteToTheSupplierModal/WriteToTheSupplierModal'
 
 const images = [
 	'https://asiastore.kg/image/cachewebp/catalog/iphone/iphone14/iphone14/starlight/wwen_iphone14_q422_starlight_pdp_image_position-1a-450x450.webp',
@@ -36,7 +38,12 @@ const images = [
 			},
 		}
 
+
+		
+
 const ProductSlider = () => {
+
+	const { isModalOpen, openModal, closeModal } = useModalStore()
 
   const [[page, direction], setPage] = useState([0, 0]);
   const firstImageIndex = wrap(0, images.length, page)
@@ -139,53 +146,19 @@ const ProductSlider = () => {
 										key={firstImageIndex}
 										src={images[firstImageIndex]}
 										className={styles.productSmallImage}
-										// custom={direction}
 										variants={variants}
 										initial='enter'
 										animate='center'
 										exit='exit'
-										// transition={{
-										// 	y: { type: 'spring' },
-										// 	opacity: { duration: 0.2 },
-										// }}
-										// drag='y'
-										// dragConstraints={{ top: 0, bottom: 0 }}
-										// dragElastic={1}
-										// onDragEnd={(e, { offset, velocity }) => {
-										// 	const swipe = swipePower(offset.y, velocity.y)
-
-										// 	if (swipe < -swipeConfidenceThreshold) {
-										// 		paginate(1)
-										// 	} else if (swipe > swipeConfidenceThreshold) {
-										// 		paginate(-1)
-										// 	}
-										// }}
 									/>
 									<motion.img
 										className={styles.productSmallImage}
 										key={secondImageIndex + 1}
 										src={images[secondImageIndex]}
-										// custom={direction}
 										variants={variants}
 										initial='enter'
 										animate='center'
 										exit='exit'
-										// transition={{
-										// 	y: { type: 'spring' },
-										// 	opacity: { duration: 0.2 },
-										// }}
-										// drag='y'
-										// dragConstraints={{ top: 0, bottom: 0 }}
-										// dragElastic={1}
-										// onDragEnd={(e, { offset, velocity }) => {
-										// 	const swipe = swipePower(offset.y, velocity.y)
-
-										// 	if (swipe < -swipeConfidenceThreshold) {
-										// 		paginate(1)
-										// 	} else if (swipe > swipeConfidenceThreshold) {
-										// 		paginate(-1)
-										// 	}
-										// }}
 									/>
 								</AnimatePresence>
 								<div
@@ -303,7 +276,8 @@ const ProductSlider = () => {
 								<span> Москва</span>
 							</h3>
 						</div>
-						<button>Написать поставщику</button>
+						<button onClick={openModal}>Написать поставщику</button>
+						{isModalOpen && <WriteToTheSupplierModal onClose={closeModal} />}
 					</div>
 				</div>
 			</div>

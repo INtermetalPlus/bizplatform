@@ -45,7 +45,6 @@ const reviews = [
     companyDescription: 'Описание компании 2',
     commentText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem maiores saepe sunt placeat. Molestias magni voluptate, eveniet dolor, expedita modi, sequi inventore rem assumenda porro odit tempora? Quo numquam dolore amet, quos totam asperiores molestiae atque repudiandae voluptatum corporis laborum dignissimos aliquam quaerat unde incidunt consequatur eaque ullam quam rerum', 
   },
-  // Добавьте больше отзывов здесь...
 ];
 
 export const Comments = () => {

@@ -10,8 +10,5 @@ export default meta
 type Story = StoryObj<typeof GoodsAndServices>
 
 export const Primery: Story = {
-    args: {
-        
-    }
 }
 
