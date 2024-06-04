@@ -46,9 +46,9 @@ export const Products = create<ProductsAPI>((set) => ({
       existance: filters.existance,
     };
 
-    // Удаляем параметры с null значением
+    // Remove parameters with null or empty values
     Object.keys(params).forEach(key => {
-      if (params[key] === null || params[key] === '' || params[key] === undefined) {
+      if (params[key] === null || params[key] === '' || params[key] === undefined || (Array.isArray(params[key]) && params[key].length === 0)) {
         delete params[key];
       }
     });
