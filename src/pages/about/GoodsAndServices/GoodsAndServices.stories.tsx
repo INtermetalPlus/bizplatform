@@ -3,7 +3,7 @@ import { GoodsAndServices } from "./GoodsAndServices";
 
 
 const meta: Meta<typeof GoodsAndServices> = {
-    title: '19.04.2024 - Товары и услуги (странирца)',
+    title: 'Pages > GoodsAndServices.tsx',
     component: GoodsAndServices
 }
 export default meta

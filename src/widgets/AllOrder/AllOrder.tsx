@@ -10,15 +10,16 @@ import { BlueButton } from "@/shared/ui/blueButton";
 import Image from "next/image";
 import Plus from "../../shared/assets/icons/plus.svg";
 import arrowDown from "../../shared/assets/icons/arrow_forward_ios (1).svg";
-import { CreateOrderModal } from "../CreateOrderModal";
 import { Select } from "antd";
 import SelectIcon from "../../shared/assets/icons/Frame 220.png";
 import { IndicateRegion } from "../IndicateRegion";
 import { AO_header } from "@/shared/ui/AllOrder/AO_header";
 import { AO_headerInfo } from "@/shared/ui/AllOrder/AO_headerInfo";
-import { AO_mainModal, closeApplicationModal, closeModal, hideViewed } from "@/features/lib/helpers/CustomHook";
+import { AO_mainModal, closeModal, hideViewed } from "@/features/lib/helpers/CustomHook";
 import { useOrders } from "@/features/lib/storage/OrderStore";
 import { Provider } from "../AO_ProviderModal/Provider";
+import { useSimilarStore } from "@/features/lib/storage/SimilarOrderStore/SimilarOrderStore";
+import Link from "next/link";
 
 
 const { Option } = Select;
@@ -57,6 +58,20 @@ export const AllOrder: React.FC = () => {
     setOrderComplited(e.target.checked)
   }
 
+
+  const {addOrder} = useSimilarStore()
+  const moreOrderInfo = (id: any) => {
+    addOrder(id)
+  }
+
+  const truncateWords = (text: string, wordLimit: number): string => {
+    const words = text.split(' ');
+    if (words.length <= wordLimit) {
+      return text;
+    }
+    return words.slice(0, wordLimit).join(' ') + '...';
+  }
+
   return (
     <>
       <div className={styles.main}>
@@ -87,9 +102,15 @@ export const AllOrder: React.FC = () => {
                   </Option>
                 ))}
                 </Select>
-                {" "}
-                  <Image src={arrowDown} alt="down arrow" width={20} height={20} className={styles.categories_select__arrow}/>
+                <Image
+                src={arrowDown} 
+                alt="down arrow" 
+                width={20} 
+                height={20} 
+                className={styles.categories_select__arrow}
+                />
               </div>
+              {" "}
             </div>
             <button className={styles.regions} onClick={open}>
               <span>Регионы</span>
@@ -103,9 +124,14 @@ export const AllOrder: React.FC = () => {
             <div className={styles.price}>
               <span>Цена</span>
               <div className={styles.inputPrice}>
-                <input type="text" placeholder="0 сом" />
+                <input
+                type="text" 
+                placeholder="0 сом" />
                 <div className={styles.inputPrice__line}></div>
-                <input type="text" placeholder="0 сом" />
+                <input 
+                type="text" 
+                placeholder="0 сом"
+                />
               </div>
             </div>
             <div>
@@ -149,28 +175,34 @@ export const AllOrder: React.FC = () => {
               />
               <Provider />
             </div>
-            {orders.map((item) => (
-              !isViewed[item.id] && (
-                <div key={item.id} className={orderComplited ? styles.completed_orders_frame : styles.orders_frame} >
-                  <div className={styles.orders_frame__order_number}>
-                    <span>Заказ № {item.order_number}</span>
-                    <span>2 апреля 2024, 13:09</span>
+            <Link href='/similarorder' className={styles.link}>
+              {orders.map((item) => (
+                !isViewed[item.id] && (
+                  <div 
+                  key={item.id}
+                  onClick={() => moreOrderInfo(item)}
+                  className={orderComplited ? styles.completed_orders_frame : styles.orders_frame} 
+                  >
+                    <div className={styles.orders_frame__order_number}>
+                      <span>Заказ № {item.order_number}</span>
+                      <span>2 апреля 2024, 13:09</span>
+                    </div>
+                    <h1 className={orderComplited ? styles.completed_orders_frame__order_title : styles.orders_frame__order_title}>
+                      {item.order_title}
+                    </h1>
+                    <span className={orderComplited ? styles.completed_orders_frame__order_description : styles.orders_frame__order_description}>
+                      {truncateWords(item.order_text, 14)}
+                    </span>
+                    <div className={styles.orders_frame__order_place}>
+                      <p className={orderComplited ? styles.completed_orders_frame__order_city : styles.orders_frame__order_city }>
+                        Поставка в Бишкек
+                      </p>
+                      <button className={orderComplited ? styles.completed_orders_frame__eye : styles.orders_frame__eye} onClick={changeOrderTheme} />
+                    </div>
                   </div>
-                  <h1 className={orderComplited ? styles.completed_orders_frame__order_title : styles.orders_frame__order_title}>
-                    {item.order_title}
-                  </h1>
-                  <span className={orderComplited ? styles.completed_orders_frame__order_description : styles.orders_frame__order_description}>
-                    {item.order_text}
-                  </span>
-                  <div className={styles.orders_frame__order_place}>
-                    <p className={orderComplited ? styles.completed_orders_frame__order_city : styles.orders_frame__order_city }>
-                      Поставка в Бишкек
-                    </p>
-                    <button className={orderComplited ? styles.completed_orders_frame__eye : styles.orders_frame__eye} onClick={changeOrderTheme} />
-                  </div>
-                </div>
-              )
-            ))}
+                )
+              ))}
+            </Link>
           </div>
         </div>
       </div>

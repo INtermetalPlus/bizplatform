@@ -9,7 +9,6 @@ const Goods = () => {
     <GAS_Header/>
     <PlaceProductBlock />
     <OrderList />
-    
     </>
   )
 }

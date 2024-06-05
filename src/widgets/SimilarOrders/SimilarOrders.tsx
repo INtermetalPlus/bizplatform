@@ -1,6 +1,7 @@
 import React from "react";
-import styles from "./SimilarOrders.module.scss";
+import styles from "./SimilarOrdersUI.module.scss";
 import { Order } from "@/entities/order";
+
 
 export const SimilarOrders = () => {
 

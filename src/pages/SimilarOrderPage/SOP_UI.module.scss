@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1600px;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    margin-top: 60px;
+}
+
+.similar_order__block { 
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    max-width: 1600px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 150px;
+}
+
+.link {
+    white-space: nowrap;
+    text-decoration: none;
+    &__title {
+        color: rgb(57, 113, 255);
+        font-family: 'Inter', sans-serif;
+        font-size: 20px;
+        margin: 0;
+        margin-bottom: 60px;
+    }
+}
