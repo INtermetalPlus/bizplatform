@@ -24,7 +24,8 @@
     }
 
     .tariffBlock {
-      width: 1571px;
+      position: relative;
+      max-width: 1571px;
       border-radius: 2px;
       padding: 36px 30px 36px 30px;
       background-color: #FDFDFD;
@@ -33,16 +34,13 @@
       .ribbonBlock {
         display: flex;
         gap: 2px;
-        position: absolute;
-        left: 1625px;
-        top: 5670px;
 
         .ribbon {
           width: 160px;
           height: 160px;
-          // top: 5694px;
-          // left: 700px;
-          // position: absolute;
+          position: absolute;
+          top:-21px;
+          right: -29px;
           background-color: #1B4BC3;
           clip-path: polygon(0 0, 100% 0, 100% 65%, 50% 100%, 0 65%); 
           display: flex;
@@ -53,7 +51,9 @@
         .ribbonSmall {
           width: 22.52px;
           height: 28.23px;
-          // left: 14.22px;
+          position: absolute;
+          top:-24px;
+          right:131px;
           rotate: -90deg;
           clip-path: polygon(0 0, 0% 0, 100% 100%, 50% 100%, 0 100%); 
           background-color: #002581;
