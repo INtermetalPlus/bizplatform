@@ -6,6 +6,15 @@ html, body {
 }
 
 
+:root {
+    --headers-color: #000;
+    --bg-color-1: #000;
+    --bg-color-2: rgb(255, 255, 255);
+    --bg-color-3: rgb(57, 113, 255);
+    --white: #fff;
+}
+
+
 @font-face {
     font-family: "Inter";
     src: url(../shared/assets/font/Inter/static/Inter-Medium.ttf);

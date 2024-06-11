@@ -6,6 +6,7 @@ import { SimilarOrder_currentOrder } from "@/widgets/SimilarOrder_currentOrder/S
 import Link from "next/link";
 import SimilarOrdersBlock from "@/widgets/SimilarOrdersBlock/SimilarOrdersBlock";
 import { useSimilarStore } from "@/features/lib/storage/SimilarOrderStore/SimilarOrderStore";
+import SOF_tariffModal from "@/shared/ui/SimilarOrderForm/SOF_tariffModal";
 
 
 export const SimilarOrderPage: React.FC = () => {
@@ -29,6 +30,7 @@ export const SimilarOrderPage: React.FC = () => {
                     <SimilarOrderForm/>
                 </div>
                 <SimilarOrdersBlock/>
+                <SOF_tariffModal/>
             </div>
         </>    
     )

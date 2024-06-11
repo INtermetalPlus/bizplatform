@@ -13,6 +13,7 @@ import { SOF_email } from "@/shared/ui/SimilarOrderForm/SOF_email";
 import Select from 'react-select'
 import { SelectFile } from "@/shared/ui/OtherUI/SelectFile";
 import { SOF_submitBtn } from "@/shared/ui/SimilarOrderForm/SOF_submitBtn";
+import { SOP_tarrifModal } from "@/features/lib/helpers/CustomHook";
 
 
 export const SimilarOrderForm: React.FC = () => {
@@ -26,7 +27,7 @@ export const SimilarOrderForm: React.FC = () => {
 
 
 
-
+    
 
     return (
         <>

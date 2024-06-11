@@ -65,3 +65,17 @@ export const applicationModal = create<InitialSAMState>((set) => ({
     close_SAM_modal: () => set({SAM_modal: false}),
     open_SAM_modal: () => set({SAM_modal: true})
 }))
+
+
+interface InitialTarrifState {
+    isTarrifModal: Boolean;
+    closeTarrifModal: () => void;
+    openTarrifModal: () => void
+}
+
+
+export const SOP_tarrifModal = create<InitialTarrifState>((set) => ({
+    isTarrifModal: false,
+    closeTarrifModal: () => set({isTarrifModal: false}),
+    openTarrifModal: () => set({isTarrifModal: true})
+}))
