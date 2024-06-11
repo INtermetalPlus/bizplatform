@@ -21,9 +21,16 @@ export default function SimilarOrdersBlock() {
     }
 
 
-    const {addOrder} = useSimilarStore()
-    const moreOrderInfo = (id: any) => {
-        addOrder(id)
+    const {addOrder, removeOrderElement, similarOrder} = useSimilarStore()
+    const moreOrderInfo = (elem: any) => {
+      const removeActivate = similarOrder.find(removeElem => removeElem !== elem)
+      if(removeActivate){
+        removeOrderElement(removeActivate)
+      }
+
+      addOrder(elem)
+      
+      window.scrollTo(0, 0)
     }
 
     return (

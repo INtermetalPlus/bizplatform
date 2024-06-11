@@ -21,11 +21,17 @@
 .link {
     white-space: nowrap;
     text-decoration: none;
+    cursor: default;
     &__title {
         color: rgb(57, 113, 255);
         font-family: 'Inter', sans-serif;
         font-size: 20px;
         margin: 0;
         margin-bottom: 60px;
+        transition: 0.1s;
+        cursor: pointer;
+        &:hover {
+            color: rgb(136, 170, 255);
+        }
     }
 }

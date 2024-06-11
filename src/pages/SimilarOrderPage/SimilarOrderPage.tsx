@@ -9,11 +9,13 @@ import { useSimilarStore } from "@/features/lib/storage/SimilarOrderStore/Simila
 
 
 export const SimilarOrderPage: React.FC = () => {
-    const {removeOrder, similarOrder} = useSimilarStore()
+    const {removeOrderElement, similarOrder} = useSimilarStore()
 
-    const removeSimilarOrder= (event: any) => {
-        const orderId = event.target.value;
-        removeOrder(orderId);
+    const removeSimilarOrder = (orderElem: any) => {
+        const removeActivate = similarOrder.find(thisElem => thisElem !== orderElem)
+        if(removeActivate){
+            removeOrderElement(removeActivate)
+        }
     }
 
     return (

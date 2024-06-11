@@ -16,7 +16,7 @@ interface Order {
 interface SimilarOrderState {
     similarOrder: Order[],
     addOrder: (order: Order) => void,
-    removeOrder: (order: Order) => void
+    removeOrderElement: (order: Order) => void
 }
 
 
@@ -25,8 +25,8 @@ export const useSimilarStore = create<SimilarOrderState>((set) => ({
     addOrder: (order: Order) => set((state) => ({
 		similarOrder: state.similarOrder.length < 1 ? [...state.similarOrder, order] : state.similarOrder
 	})),
-    removeOrder: (order: Order) => set((state) => ({
-        similarOrder: state.similarOrder.filter(filerOrder => filerOrder.id !== order.id)
+    removeOrderElement: (order: Order) => set((state) => ({
+        similarOrder: state.similarOrder.filter(delElem => delElem !== order)
     }))
 }))
 
