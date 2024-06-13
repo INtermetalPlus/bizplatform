@@ -20,7 +20,7 @@ import { useOrders } from "@/features/lib/storage/OrderStore";
 import { Provider } from "../AO_ProviderModal/Provider";
 import { useSimilarStore } from "@/features/lib/storage/SimilarOrderStore/SimilarOrderStore";
 import Link from "next/link";
-
+import { useSession } from "next-auth/react";
 
 
 const { Option } = Select;
@@ -32,11 +32,13 @@ export const AllOrder: React.FC = () => {
   const {openMainModal} = AO_mainModal()
   const {isViewed, hide, show} = hideViewed()
   const [orderComplited, setOrderComplited] = useState(false)
-
+  const { data: session, status } = useSession()
 
   useEffect(() => {
-    fetchOrders()
-  }, [fetchOrders])
+    if(session) {
+    fetchOrders(session.user.rawAccessToken)
+    }
+  }, [fetchOrders,session])
 
 
   const options = [
@@ -73,6 +75,7 @@ export const AllOrder: React.FC = () => {
     return words.slice(0, wordLimit).join(' ') + '...';
   }
 
+
   return (
     <>
       <div className={styles.main}>
@@ -90,7 +93,7 @@ export const AllOrder: React.FC = () => {
                 variant="borderless"
                 >
                 {options.map((options) => (
-                  <Option key={options.value} optionFontSize={22} value={options.value} label={options.label}>
+                  <Option key={options.value} optionFontSize={22}  value={options.value} label={options.label}>
                     <div className={styles.divSelect}>
                       <Image src={SelectIcon} alt="eye" width={48} height={48} className={styles.divSelect__arrow}/>
                       {options.label.split(' ').map((word, index, array) => (

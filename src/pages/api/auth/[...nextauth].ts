@@ -1,5 +1,6 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+import JWT from 'jsonwebtoken'
 
 async function refreshAccessToken(token:any) {
   try {
@@ -11,7 +12,7 @@ async function refreshAccessToken(token:any) {
       },
       body: JSON.stringify({
         grant_type: 'refresh',
-        refresh: token.refresh,
+        refresh: token.rawRefreshToken,
       }),
     });
     const refreshedTokens = await response.json();
@@ -63,9 +64,15 @@ export default NextAuth({
   
         
         if (user && user.access && user.refresh) {
-               
+
+          const decodedToken = JWT.decode(user.access) as any
+
+          console.log('decoded token: ', decodedToken)
+          
           return {
-            ...user,
+            ...decodedToken,
+            rawAccessToken:user.access,
+            rawRefreshToken:user.refresh,
             accessTokenExpires: Date.now() + 5 * 60 * 1000, // 5 minutes
           };
         } else {
@@ -81,8 +88,9 @@ export default NextAuth({
         console.log('JWT callback: setting new token');
         return {
           ...token,
-          accessToken: user.accessToken,
-          refreshToken: user.refreshToken,
+          user_id:user.user_id,
+          rawAccessToken: user.rawAccessToken,
+          rawRefreshToken: user.rawRefreshToken,
           accessTokenExpires: user.accessTokenExpires,
         };
       }
@@ -96,8 +104,6 @@ export default NextAuth({
     },
     async session({ session, token }) {
       session.user = token as any;
-      session.accessToken = token.accessToken;
-      session.error = token.error;
       return session;
     },
   },
