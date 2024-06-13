@@ -65,11 +65,11 @@ input {
 
 .ant-select-selection-item {
     font-size: 24px;
-input[type=checkbox] {
-    width: 28px !important;
-    height: 28px !important;
-    border: 2px solid rgb(160, 160, 160) !important;
-    border-radius: 5px !important;
+    input[type=checkbox] {
+        width: 28px !important;
+        height: 28px !important;
+        border: 2px solid rgb(160, 160, 160) !important;
+        border-radius: 5px !important;
 
-}
+    }
 }
