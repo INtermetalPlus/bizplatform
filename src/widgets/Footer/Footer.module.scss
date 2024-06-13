@@ -1,4 +1,6 @@
 .footer {
+    position: relative;
+    top: 900px;
     max-width: 1920px;
     width: 100%;
     height: auto;
@@ -6,6 +8,10 @@
     margin: auto;
     margin-top: 150px;
     border-top: 1px solid rgb(217, 217, 217);
+}
+
+.container {
+    margin: auto;
 }
 
 .footer_logo{
@@ -21,6 +27,7 @@
 .footer_blog{
     padding-top: 40px;
     display: flex;
+    background-color: #FFFFFF;
    
 }
 .footer_info{

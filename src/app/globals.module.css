@@ -9,3 +9,56 @@
   margin: 0;
   padding: 0;
 }/*# sourceMappingURL=globals.module.css.map */
+
+@font-face {
+  font-family: "Inter";
+  src: url(../shared/assets/font/Inter/static/Inter-Medium.ttf);
+}
+
+* {
+  font-family: "Inter";
+  -webkit-user-select: none; /* Для браузеров, основанных на WebKit (Chrome, Safari) */
+-moz-user-select: none; /* Для браузеров, основанных на Gecko (Firefox) */
+-ms-user-select: none; /* Для браузеров Internet Explorer/Edge */
+user-select: none; /* Стандартное свойство */
+}
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1600px;
+  height: auto;
+  /* background: rgba(64, 255, 0, 0.50); */
+  margin: auto;
+}
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+  input[type=number] {
+      color: rgb(173, 173, 173);
+      font-family: 'Inter', sans-serif;
+      font-size: 18px;
+      font-weight: 500;
+  }
+
+input {
+  outline: none !important;
+  cursor: pointer;
+}
+
+input[type=checkbox] {
+  width: 28px !important;
+  height: 28px !important;
+  border: 2px solid rgb(160, 160, 160) !important;
+  border-radius: 5px !important;
+}

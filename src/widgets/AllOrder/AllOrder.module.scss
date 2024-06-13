@@ -82,6 +82,7 @@
   }
 }
 
+
 .categories_select::after {
   position: absolute;
   content: '';
@@ -102,6 +103,12 @@
   font-size:29px !important;
   color: rgb(57, 113, 255) !important;
 }
+
+//  :global(.ant-select-selector) {
+//   font-size:29px !important;
+//   color: rgb(57, 113, 255) !important;
+// }
+
 
 .regions {
   height: 70px;

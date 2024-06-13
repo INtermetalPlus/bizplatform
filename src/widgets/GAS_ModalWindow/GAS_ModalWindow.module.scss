@@ -1,0 +1,214 @@
+.modalWindow__background {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    background: linear-gradient(-45deg,rgba(0, 0, 0, 0.35), rgb(57, 113, 255, 0.35), #4400ff52);
+    background-size: 400% 400%;
+    animation: modalBG 10s ease-in-out infinite;
+    margin: auto;
+    z-index: 999;
+    top: 0;
+    left: 0;
+}
+
+@keyframes modalBG {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50;
+    }
+}
+
+
+// Modal window
+
+.modalWindow {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: 790px;
+    width: 100%;
+    height: 560px;
+    border-radius: 2px;
+    text-align: center;
+    background: rgb(255, 255, 255);
+    padding: 19.5px 19.5px;
+    margin: auto;
+    padding: 30px 30px 38px 30px;
+    margin-top: 150px;
+    margin-bottom: 50px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+    .close {
+        position: absolute;
+        font-size: 24px;
+        top: 8px;
+        right: 16px;
+        cursor: pointer;
+    }
+
+
+.orderContainer {
+    display: flex;
+    max-width: 790px;
+    width: 100%;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.orderHeader {
+    color: #0b1623;
+    font-family: 'Inter';
+    font-style: 20px;
+    text-align: left;
+    white-space: nowrap;
+    margin: 0;
+}
+
+// Order blocks
+.orderName {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    gap: 10px;
+}
+
+.orderDescription {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    gap: 10px;
+}
+
+.orderVertical {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: auto;
+}
+
+.orderContainer_2 {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0 20px 0;
+}
+    .orderHorizontal {
+        display: flex;
+        margin-top: 20px;
+        margin-top: auto;
+    }
+
+
+// default settings input
+input {
+    transition: 0.1s;
+    cursor: pointer;
+    border: 1px solid rgb(160, 160, 160);
+    border-radius: 2px;
+    box-sizing: border-box;
+    transition: 0.1s;
+    padding-left: 20px;
+}
+    input[type="text"] {
+        color: #ADADAD;
+        padding-left: 20px;
+        font-size: 16px;
+        font-family: 'Inter';
+    }
+
+input::placeholder {
+    color: rgb(173, 173, 173);
+    font-family: 'Inter';
+    padding-left: 20px;
+}
+    input:hover {
+        border: 1px solid rgb(57, 113, 255);
+    }
+    input:focus {
+        border: 1px solid rgba(160, 160, 160, 0);
+        outline: 2px solid #2684FF;
+    }
+
+// another inputs
+.input_1 {
+    display: flex;
+    width: 520px;
+    height: 64px;
+    background: rgb(255, 255, 255);
+}
+    .input_1::placeholder {
+        padding-left: 0;
+        font-size: 18px;
+    }
+
+.input_2 {
+    width: 520px;
+    height: 98px;
+    border: 1px solid rgb(160, 160, 160);
+    border-radius: 2px;
+    background: rgb(255, 255, 255);
+    position: relative;
+}
+    .input_2::placeholder {
+        position: absolute;
+        color: #ADADAD;
+        padding-left: 0;
+        font-size: 18px;
+        font-family: 'Inter';
+        top: 20px;
+    }
+
+.input_3 {
+    position: relative;
+    max-width: 790px;
+    width: 100%;
+    height: 200px;
+}
+    .input_3::placeholder {
+        color: #ADADAD;
+        padding-left: 0;
+        font-size: 18px;
+        font-family: 'Inter';
+        position: absolute;
+        top: 20px;
+    }
+
+.input_4 {
+    width: 385px;
+    height: 64px;
+}
+    .input_4::placeholder {
+        color: #ADADAD;
+        padding-left: 0;
+        font-size: 18px;
+        font-family: 'Inter';
+    }
+
+
+// error
+.error {
+    color: rgb(226, 55, 55);
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    margin-right: auto;
+}
+
+// react-select list
+.select__block {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}

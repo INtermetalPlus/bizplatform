@@ -1,4 +1,5 @@
-import React from 'react'
+import React fr
+
 import { AllOrderPage } from '@/pages/AllOrderPage/AllOrderPage'
 
 
@@ -9,5 +10,4 @@ const Orders = () => {
     </>
   )
 }
-
-export default Orders
+  export default Orders

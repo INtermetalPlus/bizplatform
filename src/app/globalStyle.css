@@ -39,12 +39,36 @@ html, body {
 }
 
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+    input[type=number] {
+        color: rgb(173, 173, 173);
+        font-family: 'Inter', sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
 input {
     outline: none !important;
     cursor: pointer;
 }
 
 
+
 .ant-select-selection-item {
     font-size: 24px;
+input[type=checkbox] {
+    width: 28px !important;
+    height: 28px !important;
+    border: 2px solid rgb(160, 160, 160) !important;
+    border-radius: 5px !important;
+
 }

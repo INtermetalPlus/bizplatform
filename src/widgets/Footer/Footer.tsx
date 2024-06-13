@@ -8,7 +8,7 @@ import '../../app/globalStyle.css'
 export const Footer:React.FC = ():React.JSX.Element => {
   return (
     <footer className={styles.footer}>
-      <div className="container">
+      <div className={styles.container}>
         <div className={styles.footer_blog}>
             <div className={styles.footer_logo}>
                 <Image src={ibpLogo} alt="" width={98} height={50}/>
