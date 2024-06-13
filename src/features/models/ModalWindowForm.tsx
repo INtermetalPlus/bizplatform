@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useAuthStore } from "../Login/api/useAuthStore";
 import styles from './ModalWindowInputs.module.scss'
 import { SubmitHandler, useForm } from "react-hook-form";
@@ -47,7 +47,6 @@ export const ModalWindowForm: React.FC = () => {
             const request = await axios.post(`http://167.172.161.102:82/api/v1/registration/`, data)
             if(request.status === 200) {
             console.log('Form data saved');
-            console.log(request.data);
             reset()
             setVerificationToken(request?.data?.verification_token)
             setAuthModalOpen(false)
@@ -91,8 +90,8 @@ export const ModalWindowForm: React.FC = () => {
                     }
                 })}
                 onChange={(e) => {
-                    const formattedPhoneNumber = formatPhoneNumber(e.target.value);
-                    setValue('phone', formattedPhoneNumber);
+                    
+                    setValue('phone', formatPhoneNumber(e.target.value));
                 }}
             />
             {errors.phone && (

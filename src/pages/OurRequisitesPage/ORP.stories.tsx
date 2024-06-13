@@ -3,7 +3,7 @@ import { OurRequisitesPage } from './OurRequisitesPage'
 
 
 const meta: Meta<typeof OurRequisitesPage> = {
-    title: '08.05.2024 - ???',
+    title: 'Pages > OurRequisitesPage.tsx',
     component: OurRequisitesPage
 }
 export default meta

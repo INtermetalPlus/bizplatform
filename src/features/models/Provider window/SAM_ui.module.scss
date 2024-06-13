@@ -1,0 +1,59 @@
+// @font-face {
+//     font-family: 'Inter';
+//     src: url(../../../shared/assets/font/Inter/static/Inter-Regular.ttf);
+// }
+
+
+.modal_background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    background: linear-gradient(-45deg,rgba(0, 0, 0, 0.35), rgb(57, 113, 255, 0.35), #4400ff52);
+    background-size: 400% 400%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    padding-top: 260px;
+}
+
+.aplication_modal {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: 850px;
+    width: 100%;
+    height: auto;
+    padding: 30px;
+    align-items: center;
+    background: rgb(255, 255, 255);
+    margin: auto;
+    // font-family: 'Inter', sans-serif;
+    &__cross {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        cursor: pointer;
+    }
+    &__header {
+        color: rgb(11, 22, 35);
+        font-size: 48px;
+        font-weight: 700;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+    &__description {
+        max-width: 590px;
+        width: 100%;
+        color: rgb(11, 22, 35);
+        font-size: 20px;
+        font-weight: 400;
+        text-align: center;
+        margin: 0;
+        margin-bottom: 27.5px;
+    }
+    &__ellipse {
+        margin: auto;
+        margin: 0;
+    }
+}

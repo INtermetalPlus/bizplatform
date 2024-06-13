@@ -2,7 +2,18 @@ html, body {
     margin: 0;
     padding: 0;
     scrollbar-color: #3971FF #F7F7F7;
+    scrollbar-gutter: stable;
 }
+
+
+:root {
+    --headers-color: #000;
+    --bg-color-1: #000;
+    --bg-color-2: rgb(255, 255, 255);
+    --bg-color-3: rgb(57, 113, 255);
+    --white: #fff;
+}
+
 
 @font-face {
     font-family: "Inter";
@@ -50,9 +61,14 @@ input {
     cursor: pointer;
 }
 
+
+
+.ant-select-selection-item {
+    font-size: 24px;
 input[type=checkbox] {
     width: 28px !important;
     height: 28px !important;
     border: 2px solid rgb(160, 160, 160) !important;
     border-radius: 5px !important;
+
 }
