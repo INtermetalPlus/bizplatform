@@ -2,14 +2,17 @@ import React, { useEffect } from "react";
 import styles from './SOB_UI.module.scss'
 import { useOrders } from "@/features/lib/storage/OrderStore";
 import { useSimilarStore } from "@/features/lib/storage/SimilarOrderStore/SimilarOrderStore";
-
+import { useSession } from "next-auth/react";
 
 export default function SimilarOrdersBlock() {
+  const { data: session, status } = useSession()
     const {orders, fetchOrders} = useOrders()
 
     useEffect(() => {
-        fetchOrders()
-    }, [fetchOrders])
+      if(session) {
+      fetchOrders(session.user.rawAccessToken)
+      }
+    }, [fetchOrders,session])
 
     
     const truncateWords = (text: string, wordLimit: number): string => {

@@ -9,6 +9,7 @@ import { useSimilarStore } from "@/features/lib/storage/SimilarOrderStore/Simila
 import SOF_tariffModal from "@/shared/ui/SimilarOrderForm/SOF_tariffModal";
 
 
+
 export const SimilarOrderPage: React.FC = () => {
     const {removeOrderElement, similarOrder} = useSimilarStore()
 
