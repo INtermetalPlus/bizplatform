@@ -20,6 +20,13 @@
     justify-content: space-between;
     border-bottom: 1px solid #eaeaea;
 }
+.menu{
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    line-height: 28px;
+    gap: 30px;
+}
 
 .link {
     font-size: 24px;
@@ -81,6 +88,8 @@
 .menu_item:hover {
     color: #22469F;
 }
+
+
 
 
 
@@ -209,4 +218,45 @@
     background: transparent;
     color: #3971FF !important;
     cursor: pointer !important;
+}
+
+.mobile_btn{
+    display: none;
+}
+
+@media (max-width: 1400px) {
+    .mobile_btn{
+        display: block;
+        position: absolute;
+        top: 27px;
+        right: 10px;
+        cursor: pointer;
+        z-index: 10;
+    }
+    .menu{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: fixed;
+        left: -100%;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 97vh;
+        background-color: #f8f8f8;
+        z-index: 10;
+        transition: left 1s;
+    }
+
+    .active{
+        left: 0;
+    }
+    .menu link{
+        font-size: 28px;
+    }
+
+    .blog_auth{
+        padding-right: 150px;
+    }
+    
 }
