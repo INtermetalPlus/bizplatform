@@ -13,11 +13,9 @@ import { ProductList } from "@/widgets/ProductList";
 export default function Home() {
   return (
     <main className={styles.main}>
-      
       <PlatformWork />
       <SearchOrAdd />
       <TradeOperations />
-      <SearchProduct/>
       <Company />
       <Comments />
       <ProductList/>
