@@ -71,6 +71,9 @@ export const Navigation: React.FC = () => {
   return (
     <div className={styles.header}>
       <header className={styles.page_header}>
+        <div onClick={() => setNav(!nav)} className={styles.mobile_btn}>
+          {nav ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}
+        </div>
         <div className={styles.icon}>
           <a className={styles.link} href="/">
             <span className={`${styles.first}`}>IBP</span>
@@ -112,11 +115,47 @@ export const Navigation: React.FC = () => {
               </Link>
             </div>
             <div className={styles.nav}>
-            <Link href="#" className={styles.menu_item}>
-            <Select text="Еще" options={["Блог"]} />
-            </Link>
+              <Link href="#" className={styles.menu_item}>
+                <Select text="Еще" options={["Блог"]} />
+              </Link>
             </div>
-          </div>
+
+            <div className={styles.auth}>
+              {!session?.data?.user ? (
+                <>
+                <div className={styles.auth_flax}>
+                  <button className={styles.register}  onClick={openAuthWindow}>
+                    Регистрация
+                  </button>
+                  <button className={styles.login} onClick={openLoginWindow}>
+                    Вход
+                  </button>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <Link href={"/mail"}>
+                    <Image src={mailHeader} alt="mail" width={24} height={24} />
+                  </Link>
+                  <Link href={"/chat"}>
+                    <Image
+                      src={messageHeader}
+                      alt="message"
+                      width={24}
+                      height={24}
+                    />
+                  </Link>
+                  <Image
+                    onClick={() => console.log("Clicked on menu")}
+                    src={menuHeader}
+                    alt="menu"
+                    width={24}
+                    height={24}
+                  />
+                </>
+              )}
+            </div>
+          
 
           <div className={styles.header_info}>
             <Image
@@ -126,44 +165,6 @@ export const Navigation: React.FC = () => {
               alt="ru lang"
               className="lang"
             />
-          </div>
-          <div onClick={() => setNav(!nav)} className={styles.mobile_btn}>
-            {nav ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}
-          </div>
-          <div className={styles.blog_auth}>
-          <div className={styles.auth}>
-            {!session?.data?.user ? (
-              <span>
-                <button className={styles.register} onClick={openAuthWindow}>
-                  Регистрация
-                </button>
-                <button className={styles.login} onClick={openLoginWindow}>
-                  Вход
-                </button>
-              </span>
-            ) : (
-              <>
-                <Link href={"/mail"}>
-                  <Image src={mailHeader} alt="mail" width={24} height={24} />
-                </Link>
-                <Link href={"/chat"}>
-                  <Image
-                    src={messageHeader}
-                    alt="message"
-                    width={24}
-                    height={24}
-                  />
-                </Link>
-
-                <Image
-                  onClick={() => console.log("Clicked on menu")}
-                  src={menuHeader}
-                  alt="menu"
-                  width={24}
-                  height={24}
-                />
-              </>
-            )}
           </div>
           </div>
         </nav>
