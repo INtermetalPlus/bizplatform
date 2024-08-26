@@ -7,6 +7,7 @@
     background-color: #fff;
     display: flex;
     justify-content: center;
+    padding: 0;
 
 }
 
@@ -19,6 +20,13 @@
     min-height: 80px;
     justify-content: space-between;
     border-bottom: 1px solid #eaeaea;
+}
+.menu{
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    line-height: 28px;
+    gap: 30px;
 }
 
 .link {
@@ -69,7 +77,7 @@
 .menu_item {
     position: relative;
     color:black;
-    margin-right: 44px;
+    
     text-decoration: none;
     transition: all ease .5;
 }
@@ -81,6 +89,8 @@
 .menu_item:hover {
     color: #22469F;
 }
+
+
 
 
 
@@ -209,4 +219,77 @@
     background: transparent;
     color: #3971FF !important;
     cursor: pointer !important;
+}
+
+.mobile_btn{
+    display: none;
+}
+
+@media (max-width: 1400px) {
+    .mobile_btn {
+        display: block;
+        position: absolute;
+        top: 27px;
+        left: 10px;
+        margin-right: 20px;
+        padding-left: 80px;
+        cursor: pointer;
+        z-index: 11;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: flex-start; /* Выравнивание по началу */
+        align-items: flex-start; /* Выровнять элементы меню по левому краю */
+        position: fixed;
+        left: -100%;
+        top: 0;
+        width: 30%;
+        height: 97vh;
+        background-color: #f8f8f8;
+        z-index: 10;
+        transition: left 0.3s ease-in-out;
+        padding-left: 20px; /* Отступ слева */
+    }
+
+    .auth_flax button {
+        margin-bottom: 20px; /* Отступ между кнопками */
+        width: 100%; /* Убедитесь, что кнопки занимают всю ширину блока */
+    }
+    
+    /* Удаляем отступ у последнего элемента */
+    .auth_flax button:last-child {
+        margin-bottom: 0;
+    }
+    
+    .nav{
+        margin-bottom: -21px;
+    }
+
+    .menu.active {
+        left: 0;
+    }
+
+    .menu_item {
+        text-align: left; /* Выровнять текст влево */
+        margin-bottom: 20px; /* Расстояние между пунктами меню */
+        width: 100%; /* Убедитесь, что пункт меню занимает всю ширину */
+    }
+
+    .item_nav {
+        text-align: left;
+    }
+
+    .active {
+        left: 0;
+    }
+
+    .menu link {
+        font-size: 28px;
+    }
+
+    .blog_auth {
+        padding-right: 150px;
+    }
 }

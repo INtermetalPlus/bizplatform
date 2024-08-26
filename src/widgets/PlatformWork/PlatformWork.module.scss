@@ -115,3 +115,58 @@
   margin-top: -45%;
   margin-left: -50%;
 }
+
+@media (max-width: 1024px) {
+  .containerPlatform {
+    padding: 0 20px;
+  }
+
+  .ibpplatform {
+    font-size: 42px;
+  }
+
+  .frame1block, 
+  .frame2block, 
+  .frame3block {
+    font-size: 28px;
+    width: 100%;
+  }
+
+  .number {
+    font-size: 70px;
+  }
+
+  .request, 
+  .request2, 
+  .request3 {
+    font-size: 24px;
+  }
+
+  .frameImg, 
+  .frame1Img, 
+  .frame2Img, 
+  .frame3Img {
+    margin-left: 36px;
+  }
+
+  .frameImgChat {
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  .frame5Img, 
+  .frame6Img {
+    display: none;
+  }
+
+  .cover {
+    margin-top: 20px;
+  }
+
+  .frame1,
+  .frame2,
+  .frame3 {
+    margin-top: 30px;
+    justify-content: space-between;
+  }
+}
