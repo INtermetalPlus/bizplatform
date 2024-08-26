@@ -226,7 +226,7 @@
 }
 
 @media (max-width: 1400px) {
-    .mobile_btn{
+    .mobile_btn {
         display: block;
         position: absolute;
         top: 27px;
@@ -235,67 +235,61 @@
         padding-left: 80px;
         cursor: pointer;
         z-index: 11;
-
-        
     }
-    .menu{
+
+    .menu {
         display: flex;
-        flex-direction:column-reverse;
-        justify-content: center;
+        flex-direction: column-reverse;
+        justify-content: flex-start; /* Выравнивание по началу */
+        align-items: flex-start; /* Выровнять элементы меню по левому краю */
         position: fixed;
         left: -100%;
         top: 0;
-        // bottom: 0;
         width: 30%;
         height: 97vh;
         background-color: #f8f8f8;
         z-index: 10;
         transition: left 0.3s ease-in-out;
-        
-    }
-    .auth_flax{
-        display: grid;
-        margin-bottom: 20px;
-        
+        padding-left: 20px; /* Отступ слева */
     }
 
+    .auth_flax button {
+        margin-bottom: 20px; /* Отступ между кнопками */
+        width: 100%; /* Убедитесь, что кнопки занимают всю ширину блока */
+    }
+    
+    /* Удаляем отступ у последнего элемента */
+    .auth_flax button:last-child {
+        margin-bottom: 0;
+    }
+    
+    .nav{
+        margin-bottom: -21px;
+    }
 
-    .menu.active{
+    .menu.active {
         left: 0;
     }
 
     .menu_item {
-        // font-size: 28px;
-        // margin-bottom: 20px; 
+        text-align: left; /* Выровнять текст влево */
+        margin-bottom: 20px; /* Расстояние между пунктами меню */
+        width: 100%; /* Убедитесь, что пункт меню занимает всю ширину */
     }
 
-    // .header{
-    //     display: grid;
-    //     grid-template-columns: 1fr 1fr;
-    //     .first{
-    //         grid-column: 2;
-    //     }
-    //     .mobile_btn{
-    //         grid-column: 1;
-    //     }
-    // }
+    .item_nav {
+        text-align: left;
+    }
 
-    .active{
+    .active {
         left: 0;
     }
-    .menu link{
+
+    .menu link {
         font-size: 28px;
     }
 
-    .blog_auth{
+    .blog_auth {
         padding-right: 150px;
     }
-
-    
 }
-
-// @media (max-width: 1425px) {
-//     .menu_item{
-//         font-size: 20px;
-//     }
-// }

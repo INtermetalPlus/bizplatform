@@ -71,6 +71,7 @@ export const Navigation: React.FC = () => {
   return (
     <div className={styles.header}>
       <header className={styles.page_header}>
+        <div className={styles.icon_and_mobile}>
         <div onClick={() => setNav(!nav)} className={styles.mobile_btn}>
           {nav ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}
         </div>
@@ -78,6 +79,7 @@ export const Navigation: React.FC = () => {
           <a className={styles.link} href="/">
             <span className={`${styles.first}`}>IBP</span>
           </a>
+        </div>
         </div>
         <nav className={styles.item_nav}>
           <div className={nav ? `${styles.menu} ${styles.active}` : styles.menu}>

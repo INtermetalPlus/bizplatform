@@ -11,8 +11,8 @@ const SearchOrAdd = () => {
 					<h2>Найти или добавить свой товар</h2>
 					<Button width='385px' text='Добавить товар' />
 				</div>
-				<div className={styles.search}>
-					<button>
+				<div  className={styles.search}>
+					<button className={styles.search_button}>
 						Кыргызстан
 						<svg
 							xmlns='http://www.w3.org/2000/svg'
@@ -27,6 +27,9 @@ const SearchOrAdd = () => {
 							/>
 						</svg>
 					</button>
+					
+					<div className={styles.search_input_icon}>
+					<input className={styles.search_input} type='text' placeholder='Найти заказ' />
 					<svg className={styles.searchIcon}						xmlns='http://www.w3.org/2000/svg'
 						width='30'
 						height='31'
@@ -41,8 +44,7 @@ const SearchOrAdd = () => {
 							stroke-linejoin='round'
 						/>
 					</svg>
-
-					<input type='text' placeholder='Найти заказ' />
+					</div>
 					<div className={styles.ordersAndProducts}>
 						<button className={styles.active}>Заказы</button>
 						<button>Товары</button>

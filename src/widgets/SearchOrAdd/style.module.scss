@@ -1,51 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
-
-  $IBPBlue: #3971ff;
-  $IBPHover: rgba(136, 170, 255, 1);
-  $IBPOnClick: rgba(34, 70, 159, 1);
-; 
-
+$IBPBlue: #3971ff;
+$IBPHover: rgba(136, 170, 255, 1);
+$IBPOnClick: rgba(34, 70, 159, 1);
 
 .SearchOrAddBlock {
   display: flex;
   justify-content: center;
-	width: 100%;
-  padding-top: 150px;
-	gap: 20px;
+  width: 100%;
+  margin-top: 150px;
+  gap: 20px;
 
-	.container {
-    width: 1600px;
-		display: flex;
-		flex-direction: column;
+  .container {
+    max-width: 1600px;
+    display: flex;
+    flex-direction: column;
 
-		.add {
-			width: 100%;
-			height: 69px;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			padding-bottom: 20px;
+    .add {
+      width: 100%;
+      height: 69px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 20px;
 
-			h2 {
+      h2 {
         width: 782px;
         height: 68px;
-        
         font-size: 48px;
         font-weight: 700;
         line-height: 58.09px;
         text-align: left;
-			}
+      }
 
-			Button {
+      button { // Используйте lowercase для стандартных HTML-элементов
         height: 69px;
         gap: 24px;
         border-radius: 2px 0px 0px 0px;
         opacity: 0px;
-				background: $IBPBlue;
-				border: none;
-        
-        
+        background: $IBPBlue;
+        border: none;
         font-size: 24px;
         font-weight: 600;
         line-height: 29.05px;
@@ -53,33 +47,30 @@
         &:hover {
           background-color: $IBPHover;
         }
+      }
+    }
 
-			}
-		}
-
-		.search {
-			position: relative;
+    .search {
+      position: relative;
       width: 1600px;
       height: 69px;
-			display: flex;
+      display: flex;
       align-items: center;
-			gap: 20px;
+      gap: 20px;
       padding-bottom: 20px;
 
-			button {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				color: #fff;
-				width: 385px;
+      .search_button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        width: 385px;
         height: 69px;
         gap: 24px;
         border-radius: 2px 0px 0px 0px;
         opacity: 0px;
-				background: $IBPBlue;
-				border: none;
-        
-        
+        background: $IBPBlue;
+        border: none;
         font-size: 24px;
         font-weight: 600;
         line-height: 29.05px;
@@ -87,45 +78,42 @@
         &:hover {
           background-color: $IBPHover;
         }
+      }
 
-			}
+      .searchIcon {
+        position: absolute;
+        padding-right: 22px;
+        left: 1144px;
+        pointer-events: none;
+      }
 
-			.searchIcon {
-				position: absolute;
-				padding-right: 22px;
-				left: 1144px;
-				pointer-events: none;
-			}
-
-			input { 
+      .search_input { 
         width: 790px;
         height: 67px;
-        padding: 0px 0px 0px 10px ;
-				border-radius: 2px;
-				border: 2px solid $IBPBlue;	
+        padding: 0px 0px 0px 10px;
+        border-radius: 2px;
+        border: 2px solid $IBPBlue;
 
-				&::placeholder {
-					
-					font-size: 24px;
-					font-weight: 600;
-					line-height: 29.05px;
-					text-align: left;
-					color: #B5B5B5;
-				}
+        &::placeholder {
+          font-size: 24px;
+          font-weight: 600;
+          line-height: 29.05px;
+          text-align: left;
+          color: #B5B5B5;
+        }
 
-				&:focus {
-					outline-color: $IBPBlue !important;
-					
-				}
-			}
+        &:focus {
+          outline-color: $IBPBlue !important;
+        }
+      }
 
-			.ordersAndProducts {
-				display: flex;
-			  width: 385px;
+      .ordersAndProducts {
+        display: flex;
+        width: 385px;
         height: 69px;
-				border: 2px solid $IBPBlue;
+        border: 2px solid $IBPBlue;
 
-				button {
+        button {
           background-color: white;
           color: $IBPBlue;
           width: 50%;
@@ -135,72 +123,124 @@
           opacity: 0px;
           border: none;
           cursor: pointer;
-          
-          
           font-size: 24px;
           font-weight: 600;
           line-height: 29.05px;
-				}
+        }
 
-				.active {
+        .active {
           width: 50%;
-					color: #fff;
+          color: #fff;
           background-color: $IBPBlue;
-					border: none;
+          border: none;
           border-radius: unset;
           cursor: default;
+          font-size: 24px;
+          font-weight: 600;
+          line-height: 29.05px;
+        }
+      }
+    }
 
-					font-size: 24px;
-					font-weight: 600;
-					line-height: 29.05px;
-				}
-			}
-		}
-		
-		.category {
-			width: 100%;
-			display: flex;
-			flex-wrap: wrap;
-			gap: 20px;
+    .category {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
 
-			.card {
+      .card {
         display: flex;
         align-items: center;
-				width: 385px;
-				height: 100px;
-				border-radius: 2px;
-				background: rgba(251, 251, 251, 1);
-				box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+        width: 385px;
+        height: 100px;
+        border-radius: 2px;
+        background: rgba(251, 251, 251, 1);
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
 
-				.icon {
-					width: 90px;
-					height: 86px;
-					background-color: $IBPBlue;
-					width: 90px;
-					height: 86px;
-					margin: 0px 0px 10px 10px;
-					gap: 15px;
-					border-radius: 0px 0px 3px 3px;
-					opacity: 0px;
-					display: flex;
-				}
+        .icon {
+          width: 90px;
+          height: 86px;
+          background-color: $IBPBlue;
+          margin: 0px 0px 10px 10px;
+          gap: 15px;
+          border-radius: 0px 0px 3px 3px;
+          opacity: 0px;
+          display: flex;
+        }
 
-				& svg {
-					width: 90px;
-					height: 86px;
-					gap: 15px;
-					border-radius: 0px 0px 3px 3px;
-					opacity: 0px;
-				}
+        & svg {
+          width: 90px;
+          height: 86px;
+          gap: 15px;
+          border-radius: 0px 0px 3px 3px;
+          opacity: 0px;
+        }
 
         & p {
-					font-size: 20px;
-					font-weight: 500;
-					line-height: 24.2px;
-					text-align: left;
-					padding: 26px 52px;
+          font-size: 20px;
+          font-weight: 500;
+          line-height: 24.2px;
+          text-align: left;
+          padding: 26px 52px;
         }
-			}
-		}
-	}
+      }
+    }
+  }
+
+@media (max-width: 1024px) {
+  .container {
+      max-width: 100%;
+      max-width: 850px;
+  
+
+    .add h2 {
+        font-size: 19px;
+        width: 304px;
+    }
+
+    .add button { // Измените на lowercase
+        font-size: 18px;
+        width: 139px;
+    }
+
+    .search {
+      width: 100vw;
+      .search_button {
+          width:139px;      /* Установите ширину в 100% для адаптивности */
+          font-size: 18px;
+      }
+      .searchIcon {
+          left: 243px; /* Измените в зависимости от нужного отступа */
+          position: absolute;
+          padding-top: 17px;
+          // left: 1144px;
+         pointer-events: none;
+      }
+      .search_input {
+          max-width: 287px; 
+          font-size: 18px;
+          padding: 0px 10px;
+          box-sizing: border-box; 
+      }
+      .search_input_icon{
+        position: relative;
+      }
+    }
+      .ordersAndProducts {
+          width: 139px;
+          button {
+              font-size: 18px;
+          }
+      }
+    }
+
+    .category {
+        .card {
+            width: 287px; /* Исправлено на 50% для двух элементов в строке */
+            height: 77px; /* Позволяет высоте изменяться в зависимости от контента */
+            gap: 12px;
+        }
+    }
+  }
 }
+ 
