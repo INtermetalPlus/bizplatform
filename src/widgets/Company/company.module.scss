@@ -35,3 +35,22 @@
     height: 220px;
     background-color: #ccc;
 }
+
+
+@media (max-width: 1024px) {
+    .container{
+        max-width: 586px;
+        width: 100%;
+
+        .title{
+            width: 289px;
+            height: 19px;
+            font-weight: 700;
+            font-size: 19px;
+        }
+        .square{
+            width: 138px;
+            height: 100px;
+        }
+    }
+}

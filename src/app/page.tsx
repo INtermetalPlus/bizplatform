@@ -17,10 +17,10 @@ export default function Home() {
       <PlatformWork />
       <SearchOrAdd />
       <TradeOperations />
-      <SearchProduct/>
+      {/* <SearchProduct/> */}
       <Company />
       <Comments />
-      <ProductList/>
+      {/* <ProductList/> */}
     </main>
   );
 }
