@@ -81,7 +81,7 @@ export default function RootLayout({
         {/* <OfferCustomer/> */}
         {/* <SimilarOrders/> */}
         {/* <Company /> */}
-        <CompanyPage />
+        {/* <CompanyPage /> */}
         
 
         {/* <AllOrder/> */}
@@ -95,9 +95,9 @@ export default function RootLayout({
         {/* <ProtectedRoute> */}
         {/* {children} */}
         {/* </ProtectedRoute> */}
-        <Footer/>
+        {/* <Footer/> */}
           {children}
-        <Footer/>
+        {/* <Footer/> */}
         <BottomBlock />
       </body>
     </html>

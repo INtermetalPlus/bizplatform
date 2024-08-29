@@ -1,6 +1,7 @@
 .PlaceProduct__block {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 20px;
     max-width: 1600px;
     width: 100%;
@@ -8,4 +9,13 @@
     margin-bottom: 60px;
     margin-left: auto;
     margin-right: auto;
+}
+
+@media(max-width: 768px) {
+    .PlaceProduct__block {
+        width: 580px;
+        justify-content: start;
+        margin-left: 80px;
+        margin-right: 80px;
+    }
 }

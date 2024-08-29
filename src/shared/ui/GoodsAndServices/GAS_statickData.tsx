@@ -7,7 +7,6 @@ export const GAS_statickData: React.FC = () => {
     return (
         <div className={styles.GASContent}>
             <StatickDataItem/>
-            <StatickDataItem/>
         </div>      
     )
 }

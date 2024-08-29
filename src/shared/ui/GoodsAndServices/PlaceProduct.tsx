@@ -6,11 +6,7 @@ import { AddProductModal } from '@/widgets/AllOrder/AddProductModal/AddProductMo
 
 export const GAS_PlaceProduct: React.FC = () => {
 	const { isModalOpen, openModal, closeModal } = useModalStore()
-<<<<<<< HEAD
-
-=======
 	
->>>>>>> 41654f679fa483874468ba132ce8dd49ec713b09
 	return (
 		<>
 			<button onClick={openModal} className={styles.placeProductBtn}>

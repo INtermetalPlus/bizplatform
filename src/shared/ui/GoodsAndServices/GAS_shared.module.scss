@@ -30,7 +30,6 @@
     border: 2px solid rgb(57, 113, 255);
     background: rgb(255, 255, 255);
     padding: 0;
-    padding-top: 6px;
     height: 69px;
 }
 
@@ -123,6 +122,42 @@
 }
 
 
+@media(max-width: 768px) {
+    
+    .header {
+        font-size: 20px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        margin-left: 80px;
+        width: 200px;
+        margin-right: 0;
+    }
 
+    .setCountry {
+        width: 139px;
+        height: 36px;
+        font-size: 12px;
+    }
 
+    .orderSearch {
+        width: 287px;
+        height: 35px;
 
+        &::placeholder {
+            font-size: 12px;
+        }
+    }
+
+    .placeProductBtn {
+        font-size: 12px;
+        height: 35px;
+        width: 139px;
+        padding: 0;
+    }
+
+    .GASContent {  
+        margin-left: 80px;
+        margin-right: 80px;
+        margin-bottom: 80px;
+    }
+}

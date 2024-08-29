@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import { create } from 'zustand'
-=======
-import create from 'zustand'
->>>>>>> 41654f679fa483874468ba132ce8dd49ec713b09
 import axios from 'axios'
 
 const useModalStore = create(set => ({
