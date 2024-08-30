@@ -9,7 +9,7 @@ const SearchOrAdd = () => {
 			<div className={styles.container}>
 				<div className={styles.add}>
 					<h2>Найти или добавить свой товар</h2>
-					<Button width='385px' text='Добавить товар' />
+					<Button  width='385px' text='Добавить товар' />
 				</div>
 				<div  className={styles.search}>
 					<button className={styles.search_button}>
