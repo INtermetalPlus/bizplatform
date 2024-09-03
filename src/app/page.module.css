@@ -1,5 +1,9 @@
+*{
+  height: 0px;
+}
 .main {
   margin:0;
   padding:0;
+  height: 0px;
 }
 

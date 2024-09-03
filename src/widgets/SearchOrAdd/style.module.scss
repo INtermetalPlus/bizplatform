@@ -42,26 +42,26 @@ $border-radius: 2px;
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-top: 9.375rem; // 150px -> 9.375rem
-  gap: 1.25rem; // 20px -> 1.25rem
+  margin-top: 9.375rem; 
+  gap: 1.25rem; 
 
   .container {
-    max-width: 100rem; // 1600px -> 100rem
+    max-width: 100rem; 
     display: flex;
     flex-direction: column;
 
     .add {
       width: 100%;
-      height: 4.313rem; // 69px -> 4.313rem
+      height: 4.313rem; 
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-bottom: 1.25rem; // 20px -> 1.25rem
+      padding-bottom: 1.25rem; 
 
       h2 {
-        width: 48.875rem; // 782px -> 48.875rem
-        height: 4.25rem; // 68px -> 4.25rem
-        font-size: 3rem; // 48px -> 3rem
+        width: 48.875rem; 
+        height: 4.25rem; 
+        font-size: 3rem; 
         font-weight: 700;
         line-height: 1.21;
         text-align: left;
@@ -76,30 +76,32 @@ $border-radius: 2px;
 
     .search {
       position: relative;
-      width: 100rem; // 1600px -> 100rem
-      height: 4.313rem; // 69px -> 4.313rem
+      width: 100rem; 
+      height: 4.313rem; 
       display: flex;
       align-items: center;
-      gap: 1.25rem; // 20px -> 1.25rem
-      padding-bottom: 1.25rem; // 20px -> 1.25rem
+      gap: 1.25rem; 
+      padding-bottom: 1.25rem; 
 
       .search_button {
         @include button-style($primary-color, $white);
-        width: 24.063rem; // 385px -> 24.063rem
+        width: 24.063rem; 
         height: 100%;
       }
 
       .searchIcon {
         position: absolute;
-        padding-right: 1.375rem; // 22px -> 1.375rem
-        left: 71.5rem; // 1144px -> 71.5rem
+        padding-right: 1.375rem; 
+        left: 71.5rem; 
         pointer-events: none;
+        margin-top: 15px;
       }
 
       .search_input { 
-        width: 49.375rem; // 790px -> 49.375rem
-        height: 4.188rem; // 67px -> 4.188rem
-        padding: 0 0 0 0.625rem; // 10px -> 0.625rem
+        width: 49.375rem; 
+        height: 4.188rem; 
+        
+        padding: 0 0 0 0.625rem; 
         border-radius: $border-radius;
         border: 2px solid $primary-color;
 
@@ -116,7 +118,7 @@ $border-radius: 2px;
 
       .ordersAndProducts {
         display: flex;
-        width: 24.063rem; // 385px -> 24.063rem
+        width: 24.063rem; 
         height: 100%;
         border: 2px solid $primary-color;
 
@@ -137,22 +139,22 @@ $border-radius: 2px;
       width: 100%;
       display: flex;
       flex-wrap: wrap;
-      gap: 1.25rem; // 20px -> 1.25rem
+      gap: 1.25rem; 
 
       .card {
         display: flex;
         align-items: center;
-        width: 24.063rem; // 385px -> 24.063rem
-        height: 6.25rem; // 100px -> 6.25rem
+        width: 24.063rem; 
+        height: 6.25rem; 
         border-radius: $border-radius;
         background: rgba(251, 251, 251, 1);
         box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
 
         .icon {
-          width: 5.625rem; // 90px -> 5.625rem
-          height: 5.375rem; // 86px -> 5.375rem
+          width: 5.625rem; 
+          height: 5.375rem; 
           background-color: $primary-color;
-          margin: 0 0 0.625rem 0.625rem; // 10px -> 0.625rem
+          margin: 0 0 0.625rem 0.625rem; 
           border-radius: 0px 0px 3px 3px;
           display: flex;
         }
@@ -162,7 +164,7 @@ $border-radius: 2px;
           font-weight: 500;
           line-height: $line-height;
           text-align: left;
-          padding: 1.625rem 3.25rem; // 26px 52px -> 1.625rem 3.25rem
+          padding: 1.625rem 3.25rem; 
         }
       }
     }
@@ -173,16 +175,16 @@ $border-radius: 2px;
 @media screen and (max-width: 1024px) {
   .SearchOrAddBlock {
     .container {
-      max-width: 36.5rem; // 584px -> 36.5rem
+      max-width: 36.5rem; 
 
       .add {
         h2 {
           width: 270px;
-          font-size: 16px; // Уменьшение размера текста
+          font-size: 16px; 
           font-weight: 700;
           padding-top: 50px;
         }
-        button{
+        button {
           font-size: 12px;
           font-weight: 500;
           max-width: 139px;
@@ -191,64 +193,56 @@ $border-radius: 2px;
       }
 
       .search {
-        width: 36.5rem; // 584px -> 36.5rem
+        width: 36.5rem;
 
         .search_button {
           width: 106px;
           font-size: 12px;
-          font-weight: 500px;
-          svg{
+          font-weight: 500;
+          svg {
             width: 15px;
           }
         }
 
         .searchIcon {
-          left: 250px; // Позиционирование иконки поиска для адаптации
-          // right: 1rem;
+          left: 386px;
           top: 15px;
         }
 
         .search_input {
           width: 286px;
-          // font-size: 12px;
-          .search_input::placeholder{
+          &::placeholder {
             font-size: 12px;
             font-weight: 500;
           }
-          
         }
 
         .ordersAndProducts {
           width: 139px;
-          button{
+          button {
             font-size: 12px;
             font-weight: 500;
           }
-          .active{
+          .active {
             width: 66px;
           }
-        }
-        .search_input_icon{
-          position: relative;
-
         }
       }
 
       .category {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 1.25rem; // 20px -> 1.25rem
+        gap: 1.25rem;
 
         .card {
-          width: 284px; // 282px -> половина от 584px с учетом gap
-          p{
+          width: 284px;
+          p {
             width: 97px;
             font-size: 14px;
             font-weight: 500;
             line-height: 16px;
           }
         }
-        
       }
     }
   }

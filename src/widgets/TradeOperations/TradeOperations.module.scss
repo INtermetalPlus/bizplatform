@@ -24,7 +24,7 @@
 }
 
 .tradeOperation_title {
-  min-width: 925px;
+  // min-width: 925px;
   max-width: 1600px;
   min-height: 156px;
   display: flex;
@@ -160,6 +160,11 @@
   .tradeOperation{
     max-width: 584px;
     width: 100%;
+    .tradeOperation_title{
+      max-width: 584px;
+      width: 100%;
+      
+    
   
   .tradeOperation_title_header{
     width: 352px;
@@ -173,6 +178,7 @@
     font-size: 18px;
     font-weight: 700;
   }
+}
   .tradeOperation_headerForm{
     width: 155px;
     height: 19px;

@@ -18,6 +18,7 @@ export const GAS_SetCountry: React.FC = () => {
         <>
             <label className={styles.setCountry}>
                 <select name="selectedCountry" className={styles.setCountrylist}>
+                <option value={0} className={styles.setCountrylist__option}>Кыргызстан</option>
                     {country.map((item) => (
                         <option value={1} className={styles.setCountrylist__option} key={item.id}>{item.country_name}</option>
                     ))}

@@ -14,7 +14,7 @@
     margin: auto;
 }
 
-.footer_logo{
+.footer_logo {
     margin: auto;
     margin-right: 177px;
 }
@@ -23,27 +23,27 @@
     margin-right: 98px;
 }
 
-
-.footer_blog{
+.footer_blog {
     padding-top: 40px;
     display: flex;
     background-color: #FFFFFF;
-   
 }
-.footer_info{
+
+.footer_info {
     display: grid;
     color: #ccc;
 }
-.info_a{
+
+.info_a {
     margin-top: 20px;
     color: #000;
     text-decoration: none;
     width: 150px;
 }
-.footer_info_blog{
+
+.footer_info_blog {
     display: flex;
     flex-direction: column;
-    
 }
 
 .topRow, .bottomRow {
@@ -57,4 +57,51 @@
     width: 250px;
     height: 120px;
     background-color: #ccc;
+}
+
+.blog_footer {
+    display: flex;
+}
+
+/* Адаптация под планшеты с разрешением 1024px */
+@media (max-width: 1024px) {
+    .footer {
+        margin-top: 50px;
+        padding: 0 10px;
+    }
+
+    .footer_blog {
+        max-width: 584px; /* Установка ширины главного блока */
+    }
+
+    .footer_logo {
+        margin-right: 50px; /* Уменьшение отступа от логотипа */
+    }
+
+    .footer_logo + div {
+        margin-right: 50px; /* Уменьшение отступа между блоками */
+    }
+
+    .footer_info {
+        font-size: 14px;
+    }
+
+    .info_a {
+        height: 15px;
+        margin-top: 10px;
+        width: 100px;
+        line-height: 14px;
+        font-weight: 500;
+        font-size: 12px;
+        
+    }
+
+    .square {
+        width: 64px; /* Уменьшение размера квадратов */
+        height: 64px;
+    }
+
+    .topRow, .bottomRow {
+        gap: 10px; /* Уменьшение промежутков между квадратами */
+    }
 }

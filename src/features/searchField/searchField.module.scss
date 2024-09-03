@@ -25,3 +25,12 @@
     right: 0;
     cursor: pointer;
   }
+
+  .input_icon{
+    position: relative;
+  }
+  .input_icon svg{
+    position: absolute;
+    right: 15px;
+    top: 17px;
+  }

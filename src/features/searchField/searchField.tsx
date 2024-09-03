@@ -33,6 +33,7 @@ export const SearchField: FC<SearchFieldProps> = ({ onSearch }) => {
 
   return (
     <form onSubmit={handleSubmit} className={styles.searchForm}>
+      <div className={styles.input_icon}>
       <input
         type="text"
         placeholder="Найти заказ"
@@ -40,18 +41,10 @@ export const SearchField: FC<SearchFieldProps> = ({ onSearch }) => {
         onChange={handleChange}
         className={styles.searchInput}
         ref={changeSearch}
+        
       />
-      <Image
-      width={22.5}
-      height={22.5}
-      src={loop}
-      alt="search icon"
-      className={styles.searchIcon}
-      onClick={activateInput}
-      />
-
-      <button type="submit" className={styles.searchIcon}>
-        <svg
+      <svg
+      
           width="30"
           height="31"
           viewBox="0 0 30 31"
@@ -66,7 +59,19 @@ export const SearchField: FC<SearchFieldProps> = ({ onSearch }) => {
             strokeLinejoin="round"
           />
         </svg>
-      </button>
+        </div>
+      {/* <Image
+      width={22.5}
+      height={22.5}
+      src={loop}
+      alt="search icon"
+      className={styles.searchIcon}
+      onClick={activateInput}
+      /> */}
+
+      
+        
+      
 
     </form>
   );

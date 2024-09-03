@@ -13,6 +13,7 @@ export const Footer:React.FC = ():React.JSX.Element => {
             <div className={styles.footer_logo}>
                 <Image src={ibpLogo} alt="" width={98} height={50}/>
             </div>
+            <div className={styles.blog_footer}>
             <div className={styles.footer_info_blog}>
               <div className={styles.footer_info}>
                 <a className={styles.info_a} href="">Все заказы</a>
@@ -23,7 +24,7 @@ export const Footer:React.FC = ():React.JSX.Element => {
                 <a className={styles.info_a} href="">Помощь</a>
               </div>
             </div>
-            <div className={styles.footer_info_blog}>
+              <div className={styles.topRow_bottomRow}>
               <div className={styles.topRow}>
                   <div className={styles.square}></div>
                   <div className={styles.square}></div>
@@ -36,9 +37,11 @@ export const Footer:React.FC = ():React.JSX.Element => {
                   <div className={styles.square}></div>
                   <div className={styles.square}></div>
                 </div>
+                </div>
+            </div>
             </div>
         </div>
-        </div>
+        
     </footer>   
   )
 }

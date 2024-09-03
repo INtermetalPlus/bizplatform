@@ -10,6 +10,7 @@ import { TradeOperations } from "@/widgets/TradeOperations/TradeOperations";
 import { SearchProduct } from "@/widgets/SearchProduct";
 import { ProductList } from "@/widgets/ProductList";
 
+
 export default function Home() {
   return (
     <main className={styles.main}>

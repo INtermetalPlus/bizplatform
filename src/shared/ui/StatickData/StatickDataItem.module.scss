@@ -10,49 +10,99 @@
     display: flex;
     height: auto;
 }
-    .orderList__orderFrame {
-        display: flex;
-        flex-direction: column;
-        max-width: 385px;
-        height: auto;
-        width: 100%;
-        border-radius: 2px;
-        background: rgb(247, 247, 247);
-        padding: 20px 0 50px 20px;
-        cursor: pointer;
+
+.orderList__orderFrame {
+    display: flex;
+    flex-direction: column;
+    max-width: 385px;
+    height: auto;
+    width: 100%;
+    border-radius: 2px;
+    background: rgb(247, 247, 247);
+    padding: 20px 0 50px 20px;
+    cursor: pointer;
+}
+
+.orderFrame__header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: rgb(0, 0, 0);
+    font-family: 'Inter';
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.orderFrame_content {
+    display: flex;
+    flex-direction: column;
+    margin: auto 69px;
+    max-width: 197px;
+    gap: 16px;
+}
+
+.orderFrame__icon {
+    border-radius: 50px;
+    padding: 6px;
+    background: rgb(57, 113, 255);
+}
+
+.orderFrame__infoText {
+    color: rgb(0, 0, 0);
+    font-family: 'Inter';
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.OrderFrame__showMore {
+    color: rgb(34, 70, 159);
+    font-family: 'Inter';
+    font-size: 20px;
+    text-decoration: none;
+    margin-top: 4px;
+}
+
+@media (max-width: 1024px) {
+    .orderList__container {
+        max-width: 585px;
+        gap: 10px; /* Сокращаем расстояние между элементами для более компактного отображения */
     }
-        .orderFrame__header {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            color: rgb(0, 0, 0);
-            font-family: 'Inter';
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-        .orderFrame_content {
-            display: flex;
-            flex-direction: column;
-            margin: auto 69px;
-            max-width: 197px;
-            gap: 16px;
-        }
-            .orderFrame__icon {
-                border-radius: 50px;
-                padding: 6px;
-                background: rgb(57, 113, 255);
-            }
-            .orderFrame__infoText {
-                color: rgb(0, 0, 0);
-                font-family: 'Inter';
-                font-size: 20px;
-                font-weight: 500;
-                margin: 0;
-            }
-            .OrderFrame__showMore {
-                color: rgb(34, 70, 159);
-                font-family: 'Inter';
-                font-size: 20px;
-                text-decoration: none;
-                margin-top: 4px;
-            }
+
+    .orderList__orderFrame {
+        max-width: 139px;
+        height: 131px;
+        padding: 10px 0 25px 10px; /* Уменьшаем отступы для компактности */
+    }
+
+    .orderFrame_content {
+        margin: auto 34px; /* Пропорционально уменьшаем боковые отступы */
+        max-width: 98px; /* Пропорционально уменьшаем ширину контента */
+        gap: 8px; /* Уменьшаем расстояние между элементами */
+    }
+
+    .orderFrame__infoText,
+    .OrderFrame__showMore {
+        font-size: 12px; /* Уменьшаем размер шрифта */
+        width: 84px;
+    }
+
+    .orderFrame__header {
+        font-size: 16px;
+        margin-bottom: 10px; /* Уменьшаем отступ снизу */
+    }
+
+    .orderFrame__icon {
+        padding: 3px; /* Уменьшаем padding иконки */
+        width: 24px;
+        height: 24px;
+    }
+
+    .orderFrame__header_h4 {
+        font-size: 12px;
+        font-weight: 600;
+        width: 79px;
+        height: 15px;
+    }
+}
+
