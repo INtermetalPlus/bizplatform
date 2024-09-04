@@ -26,6 +26,7 @@ export const AddProductModal: React.FC<AddProductModalProps> = ({ onClose }) => 
       </div>
       <div className={styles.block}>
         <div className={styles.photo}></div>
+        
         <div className={styles.addForm}>
           <label>
             Что хотите продать?
@@ -44,7 +45,8 @@ export const AddProductModal: React.FC<AddProductModalProps> = ({ onClose }) => 
               placeholder="Не больше 60 символов"
             />
           </label>
-          <label>
+          <div className={styles.blog_left}>
+          <label className={styles.label_characteristic}>
             Характеристика вашего товара/услуги
             <textarea
               name="characteristics"
@@ -95,6 +97,7 @@ export const AddProductModal: React.FC<AddProductModalProps> = ({ onClose }) => 
             width="385px"
             text="Добавить товар"
           />
+          </div>
           </div>
         </div>
       </div>

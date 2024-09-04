@@ -44,8 +44,8 @@
 }
 
 .photo {
-    width: 468px;
-    height: 500px;
+    width: 250px;
+    height: 250px;
     background-color: #D9D9D9;
 
 }
@@ -75,4 +75,19 @@
   }
   .checkbox_round:checked {
     background-color: #3971FF;
+  }
+
+  .label_characteristic{
+    width: 790px;
+    height: 234px;
+  }
+
+  .blog_left{
+    flex-direction: column ;
+    display: flex;
+    
+  }
+
+  .block_1{
+    display: flex;
   }
