@@ -16,6 +16,8 @@ interface Price {
   premium: number;
 }
 
+
+
 export const TariffsForSuppliers: React.FC = () => {
   const [currency, setCurrency] = useState<string>('USD');
   const [price, setPrice] = useState<Price>({ standard: 100, premium: 300 });
@@ -57,16 +59,16 @@ export const TariffsForSuppliers: React.FC = () => {
         <div className={styles.tablo}>
           <div className={styles.doska}>
             <div className={styles.first}>
-              <div>
+              <div className={styles.block_blue}>
                 <p className={styles.black}>Версия</p>
                 <p className={styles.blue}>демо</p>
               </div>
               <Image src={Demo} alt="demo" width={183} height={166} />
             </div>
             <div className={styles.tarif}>
-              <div style={{ height: "78.93px" }}>
-                <p className={styles.black}>Бесплатно</p>
-              </div>
+              {/* <div style={{ height: "78.93px" }}> */}
+                <p className={styles.black_masiv}>Бесплатно</p>
+              
               <div className={styles.checkBox}>
                 <label htmlFor="">
                   <Image src={Check123} alt="demo" width={28} height={28} />
@@ -93,8 +95,8 @@ export const TariffsForSuppliers: React.FC = () => {
             </div>
             <div className={styles.tarif}>
               <div>
-                <p className={styles.black}>{price.standard} {currency}</p>
-                <span>1 месяц</span>
+                <p className={styles.black_masiv}>{price.standard} {currency}</p>
+                <span className={styles.span}>1 месяц</span>
               </div>
               <div className={styles.checkBox}>
                 <label htmlFor="">
@@ -126,8 +128,8 @@ export const TariffsForSuppliers: React.FC = () => {
             </div>
             <div className={styles.tarif}>
               <div>
-                <p className={styles.black}>{price.premium} {currency}</p>
-                <span>1 год</span>
+                <p className={styles.black_masiv}>{price.premium} {currency}</p>
+                <span className={styles.span}>1 год</span>
               </div>
               <div className={styles.checkBox}>
                 <label htmlFor="">
