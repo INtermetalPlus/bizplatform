@@ -291,3 +291,45 @@
         
     } 
 }
+
+@media (max-width: 420px) {
+    .tablo{
+        max-width: 420px;
+        display: contents;
+    }
+    .orderDemonstration{
+        max-width: 343px;
+        height: 173px;
+    }
+
+    .text p {
+        font-size: 20px; 
+        font-weight: 500;
+        width: 220px;
+    }
+
+    .text span {
+        font-size: 12px; 
+        width: 337px;
+    }
+    .prises {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        margin-top: 40px;
+    
+        h2 {
+            width: 178px;
+            height: 56px;
+            font-size: 20px;
+            color: #ffff;
+        }
+    }
+    .check{
+        width: 210px;
+        .inputs{
+            
+        }
+    }
+}

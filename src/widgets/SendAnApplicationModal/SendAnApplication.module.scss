@@ -5,7 +5,7 @@
     height: 100%;
     justify-content: space-around;
     align-items: center;
-    backdrop-filter: blur(10px);
+    
     background: linear-gradient(-45deg,rgba(0, 0, 0, 0.35), rgb(57, 113, 255, 0.35), #4400ff52);
     background-size: 400% 400%;
     animation: modalBG 10s ease-in-out infinite;
@@ -174,7 +174,7 @@
         
     }
     .form_blog1 input{
-        width: 287px;
+        width: 305px;
         height: 87px;
     }
 
@@ -187,4 +187,17 @@
         width: 139px;
         height: 35px;
     }
+}
+
+@media (max-width: 420px) {
+    .registerForm__submit{
+        margin-top: 6px;
+        width: 312px;
+        height: 35px;
+    }
+    .form_blog1 input{
+        width: 305px;
+        height: 74px;
+    }
+    
 }
