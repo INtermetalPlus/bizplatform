@@ -94,3 +94,97 @@
 .modalWindow__becomeAccount > p {
     transition: 0.3s;
 }
+
+.form_blog input{
+    width: 385px;
+    height: 64px;
+}
+
+.form_blog1 input{
+    width: 790px;
+    height: 120px;
+}
+
+@media (max-width: 1024px) {
+    .BlogModal {
+        width: 314px; /* Уменьшение ширины до 314px */
+        height: 310px; /* Автоматическая высота для более гибкого адаптирования */
+        padding: 15px;
+        
+         
+    }
+
+    .registerForm__submit {
+        width: 100%; /* Устанавливаем кнопку на полную ширину блока */
+        height: 45px; /* Уменьшение высоты кнопки */
+        font-size: 20px; /* Уменьшение размера текста */
+    }
+
+    .form_blog input::placeholder {
+        font-size: 18px; /* Корректируем размер плейсхолдера */
+    }
+
+    .modalWindow__becomeAccount {
+        font-size: 20px; /* Уменьшение размера текста */
+    }
+
+    .Blog_title_text{
+        margin-top: -3px;
+        .title{
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .subtitle{
+            font-size: 10px;
+        }
+
+    }
+    .Blog_form_block{
+        margin-top: -10px;
+    }
+    .Blog_form_block_title{
+        .Blog_form_block_title_text{
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .form_blog input{
+            width: 139px;
+            height: 31px;
+        }
+    }
+    .Blog_form_block_title1{
+        .Blog_form_block_title_text{
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .form_blog input{
+            width: 139px;
+            height: 31px;
+        }
+    }
+
+    .Blog_title_text{
+        .title{
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        
+    }
+    .form_blog1 input{
+        width: 287px;
+        height: 87px;
+    }
+
+    .form_blog2{
+        display: none;
+    }
+
+    .registerForm__submit{
+        margin-top: 6px;
+        width: 139px;
+        height: 35px;
+    }
+}

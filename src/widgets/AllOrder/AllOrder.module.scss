@@ -386,3 +386,69 @@
 .link {
   text-decoration: none;
 }
+
+@media (max-width: 1024px) {
+  .main {
+    max-width: 480px; /* Уменьшаем основной блок */
+    margin: 30px auto;
+  }
+
+  .secondBlock {
+    gap: 15px; /* Уменьшаем промежуток между блоками */
+  }
+
+  .categories {
+    width: 200px; /* Уменьшаем ширину блока категорий */
+  }
+
+  .searchField {
+    max-width: 100%;
+    margin-bottom: 15px; /* Уменьшаем отступы */
+  }
+
+  .selectDiv {
+    font-size: 16px; /* Уменьшаем размер текста */
+    gap: 8px;
+  }
+
+  .select_categories_block,
+  .categories_select {
+    width: 200px; /* Уменьшаем размер элементов селекта */
+    height: 50px;
+    font-size: 18px !important; /* Подгоняем текст под размеры */
+  }
+
+  .inputPrice {
+    width: 180px; /* Уменьшаем поля ввода для цены */
+    input {
+      width: 50px;
+      height: 20px;
+    }
+  }
+
+  .orders {
+    max-width: 480px; /* Уменьшаем общий блок заказов */
+    margin-left: 0;
+  }
+
+  .orders_frame,
+  .completed_orders_frame {
+    max-width: 460px; /* Уменьшаем карточки заказов */
+    padding: 15px;
+  }
+
+  .orders_frame__order_title,
+  .completed_orders_frame__order_title {
+    font-size: 20px; /* Уменьшаем заголовки */
+  }
+
+  .orders_frame__order_description,
+  .completed_orders_frame__order_description {
+    font-size: 18px; /* Уменьшаем описание */
+  }
+
+  .check {
+    width: 22px;
+    height: 22px; /* Уменьшаем чекбоксы */
+  }
+}

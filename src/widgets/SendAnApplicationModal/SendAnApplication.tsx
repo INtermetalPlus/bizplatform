@@ -86,7 +86,7 @@ export const SendAnApplication: React.FC<ModalWindowRegProps> = ({ closeModalWin
                                             type="text"
                                             value={phoneNumber}
                                             onChange={(e) => setPhoneNumber(e.target.value)}
-                                            style={{ width: "385px", height: "64px" }}
+                                            // style={{ width: "385px", height: "64px" }}
                                             placeholder="+996"
                                         />
                                     </div>
@@ -98,7 +98,7 @@ export const SendAnApplication: React.FC<ModalWindowRegProps> = ({ closeModalWin
                                             type="text"
                                             value={name}
                                             onChange={(e) => setName(e.target.value)}
-                                            style={{ width: "385px", height: "64px" }}
+                                            // style={{ width: "385px", height: "64px" }}
                                             placeholder="Мое имя"
                                         />
                                     </div>
@@ -111,21 +111,21 @@ export const SendAnApplication: React.FC<ModalWindowRegProps> = ({ closeModalWin
                                 Заполнение данного поля необязательно.
                             </p>
                         </div>
-                        <div className={styles.form_blog}>
+                        <div className={styles.form_blog1}>
                             <input
                                 type="text"
                                 value={comment}
                                 onChange={(e) => setComment(e.target.value)}
-                                style={{ width: "790px", height: "120px" }}
+                                // style={{ width: "790px", height: "120px" }}
                                 placeholder="Мой комментарий..."
                             />
                         </div>
-                        <div className={styles.form_blog}>
+                        <div className={styles.form_blog2}>
                             <h2 className={styles.Blog_form_block_title_text}>Выберите тариф</h2>
                             <select
                                 value={tariff ?? ''}
                                 onChange={(e) => setTariff(Number(e.target.value))}
-                                style={{ width: "385px", height: "64px" }}
+                                // style={{ width: "385px", height: "64px" }}
                             >
                                 <option value="" disabled>Выберите тариф</option>
                                 <option value="1">Тариф 1</option>
