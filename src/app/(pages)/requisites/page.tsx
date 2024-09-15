@@ -5,7 +5,6 @@ import React from 'react'
 const Requisites = () => {
   return (
     <>
-      <Help />
       <OurRequisitesPage />
     </>
   )

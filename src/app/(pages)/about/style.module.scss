@@ -221,3 +221,40 @@
     }
   }
 }
+
+
+@media (max-width: 400px) { 
+  .aboutPage {
+
+    .about {
+      margin-bottom: 64px;
+      h1 {
+        margin-bottom: 16px;
+      }
+      p {
+        margin-bottom: 20px;
+      }
+    }
+    .howWorks {
+      margin-bottom: 64px;
+
+      .examples {
+        flex-direction: column;
+
+        .example {
+          width: 100%;
+
+          ul {
+            font-size: 14px;
+            margin-bottom: 0;
+          }
+
+          span {
+            font-size: 14px;
+            height: 57px;
+          }
+        }
+      }
+    }
+  }
+}
